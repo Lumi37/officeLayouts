@@ -36,6 +36,7 @@ ul{
     align-items: center;
     justify-content: center;
     user-select: none;
+    padding: 0.5rem;
     border: solid 0.5px rgb(255, 255, 255, 0.2);
 }
 .userListItem:hover{
@@ -46,7 +47,10 @@ ul{
 }
 
 .hoverUser{
-    border: solid 2px red;
+    stroke: cyan;
+}
+.hoverUserListItem{
+    border:1px solid cyan
 }
 
 .highlighted{
