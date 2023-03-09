@@ -1,3 +1,51 @@
+html{
+    font-size: 16px; 
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    background-color: rgb(66, 66, 66);
+    color: cyan;
+}
 .highlighted{
     fill:greenyellow
+}
+
+rect{
+    fill:rgb(255, 255, 255);
+    stroke: rgb(0, 0, 0);
+}
+ellipse{
+    fill:rgb(255, 255, 255);
+    stroke: rgb(0, 0, 0);
+}
+#log{
+    font-size: 1.5rem;
+    height: 2rem;
+}
+
+
+
+
+.mainContainer{
+    display: grid;
+    grid-template-columns: 0.1fr 1fr .2fr;
+    height: 98vh;
+    width: 99vw;
+}
+.dropdownMenu{
+ border: solid 1px cyan;
+}
+
+.content{
+    display: flex;
+    border: solid 1px cyan;
+    align-items: center;
+    justify-content: center;
+}
+.info{
+    display: flex;
+    border: solid 1px cyan;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
 }
