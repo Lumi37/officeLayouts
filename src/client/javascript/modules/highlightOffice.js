@@ -1,6 +1,6 @@
-export function highlightOffice(target, selectedShape) {
-  if (selectedShape) selectedShape.classList.remove("highlighted");
-  selectedShape = target;
-  selectedShape.classList.add("highlighted");
-  return selectedShape;
+export function highlightOffice(target, selectedUser) {
+  if (selectedUser) selectedUser.classList.remove("highlighted");
+  selectedUser = target;
+  selectedUser.classList.add("highlighted");
+  return selectedUser;
 }

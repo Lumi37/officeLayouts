@@ -1,17 +1,77 @@
 html{
     font-size: 16px; 
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    background-color: rgb(66, 66, 66);
+    background-color: #333;
     color: cyan;
 }
-.highlighted{
-    fill:greenyellow
+body{
+    padding: 0;
+    margin: 0;
+}
+span{
+    color: #76ae20;
+}
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.listedOffices li{
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    border: solid 0.5px rgb(255, 255, 255, 0.2);
+}
+.listedOffices li:hover{
+    background-color: rgb(255, 255, 255,0.2);
+}
+.listedOffices li:active{
+    background-color: #333;
+}
+.userListItem{
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+    user-select: none;
+    border: solid 0.5px rgb(255, 255, 255, 0.2);
+}
+.userListItem:hover{
+    background-color: rgb(255, 255, 255,0.2);
+}
+.userListItem:active{
+    background-color: #333;
 }
 
+.hoverUser{
+    border: solid 2px red;
+}
+
+.highlighted{
+    fill:cyan
+}
+svg{
+    display: none;
+}
+.chosenOffice{
+    display: block;
+}
 rect{
-    fill:rgb(255, 255, 255);
+    fill:rgb(99 99 99);
     stroke: rgb(0, 0, 0);
 }
+
+.rectContainer{
+    fill:#434343;
+    stroke:cyan
+}
+.rectUser{
+    width:120px;
+    height:60px;
+}
+
 ellipse{
     fill:rgb(255, 255, 255);
     stroke: rgb(0, 0, 0);
@@ -20,32 +80,45 @@ ellipse{
     font-size: 1.5rem;
     height: 2rem;
 }
-
-
+#office{
+    font-size: 2rem;
+    padding: 1rem
+}
 
 
 .mainContainer{
     display: grid;
     grid-template-columns: 0.1fr 1fr .2fr;
-    height: 98vh;
-    width: 99vw;
+    height: 100vh;
+    width: 100vw;
 }
 .dropdownMenu{
- border: solid 1px cyan;
+    border: solid 1px rgb(255, 255, 255, 0.2);
 }
 
 .content{
     display: flex;
-    border: solid 1px cyan;
+    border: solid 1px rgb(255, 255, 255, 0.2);
     align-items: center;
     justify-content: center;
 }
 .info{
-    display: flex;
-    border: solid 1px cyan;
+    display: grid;
+    grid-template-rows: 0.3fr 1fr;
+    border: solid 1px rgb(255, 255, 255, 0.2);
+
+}
+
+.infoEditing{
+    border: solid 1px rgb(255, 255, 255, 0.2);
+    display:flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
+    gap: 0.5rem;
+
+}
+.infoDisplay{
+    border: solid 1px rgb(255, 255, 255, 0.2);
 
 }
