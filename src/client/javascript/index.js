@@ -1,3 +1,4 @@
+
 import { selectUser } from "./modules/selectUser.js";
 import { displaySelectedOffice } from "./modules/displaySelectedOffice.js";
 import { highlightCorrespondingUser } from "./modules/highlightCorrespondingUser.js";
@@ -5,11 +6,10 @@ import { selectUserFromList } from "./modules/selectUserFromList.js";
 import { selectCorrespondingListedUser } from "./modules/selectCorrespondingListedUser.js";
 import { highlightCorrespondingListedUser } from "./modules/highlightCorrespondingListedUser.js";
 import { constructList } from "./modules/constructList.js";
-// const terror = await fetch('/data')
-// const text =  await terror.text()
-// console.log(text)
-const svgContainer = document.querySelector("#svgs");
-// const log = document.querySelector("#log");
+import { updateSelectedOfficeInformation } from "./modules/updateSelectedOfficeInfo.js";
+// import './modules/tooltip.js'
+
+export const svgContainer = document.querySelector("#svgs");
 const userTextInput = document.querySelector('#user')
 const powerOutletTextInput = document.querySelector("#powerOutlet");
 export const offices = document.querySelectorAll('svg')
@@ -19,7 +19,7 @@ const changeButton = document.querySelector('#submitChanges')
 let selectedUser;
 let hoverUser
 let selectListedUser
-const selectedOffice = document.querySelector('#office')
+export const selectedOffice = document.querySelector('#office')
 
 svgContainer.addEventListener("click", (e) => {
   if (e.target.dataset.id) {
@@ -68,6 +68,7 @@ document.querySelectorAll('.listedOffices li').forEach(office=>{
     const response = await fetch('/getData',officeReq)
     const receivedData = await response.json()
     console.log(receivedData)
+    updateSelectedOfficeInformation(receivedData)
     constructList()
   })
 })

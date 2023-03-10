@@ -1,5 +1,5 @@
 export function highlightCorrespondingUser(target,hoverUser){
-    let selectedOfficeUsers = document.querySelectorAll('.chosenOffice rect[data-user]')
+    let selectedOfficeUsers = document.querySelectorAll('.chosenOffice rect[data-id]')
     if(hoverUser)hoverUser.classList.remove('hoverUser')
     selectedOfficeUsers.forEach(user=>{
         if(user.dataset.id === target.dataset.id){
