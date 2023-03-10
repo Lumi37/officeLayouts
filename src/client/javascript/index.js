@@ -7,7 +7,7 @@ import { selectCorrespondingListedUser } from "./modules/selectCorrespondingList
 import { highlightCorrespondingListedUser } from "./modules/highlightCorrespondingListedUser.js";
 import { constructList } from "./modules/constructList.js";
 import { updateSelectedOfficeInformation } from "./modules/updateSelectedOfficeInfo.js";
-// import './modules/tooltip.js'
+import { tooltip } from "./modules/tooltip.js";
 
 export const svgContainer = document.querySelector("#svgs");
 const userTextInput = document.querySelector('#user')
@@ -36,16 +36,19 @@ svgContainer.addEventListener("click", (e) => {
 });
 
 svgContainer.addEventListener('mouseover' ,e=>{
-  if(e.target.dataset.user){
+  if(e.target.dataset.id){
     hoverUser = highlightCorrespondingListedUser(e.target,hoverUser)
+    tooltip(selectedOffice,e.target)
   }
   else{
     hoverUser = highlightCorrespondingListedUser(e.target,hoverUser)
   }
 })
 
-svgContainer.addEventListener('mouseleave',e=>{
+svgContainer.addEventListener('mouseout',e=>{
   if(hoverUser)hoverUser.classList.remove('highlightUserListItem')
+  const tooltip = document.querySelector('.tooltip');
+  tooltip.parentNode.removeChild(tooltip);
 })
 
 
