@@ -2,71 +2,104 @@ import { selectUser } from "./modules/selectUser.js";
 import { displaySelectedOffice } from "./modules/displaySelectedOffice.js";
 import { highlightCorrespondingUser } from "./modules/highlightCorrespondingUser.js";
 import { selectUserFromList } from "./modules/selectUserFromList.js";
+import { selectCorrespondingListedUser } from "./modules/selectCorrespondingListedUser.js";
 import { highlightCorrespondingListedUser } from "./modules/highlightCorrespondingListedUser.js";
-
+import { constructList } from "./modules/constructList.js";
+// const terror = await fetch('/data')
+// const text =  await terror.text()
+// console.log(text)
 const svgContainer = document.querySelector("#svgs");
-const log = document.querySelector("#log");
-const powerOutlet = document.querySelector("#powerOutlet");
+// const log = document.querySelector("#log");
+const userTextInput = document.querySelector('#user')
+const powerOutletTextInput = document.querySelector("#powerOutlet");
 export const offices = document.querySelectorAll('svg')
 const officesList = document.querySelector('.listedOffices')
-let selectedOfficeUsersList = document.querySelector('.listedUsers')
+export let selectedOfficeUsersList = document.querySelector('.listedUsers')
+const changeButton = document.querySelector('#submitChanges')
 let selectedUser;
 let hoverUser
-let hoverListedUser
+let selectListedUser
 const selectedOffice = document.querySelector('#office')
 
 svgContainer.addEventListener("click", (e) => {
-  if (e.target.dataset.user) {
+  if (e.target.dataset.id) {
     selectedUser = selectUser(e.target, selectedUser);
-    hoverListedUser = highlightCorrespondingListedUser(e.target, hoverListedUser)
-    log.innerHTML = e.target.dataset.user;
-    powerOutlet.value = e.target.dataset.outlet;
+    selectListedUser = selectCorrespondingListedUser(e.target, selectListedUser)
+    userTextInput.value = e.target.dataset.user;
+    powerOutletTextInput.value = e.target.dataset.outlet;
   } else {
     selectedUser = selectUser(e.target, selectedUser);
-    //hoverListedUser = highlightCorrespondingListedUser(e.target, hoverListedUser)
-    log.innerHTML=''
-    powerOutlet.value=''
+    selectListedUser = selectCorrespondingListedUser(e.target, selectListedUser)
+    userTextInput.value = ''
+    powerOutletTextInput.value=''
   }
 });
 
+svgContainer.addEventListener('mouseover' ,e=>{
+  if(e.target.dataset.user){
+    hoverUser = highlightCorrespondingListedUser(e.target,hoverUser)
+  }
+  else{
+    hoverUser = highlightCorrespondingListedUser(e.target,hoverUser)
+  }
+})
+
+svgContainer.addEventListener('mouseleave',e=>{
+  if(hoverUser)hoverUser.classList.remove('highlightUserListItem')
+})
+
 
 offices.forEach(svg=>{
-  officesList.innerHTML += `<li>${svg.dataset.office}</li>`
+  officesList.innerHTML += `<li data-office ="${svg.dataset.office}">${svg.dataset.office}</li>`
 })
 
 
 
 document.querySelectorAll('.listedOffices li').forEach(office=>{
-  office.addEventListener('click',e=>{
+  office.addEventListener('click',async e=>{
     selectedOfficeUsersList.innerHTML=''
     selectedOffice.innerHTML = displaySelectedOffice(e.target,selectedOffice)
-    let selectedOfficeUsers = document.querySelectorAll('.chosenOffice rect[data-user]')
-    selectedOfficeUsers.forEach(user=>{
-      // selectedOfficeUsersList.innerHTML += `
-      // <li data-user="${user.dataset.user}" data-outlet="${user.dataset.outlet}" class="userListItem">
-      //   <div>User:</div>
-      //   <span>${user.dataset.user}</span>
-      //   <div>PO:</div> 
-      //   <span>${user.dataset.outlet}</span>
-      // </li>`
-      selectedOfficeUsersList.innerHTML += `<li data-user="${user.dataset.user}" data-outlet="${user.dataset.outlet}" class="userListItem">User:&nbsp; <span>${user.dataset.user}</span>&nbsp; PO:&nbsp; <span>${user.dataset.outlet}</span></li>`
-    })
+    const officeReq = {
+      method:'POST',
+      headers:{'Content-Type': 'application/json'},
+      body:JSON.stringify({
+        file: selectedOffice.innerHTML}
+    )}
+    const response = await fetch('/getData',officeReq)
+    const receivedData = await response.json()
+    console.log(receivedData)
+    constructList()
   })
 })
 
 
 selectedOfficeUsersList.addEventListener('mouseover' ,e=>{
-  if(e.target.dataset.user){
+  if(e.target.dataset.id){
     hoverUser = highlightCorrespondingUser(e.target,hoverUser)
   }
 })
 
 selectedOfficeUsersList.addEventListener('mouseleave',e=>{
-  hoverUser.classList.remove('hoverUser')
+  if(hoverUser)hoverUser.classList.remove('hoverUser')
 })
 
 selectedOfficeUsersList.addEventListener("click", (e) => {
     selectedUser = selectUserFromList(e.target.closest('li[data-user]'), selectedUser);
-    log.innerHTML = e.target.closest('li[data-user]').dataset.user;
-    powerOutlet.value = e.target.closest('li[data-user]').dataset.outlet;
+    selectListedUser = selectCorrespondingListedUser(e.target.closest('li[data-user]'), selectListedUser)
+    userTextInput.value = e.target.closest('li[data-user]').dataset.user;
+    powerOutletTextInput.value = e.target.closest('li[data-user]').dataset.outlet;
 });
+
+changeButton.addEventListener('click',async e=>{
+  if(userTextInput.value && powerOutletTextInput.value){
+      const userInfo = {
+        method:'POST',
+        headers:{'Content-Type': 'application/json'},
+        body:JSON.stringify({
+          user:userTextInput.value,
+          powerOutlet:powerOutletTextInput.value}
+      )}
+      fetch('/dataUpdate',userInfo)
+  }
+
+})

@@ -4,9 +4,20 @@ html{
     background-color: #333;
     color: cyan;
 }
+
 body{
     padding: 0;
     margin: 0;
+}
+::placeholder {
+    color: rgba(0, 255, 255, 0.62)
+}
+input[type="text"]{
+    padding: 0.3rem;
+    background-color: #3a4341;
+    outline-width: 0;
+    color: cyan;
+    text-align: center;
 }
 span{
     color: #76ae20;
@@ -15,6 +26,16 @@ ul{
     list-style-type: none;
     margin: 0;
     padding: 0;
+}
+#submitChanges{
+    border: 1px solid #6b6b6b;
+    padding: 10px;
+    cursor: pointer;
+    background-color: #535353;
+    color: cyan;
+}
+#submitChanges:active{
+    background-color: #828181;
 }
 .listedOffices li{
     display: flex;
@@ -39,17 +60,23 @@ ul{
     padding: 0.5rem;
     border: solid 0.5px rgb(255, 255, 255, 0.2);
 }
+.highlightUserListItem{
+    background-color: rgb(255, 255, 255,0.2);
+
+}
 .userListItem:hover{
     background-color: rgb(255, 255, 255,0.2);
 }
 .userListItem:active{
     background-color: #333;
 }
-
+rect[data-user]:hover{
+    stroke: cyan;
+}
 .hoverUser{
     stroke: cyan;
 }
-.hoverUserListItem{
+.selectUserListItem{
     border:1px solid cyan
 }
 
