@@ -50,6 +50,7 @@ svgContainer.addEventListener('mouseover' ,e=>{
 svgContainer.addEventListener('mouseout',e=>{
   if(hoverUser)hoverUser.classList.remove('highlightUserListItem')
   const tooltip = document.querySelector('.tooltip');
+  if(tooltip)
   tooltip.remove()
 })
 
@@ -89,6 +90,7 @@ selectedOfficeUsersList.addEventListener('mouseout',e=>{
   if(hoverUser){
     hoverUser.classList.remove('hoverUser')
     const tooltip = document.querySelector('.tooltip');
+    if(tooltip)
     tooltip.remove()
     
   }
