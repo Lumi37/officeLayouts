@@ -8,6 +8,7 @@ import { highlightCorrespondingListedUser } from "./modules/highlightCorrespondi
 import { constructList } from "./modules/constructList.js";
 import { updateSelectedOfficeInformation } from "./modules/updateSelectedOfficeInfo.js";
 import { tooltip } from "./modules/tooltip.js";
+import { tooltipByList } from "./modules/tooltipByList.js";
 
 export const svgContainer = document.querySelector("#svgs");
 const userTextInput = document.querySelector('#user')
@@ -27,6 +28,7 @@ svgContainer.addEventListener("click", (e) => {
     selectListedUser = selectCorrespondingListedUser(e.target, selectListedUser)
     userTextInput.value = e.target.dataset.user;
     powerOutletTextInput.value = e.target.dataset.outlet;
+    powerOutletTextInput.dataset.id = e.target.dataset.id
   } else {
     selectedUser = selectUser(e.target, selectedUser);
     selectListedUser = selectCorrespondingListedUser(e.target, selectListedUser)
@@ -48,7 +50,7 @@ svgContainer.addEventListener('mouseover' ,e=>{
 svgContainer.addEventListener('mouseout',e=>{
   if(hoverUser)hoverUser.classList.remove('highlightUserListItem')
   const tooltip = document.querySelector('.tooltip');
-  tooltip.parentNode.removeChild(tooltip);
+  tooltip.remove()
 })
 
 
@@ -66,11 +68,10 @@ document.querySelectorAll('.listedOffices li').forEach(office=>{
       method:'POST',
       headers:{'Content-Type': 'application/json'},
       body:JSON.stringify({
-        file: selectedOffice.innerHTML}
+        office: selectedOffice.innerHTML}
     )}
     const response = await fetch('/getData',officeReq)
     const receivedData = await response.json()
-    console.log(receivedData)
     updateSelectedOfficeInformation(receivedData)
     constructList()
   })
@@ -80,11 +81,17 @@ document.querySelectorAll('.listedOffices li').forEach(office=>{
 selectedOfficeUsersList.addEventListener('mouseover' ,e=>{
   if(e.target.dataset.id){
     hoverUser = highlightCorrespondingUser(e.target,hoverUser)
+    tooltipByList(hoverUser,e.target)
   }
 })
 
-selectedOfficeUsersList.addEventListener('mouseleave',e=>{
-  if(hoverUser)hoverUser.classList.remove('hoverUser')
+selectedOfficeUsersList.addEventListener('mouseout',e=>{
+  if(hoverUser){
+    hoverUser.classList.remove('hoverUser')
+    const tooltip = document.querySelector('.tooltip');
+    tooltip.remove()
+    
+  }
 })
 
 selectedOfficeUsersList.addEventListener("click", (e) => {
@@ -100,10 +107,16 @@ changeButton.addEventListener('click',async e=>{
         method:'POST',
         headers:{'Content-Type': 'application/json'},
         body:JSON.stringify({
-          user:userTextInput.value,
-          powerOutlet:powerOutletTextInput.value}
-      )}
-      fetch('/dataUpdate',userInfo)
+          user: userTextInput.value,
+          outlet: powerOutletTextInput.value,
+          id: powerOutletTextInput.dataset.id,
+          office: selectedOffice.innerHTML
+        }
+        )}
+      const response  = await fetch('/postData',userInfo)
+      const receivedData = await response.json()
+      console.log(receivedData)
+      updateSelectedOfficeInformation(receivedData)
+      constructList()
   }
-
 })
