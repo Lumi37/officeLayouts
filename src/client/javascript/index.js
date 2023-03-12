@@ -122,3 +122,47 @@ changeButton.addEventListener('click',async e=>{
       constructList()
   }
 })
+
+userTextInput.addEventListener('keypress', async e=>{
+  if(e.key ==='Enter'){
+    if(userTextInput.value && powerOutletTextInput.value){
+      const userInfo = {
+        method:'POST',
+        headers:{'Content-Type': 'application/json'},
+        body:JSON.stringify({
+          user: userTextInput.value,
+          outlet: powerOutletTextInput.value,
+          id: powerOutletTextInput.dataset.id,
+          office: selectedOffice.innerHTML
+        }
+        )}
+      const response  = await fetch('/postData',userInfo)
+      const receivedData = await response.json()
+      console.log(receivedData)
+      updateSelectedOfficeInformation(receivedData)
+      constructList()
+    }
+  }
+})
+
+userTextInput.addEventListener('keypress', async e=>{
+  if(e.key ==='Enter'){
+    if(userTextInput.value && powerOutletTextInput.value){
+      const userInfo = {
+        method:'POST',
+        headers:{'Content-Type': 'application/json'},
+        body:JSON.stringify({
+          user: userTextInput.value,
+          outlet: powerOutletTextInput.value,
+          id: powerOutletTextInput.dataset.id,
+          office: selectedOffice.innerHTML
+        }
+        )}
+      const response  = await fetch('/postData',userInfo)
+      const receivedData = await response.json()
+      console.log(receivedData)
+      updateSelectedOfficeInformation(receivedData)
+      constructList()
+    }
+  }
+})
