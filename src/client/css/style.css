@@ -22,6 +22,10 @@ input[type="text"]{
 span{
     color: #76ae20;
 }
+path{
+    fill: rgb(99 99 99);
+    stroke: rgb(0, 0, 0);
+}
 .tooltip {
     position: absolute;
     background-color: rgb(110, 109, 109);
@@ -102,6 +106,8 @@ rect{
 }
 
 .rectContainer{
+    width:1200px;
+    height:800px;
     fill:#434343;
     stroke:cyan
 }
@@ -109,6 +115,11 @@ rect{
     width:120px;
     height:60px;
 }
+.rectUserBig{
+    width:170px;
+    height:290px;
+}
+
 
 ellipse{
     fill:rgb(255, 255, 255);
