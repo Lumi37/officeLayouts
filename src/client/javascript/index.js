@@ -13,7 +13,7 @@ import { deleteText } from "./modules/deleteText.js";
 
 export const svgContainer = document.querySelector("#svgs");
 export const userTextInput = document.querySelector('#user')
-export const powerOutletTextInput = document.querySelector("#powerOutlet");
+export const outletTextInput = document.querySelector("#dataOutlet");
 export const offices = document.querySelectorAll('svg')
 export let selectedOfficeUsersList = document.querySelector('.listedUsers')
 export const selectedOffice = document.querySelector('#office')
@@ -24,7 +24,7 @@ let hoverUser
 let selectListedUser
 
 svgContainer.addEventListener("click", (e) => {
-  if (e.target.dataset.id) {
+  if (e.target.dataset.position) {
     selectedUser = selectUser(e.target, selectedUser);
     selectListedUser = selectCorrespondingListedUser(e.target, selectListedUser)
     autofillText(e.target)
@@ -36,7 +36,7 @@ svgContainer.addEventListener("click", (e) => {
 });
 
 svgContainer.addEventListener('mouseover' ,e=>{
-  if(e.target.dataset.id){
+  if(e.target.dataset.position){
     hoverUser = highlightCorrespondingListedUser(e.target,hoverUser)
     tooltip(selectedOffice,e.target)
   }
@@ -62,7 +62,9 @@ document.querySelectorAll('.listedOffices li').forEach(office=>{
   office.addEventListener('click',async e=>{
     selectedOfficeUsersList.innerHTML=''
     selectedOffice.innerHTML = displaySelectedOffice(e.target,selectedOffice)
-    const response = await fetch(`/getoffice/:${selectedOffice.innerHTML}`)
+    const userAmount = document.querySelectorAll(`[data-office='${selectedOffice.innerHTML}'] rect[data-position]`)
+    console.log(userAmount)
+    const response = await fetch(`/getoffice/${selectedOffice.innerHTML}/${userAmount.length}`)
     const receivedData = await response.json()
     updateSelectedOfficeInformation(receivedData)
     constructList()
@@ -71,7 +73,7 @@ document.querySelectorAll('.listedOffices li').forEach(office=>{
 
 
 selectedOfficeUsersList.addEventListener('mouseover' ,e=>{
-  if(e.target.dataset.id){
+  if(e.target.dataset.position){
     hoverUser = highlightCorrespondingUser(e.target,hoverUser)
     tooltipByList(hoverUser,e.target)
   }
@@ -89,22 +91,22 @@ selectedOfficeUsersList.addEventListener('mouseout',e=>{
 selectedOfficeUsersList.addEventListener("click", (e) => {
     selectedUser = selectUserFromList(e.target.closest('li[data-user]'), selectedUser);
     selectListedUser = selectCorrespondingListedUser(e.target.closest('li[data-user]'), selectListedUser)
-    autofillText(e.target.closest('li[data-id]'))
+    autofillText(e.target.closest('li[data-position]'))
 });
 
 changeButton.addEventListener('click',async e=>{
-  if(userTextInput.value && powerOutletTextInput.value){
+  if(userTextInput.value && outletTextInput.value){
       const userInfo = {
         method:'POST',
         headers:{'Content-Type': 'application/json'},
         body:JSON.stringify({
           user: userTextInput.value,
-          outlet: powerOutletTextInput.value,
-          id: powerOutletTextInput.dataset.id,
-          office: selectedOffice.innerHTML
+          outlet: outletTextInput.value,
+          office: selectedOffice.innerHTML,
+          position: outletTextInput.dataset.position
         }
         )}
-      const response  = await fetch('/postData',userInfo)
+      const response  = await fetch('/updateuserinfo',userInfo)
       const receivedData = await response.json()
       updateSelectedOfficeInformation(receivedData)
       constructList()
@@ -117,7 +119,7 @@ userTextInput.addEventListener('keypress',  e=>{
   }
 })
 
-powerOutletTextInput.addEventListener('keypress',e=>{
+outletTextInput.addEventListener('keypress',e=>{
   if(e.key ==='Enter'){
     changeButton.click()
   }

@@ -1,1 +1,62 @@
-[{"id":"1","user":"e.theodoraki","outlet":"D73"},{"id":"2","user":"d.dede","outlet":"D09"},{"id":"3","user":"zezas","outlet":"D103"},{"id":"4","user":"mprachoy","outlet":"D256"},{"id":"5","user":"makris","outlet":"D233"},{"id":"6","user":"k.skamagkas","outlet":"D05"},{"id":"7","user":"belafemine","outlet":"D123"},{"id":"8","user":"kyatz","outlet":"D53"},{"id":"9","user":"kosmetou","outlet":"D252"},{"id":"10","user":"Michalakakos","outlet":"D22"}]
+[
+  {
+    "user": "turbo",
+    "outlet": "D12",
+    "office": "protocol",
+    "position": "1"
+  },
+  {
+    "user": "k.skamagkas",
+    "outlet": "D69",
+    "office": "protocol",
+    "position": "2"
+  },
+  {
+    "user": "g.petrou",
+    "outlet": "D22",
+    "office": "protocol",
+    "position": "3"
+  },
+  {
+    "user": "",
+    "outlet": "",
+    "office": "protocol",
+    "position": "4"
+  },
+  {
+    "user": "",
+    "outlet": "",
+    "office": "protocol",
+    "position": "5"
+  },
+  {
+    "user": "",
+    "outlet": "",
+    "office": "protocol",
+    "position": "6"
+  },
+  {
+    "user": "",
+    "outlet": "",
+    "office": "protocol",
+    "position": "7"
+  },
+  {
+    "user": "",
+    "outlet": "",
+    "office": "protocol",
+    "position": "8"
+  },
+  {
+    "user": "",
+    "outlet": "",
+    "office": "protocol",
+    "position": "9"
+  },
+  {
+    "user": "",
+    "outlet": "",
+    "office": "protocol",
+    "position": "10"
+  }
+]

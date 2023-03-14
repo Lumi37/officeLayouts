@@ -1,7 +1,7 @@
-import{powerOutletTextInput,userTextInput} from '../index.js'
+import{outletTextInput,userTextInput} from '../index.js'
 
 export function deleteText(){
-    powerOutletTextInput.value = ''
-    powerOutletTextInput.dataset.id = ''
+    outletTextInput.value = ''
+    outletTextInput.dataset.position = ''
     userTextInput.value = ''
 }

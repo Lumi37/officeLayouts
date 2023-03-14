@@ -19,6 +19,11 @@ input[type="text"]{
     color: cyan;
     text-align: center;
 }
+#search{
+    padding: 0.6rem;
+    font-size: 1rem;
+    font-weight: 600;
+}
 span{
     color: #76ae20;
 }
@@ -169,5 +174,6 @@ ellipse{
 }
 .infoDisplay{
     border: solid 1px rgb(255, 255, 255, 0.2);
-
+    display: flex;
+    flex-direction: column;
 }

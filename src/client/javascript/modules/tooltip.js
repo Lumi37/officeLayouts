@@ -1,6 +1,6 @@
 
 export function tooltip(selectedOffice,target){
-    if(selectedOffice && target.dataset.id ){
+    if(selectedOffice && target.dataset.position ){
         const tooltip = document.createElement('div')
         tooltip.innerHTML = `User:<span>${target.dataset.user}</span>&nbsp;PO:<span>${target.dataset.outlet}</span>`
         tooltip.classList.add('tooltip')

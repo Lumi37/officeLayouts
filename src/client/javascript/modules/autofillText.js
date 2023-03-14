@@ -1,6 +1,6 @@
-import {powerOutletTextInput,userTextInput} from '../index.js'
+import {outletTextInput,userTextInput} from '../index.js'
 export function autofillText(target){
-    powerOutletTextInput.value = target.dataset.outlet
-    powerOutletTextInput.dataset.id = target.dataset.id
+    outletTextInput.value = target.dataset.outlet
+    outletTextInput.dataset.position = target.dataset.position
     userTextInput.value = target.dataset.user
 }

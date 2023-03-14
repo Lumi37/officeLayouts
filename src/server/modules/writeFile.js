@@ -6,17 +6,18 @@ export async function writeToFile(body){
     let requestedFileContent
     try{
         requestedFileContent = JSON.parse(await fs.readFile(requestedFile,{encoding: 'utf-8'}))
+        console.log('filecontent',requestedFileContent)
     }catch(err){
         console.log('readingfile',err)
     }
     for(let i = 0; i<requestedFileContent.length; i++){
-        if(requestedFileContent[i].id === body.id){
+        if(requestedFileContent[i].position === body.position){
             requestedFileContent[i].user = body.user
             requestedFileContent[i].outlet = body.outlet
         }
     }
     try{
-        await fs.writeFile(requestedFile, JSON.stringify(requestedFileContent))
+        await fs.writeFile(requestedFile, JSON.stringify(requestedFileContent, null, 2))
     }catch(err){
         console.log('writetofile'+err)
     }
