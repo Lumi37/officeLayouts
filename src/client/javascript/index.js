@@ -17,6 +17,7 @@ export const outletTextInput = document.querySelector("#dataOutlet");
 export const offices = document.querySelectorAll('svg')
 export let selectedOfficeUsersList = document.querySelector('.listedUsers')
 export const selectedOffice = document.querySelector('#office')
+const searchBar = document.querySelector('#search')
 const officesList = document.querySelector('.listedOffices')
 const changeButton = document.querySelector('#submitChanges')
 let selectedUser;
@@ -123,4 +124,8 @@ outletTextInput.addEventListener('keypress',e=>{
   if(e.key ==='Enter'){
     changeButton.click()
   }
+})
+
+searchBar.addEventListener('keypress', async e=>{
+  const response = fetch(`/search/${}`)
 })
