@@ -2,6 +2,8 @@ import express from "express";
 import { createFileIfNotExists } from "./modules/createFileIfNotExists.js";
 import { readToFile } from "./modules/readFile.js";
 import { writeToFile } from "./modules/writeFile.js";
+import { searchQuery } from "./modules/searchQuery.js";
+
 
 const server = express();
 export const _dirname = new URL('.',import.meta.url).pathname
@@ -26,4 +28,14 @@ server.post('/updateuserinfo',async (req,res)=>{
     res.end()
 })
 
+
+server.get('/search/:key',async (req,res)=>{
+    
+    const {key} = req.params
+    console.log(key)
+    const result = await searchQuery(key)
+    // if(result)
+    res.send(JSON.stringify(result))
+    res.end()
+})
 server.listen(3000, console.log("listens to 3000"));

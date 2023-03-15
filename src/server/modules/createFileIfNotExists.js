@@ -6,14 +6,14 @@ export async function createFileIfNotExists(office,userAmount){
     let fileLocation = `${_dirname}/../../offices/${office}.json`
     if(!fs.existsSync(fileLocation)){
         let fileContent = []
-        let fileLog 
+        // let fileLog 
         
         for (let i=0; i<userAmount; i++)
             fileContent.push({user:'',outlet:'',office:office,position:String(i+1)})
         try {
-            fileLog = JSON.parse(await fileSystem.readFile(`${_dirname}/../../offices/fileLog.json`,{encoding: 'utf-8'}))
-            fileLog.push({office:office})
-            await fileSystem.writeFile(`${_dirname}/../../offices/fileLog.json`,JSON.stringify(fileLog, null, 2))
+        //  fileLog = JSON.parse(await fileSystem.readFile(`${_dirname}/../../newfolder/fileLog.json`,{encoding: 'utf-8'}))
+        //  fileLog.push({office:office})
+        //  await fileSystem.writeFile(`${_dirname}/../../newfolder/fileLog.json`,JSON.stringify(fileLog, null, 2))
             await fileSystem.writeFile(fileLocation,JSON.stringify(fileContent, null, 2))
             console.log(`file: ${fileLocation} Created Succesfuly`)
         } catch (error) {

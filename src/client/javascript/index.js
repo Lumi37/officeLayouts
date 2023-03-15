@@ -10,6 +10,7 @@ import { tooltip } from "./modules/tooltip.js";
 import { tooltipByList } from "./modules/tooltipByList.js";
 import { autofillText } from "./modules/autofillText.js";
 import { deleteText } from "./modules/deleteText.js";
+import { timerForNextRequest } from "./modules/timerForNextRequest.js";
 
 export const svgContainer = document.querySelector("#svgs");
 export const userTextInput = document.querySelector('#user')
@@ -20,6 +21,9 @@ export const selectedOffice = document.querySelector('#office')
 const searchBar = document.querySelector('#search')
 const officesList = document.querySelector('.listedOffices')
 const changeButton = document.querySelector('#submitChanges')
+let searchQuery = true
+let searchKeyWord 
+let searchArray 
 let selectedUser;
 let hoverUser
 let selectListedUser
@@ -96,22 +100,23 @@ selectedOfficeUsersList.addEventListener("click", (e) => {
 });
 
 changeButton.addEventListener('click',async e=>{
-  if(userTextInput.value && outletTextInput.value){
-      const userInfo = {
-        method:'POST',
-        headers:{'Content-Type': 'application/json'},
-        body:JSON.stringify({
-          user: userTextInput.value,
-          outlet: outletTextInput.value,
-          office: selectedOffice.innerHTML,
-          position: outletTextInput.dataset.position
-        }
-        )}
-      const response  = await fetch('/updateuserinfo',userInfo)
-      const receivedData = await response.json()
-      updateSelectedOfficeInformation(receivedData)
-      constructList()
-  }
+if(outletTextInput.dataset.position){
+  const userInfo = {
+    method:'POST',
+    headers:{'Content-Type': 'application/json'},
+    body:JSON.stringify({
+      user: userTextInput.value.trim(),
+      outlet: outletTextInput.value.trim(),
+      office: selectedOffice.innerHTML,
+      position: outletTextInput.dataset.position
+    }
+    )}
+  const response  = await fetch('/updateuserinfo',userInfo)
+  const receivedData = await response.json()
+  updateSelectedOfficeInformation(receivedData)
+  constructList()
+}
+  
 })
 
 userTextInput.addEventListener('keypress',  e=>{
@@ -126,6 +131,18 @@ outletTextInput.addEventListener('keypress',e=>{
   }
 })
 
-searchBar.addEventListener('keypress', async e=>{
-  const response = fetch(`/search/${}`)
+// searchBar.addEventListener('keypress', async e=>{
+//   console.log(searchQuery && !searchKeyWord && !(e.key==='Enter'))
+//   if(searchQuery && !searchKeyWord && !(e.key==='Enter') ){
+//     searchKeyWord = e.key
+//     searchQuery = false
+//     timerForNextRequest()
+//     const response =  await fetch(`/search/${e.key}`)
+//     searchArray = await response.json()
+//     console.log(searchArray)
+//   }
+// })
+
+document.querySelector('#baton').addEventListener('click',e=>{
+  timerForNextRequest()
 })
