@@ -10,7 +10,7 @@ import { tooltip } from "./modules/tooltip.js";
 import { tooltipByList } from "./modules/tooltipByList.js";
 import { autofillText } from "./modules/autofillText.js";
 import { deleteText } from "./modules/deleteText.js";
-import { timerForNextRequest } from "./modules/timerForNextRequest.js";
+import { queryRequest } from "./modules/queryRequest.js";
 
 export const svgContainer = document.querySelector("#svgs");
 export const userTextInput = document.querySelector('#user')
@@ -18,12 +18,10 @@ export const outletTextInput = document.querySelector("#dataOutlet");
 export const offices = document.querySelectorAll('svg')
 export let selectedOfficeUsersList = document.querySelector('.listedUsers')
 export const selectedOffice = document.querySelector('#office')
-const searchBar = document.querySelector('#search')
+export const searchBar = document.querySelector('#search')
+export const queryResultsList = document.querySelector('.queryResultsList')
 const officesList = document.querySelector('.listedOffices')
 const changeButton = document.querySelector('#submitChanges')
-let searchQuery = true
-let searchKeyWord 
-let searchArray 
 let selectedUser;
 let hoverUser
 let selectListedUser
@@ -66,6 +64,7 @@ offices.forEach(svg=>{
 document.querySelectorAll('.listedOffices li').forEach(office=>{
   office.addEventListener('click',async e=>{
     selectedOfficeUsersList.innerHTML=''
+    console.log(e.target)
     selectedOffice.innerHTML = displaySelectedOffice(e.target,selectedOffice)
     const userAmount = document.querySelectorAll(`[data-office='${selectedOffice.innerHTML}'] rect[data-position]`)
     console.log(userAmount)
@@ -99,6 +98,23 @@ selectedOfficeUsersList.addEventListener("click", (e) => {
     autofillText(e.target.closest('li[data-position]'))
 });
 
+queryResultsList.addEventListener('click',async e=>{
+  selectedOfficeUsersList.innerHTML=''
+  const target = e.target.closest('li[data-office]')
+  selectedOffice.innerHTML = displaySelectedOffice(target,selectedOffice)
+  const userAmount = document.querySelectorAll(`[data-office='${selectedOffice.innerHTML}'] rect[data-position]`)
+  console.log(userAmount)
+  const response = await fetch(`/getoffice/${selectedOffice.innerHTML}/${userAmount.length}`)
+  const receivedData = await response.json()
+  updateSelectedOfficeInformation(receivedData)
+  constructList()
+  userTextInput.value = target.dataset.user
+  outletTextInput.value = target.dataset.outlet
+  outletTextInput.dataset.position = target.dataset.position
+  queryResultsList.innerHTML=''
+  searchBar.value=''
+})
+
 changeButton.addEventListener('click',async e=>{
 if(outletTextInput.dataset.position){
   const userInfo = {
@@ -119,30 +135,24 @@ if(outletTextInput.dataset.position){
   
 })
 
-userTextInput.addEventListener('keypress',  e=>{
+userTextInput.addEventListener('keydown',  e=>{
   if(e.key ==='Enter'){
     changeButton.click() 
   }
 })
 
-outletTextInput.addEventListener('keypress',e=>{
+outletTextInput.addEventListener('keydown',e=>{
   if(e.key ==='Enter'){
     changeButton.click()
   }
 })
 
-// searchBar.addEventListener('keypress', async e=>{
-//   console.log(searchQuery && !searchKeyWord && !(e.key==='Enter'))
-//   if(searchQuery && !searchKeyWord && !(e.key==='Enter') ){
-//     searchKeyWord = e.key
-//     searchQuery = false
-//     timerForNextRequest()
-//     const response =  await fetch(`/search/${e.key}`)
-//     searchArray = await response.json()
-//     console.log(searchArray)
-//   }
-// })
-
-document.querySelector('#baton').addEventListener('click',e=>{
-  timerForNextRequest()
+searchBar.addEventListener('keyup',e=>{
+  console.log(searchBar.value)
+  if(searchBar.value)selectedOfficeUsersList.innerHTML = ''
+  else if(document.querySelector('.chosenOffice')){
+    constructList()
+    queryResultsList.innerHTML=''
+  }
+  setTimeout(queryRequest,300)
 })

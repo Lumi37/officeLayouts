@@ -2,7 +2,7 @@ html{
     font-size: 16px; 
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     background-color: #333;
-    color: cyan;
+    color: rgb(255, 255, 255);
 }
 
 body{
@@ -10,22 +10,23 @@ body{
     margin: 0;
 }
 ::placeholder {
-    color: rgba(0, 255, 255, 0.62)
+    color: rgba(255, 255, 255, 0.3)
 }
 input[type="text"]{
     padding: 0.3rem;
     background-color: #3a4341;
     outline-width: 0;
-    color: cyan;
+    color: white;
     text-align: center;
 }
 #search{
+    background-color: #6b6b6b;
     padding: 0.6rem;
     font-size: 1rem;
     font-weight: 600;
 }
 span{
-    color: #76ae20;
+    color: #6baf6b;
 }
 path{
     fill: rgb(99 99 99);
@@ -48,7 +49,7 @@ ul{
     padding: 10px;
     cursor: pointer;
     background-color: #535353;
-    color: cyan;
+    color: white;
 }
 #submitChanges:active{
     background-color: #828181;
@@ -87,17 +88,17 @@ ul{
     background-color: #333;
 }
 rect[data-user]:hover{
-    stroke: cyan;
+    stroke: white;
 }
 .hoverUser{
-    stroke: cyan;
+    stroke: white;
 }
 .selectUserListItem{
-    border:1px solid cyan
+    border:1px solid white
 }
 
 .highlighted{
-    fill:cyan
+    fill:white
 }
 svg{
     display: none;
@@ -114,7 +115,7 @@ rect{
     width:1200px;
     height:800px;
     fill:#434343;
-    stroke:cyan
+    stroke:white
 }
 .rectUser{
     width:120px;

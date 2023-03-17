@@ -2,7 +2,7 @@ import fs from 'fs/promises'
 import _ from 'lodash'
 import { _dirname } from '../server.js';
 
-export async function searchQuery(key){
+export async function searchQuery(str){
     let result
     const directoryPath = `${_dirname}/../../offices/`;
     const searchPromise = new Promise(async (resolve, reject) => {
@@ -21,7 +21,7 @@ export async function searchQuery(key){
           }
         });
         const arr = _.flatten(await Promise.all(promises));
-        filteredArr = arr.filter(user=>( (user.user.toLowerCase().startsWith(key.toLowerCase())) || (user.outlet.toLowerCase().startsWith(key.toLowerCase())) ))
+        filteredArr = arr.filter(user=>( (user.user.toLowerCase().startsWith(str.toLowerCase())) || (user.outlet.toLowerCase().startsWith(str.toLowerCase())) ))
         resolve(filteredArr);
       } catch (error) {
         console.log(error);
