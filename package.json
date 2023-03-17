@@ -8,6 +8,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
+    "deploy": "rsync -avz ../officeLayouts/* kostas:officeLayouts",
+    "start":"node src/server/index.cjs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

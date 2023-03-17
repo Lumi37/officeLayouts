@@ -1,6 +1,6 @@
 import fs from 'fs/promises'
 import _ from 'lodash'
-import { _dirname } from '../server.js';
+import { _dirname } from '../server.mjs';
 
 export async function searchQuery(str){
     let result

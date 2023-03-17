@@ -34,7 +34,6 @@ server.get('/search/:key',async (req,res)=>{
     const {key} = req.params
     console.log(key)
     const result = await searchQuery(key)
-    // if(result)
     res.send(JSON.stringify(result))
     res.end()
 })

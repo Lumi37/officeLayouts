@@ -1,4 +1,4 @@
-import {searchBar} from '../index.js'
+import {searchBar,queryResultsList} from '../index.js'
 import { constructQueryResultsList } from './constructQueryResultsList.js'
 // let lastRequestTime 
 // let requestDelay = true
@@ -8,10 +8,11 @@ import { constructQueryResultsList } from './constructQueryResultsList.js'
 
 export async function queryRequest(){
     if(searchBar.value){
-        
         const response =  await fetch(`/search/${searchBar.value.trim()}`)
         const searchArray = await response.json()
         constructQueryResultsList(searchArray)
+    }else{
+        queryResultsList.innerHTML=''
     }
 }
 

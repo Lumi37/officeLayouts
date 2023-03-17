@@ -148,7 +148,6 @@ outletTextInput.addEventListener('keydown',e=>{
 })
 
 searchBar.addEventListener('keyup',e=>{
-  console.log(searchBar.value)
   if(searchBar.value)selectedOfficeUsersList.innerHTML = ''
   else if(document.querySelector('.chosenOffice')){
     constructList()
