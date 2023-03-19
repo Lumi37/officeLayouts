@@ -25,7 +25,7 @@ export async function searchQuery(str){
         resolve(filteredArr);
       } catch (error) {
         console.log(error);
-        reject('something went wrong!');
+        reject(error);
       }
     });
    

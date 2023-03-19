@@ -65,7 +65,8 @@ offices.forEach(svg=>{
 document.querySelectorAll('.listedOffices li').forEach(office=>{
   office.addEventListener('click',async e=>{
     selectedOfficeUsersList.innerHTML=''
-    console.log(e.target)
+    queryResultsList.innerHTML = ''
+    deleteText()
     selectedOffice.innerHTML = displaySelectedOffice(e.target,selectedOffice)
     const userAmount = document.querySelectorAll(`[data-office='${selectedOffice.innerHTML}'] rect[data-position]`)
     console.log(userAmount)

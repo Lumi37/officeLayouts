@@ -1,4 +1,5 @@
 import fileSystem from 'fs/promises'
+import fs from 'fs'
 import { _dirname } from '../server.mjs'
 
 export async function createFileIfNotExists(office,userAmount){
