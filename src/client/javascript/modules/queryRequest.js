@@ -10,6 +10,7 @@ export async function queryRequest(){
     if(searchBar.value){
         const response =  await fetch(`/search/${searchBar.value.trim()}`)
         const searchArray = await response.json()
+        if(searchArray)
         constructQueryResultsList(searchArray)
     }else{
         queryResultsList.innerHTML=''

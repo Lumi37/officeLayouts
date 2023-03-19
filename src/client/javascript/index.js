@@ -1,4 +1,4 @@
-import { selectUser } from "./modules/selectUser.js";
+import { selectUser } from "./modules/selectUser.js";tooltipFromList
 import { displaySelectedOffice } from "./modules/displaySelectedOffice.js";
 import { highlightCorrespondingUser } from "./modules/highlightCorrespondingUser.js";
 import { selectUserFromList } from "./modules/selectUserFromList.js";
@@ -7,10 +7,11 @@ import { highlightCorrespondingListedUser } from "./modules/highlightCorrespondi
 import { constructList } from "./modules/constructList.js";
 import { updateSelectedOfficeInformation } from "./modules/updateSelectedOfficeInfo.js";
 import { tooltip } from "./modules/tooltip.js";
-import { tooltipByList } from "./modules/tooltipByList.js";
+import { tooltipFromList } from "./modules/tooltipFromList.js";
 import { autofillText } from "./modules/autofillText.js";
 import { deleteText } from "./modules/deleteText.js";
 import { queryRequest } from "./modules/queryRequest.js";
+import { selectClickedUserFromSearch } from "./modules/selectClickedUserFromSearch.js";
 
 export const svgContainer = document.querySelector("#svgs");
 export const userTextInput = document.querySelector('#user')
@@ -79,7 +80,7 @@ document.querySelectorAll('.listedOffices li').forEach(office=>{
 selectedOfficeUsersList.addEventListener('mouseover' ,e=>{
   if(e.target.dataset.position){
     hoverUser = highlightCorrespondingUser(e.target,hoverUser)
-    tooltipByList(hoverUser,e.target)
+    tooltipFromList(hoverUser,e.target)
   }
 })
 
@@ -107,10 +108,9 @@ queryResultsList.addEventListener('click',async e=>{
   const response = await fetch(`/getoffice/${selectedOffice.innerHTML}/${userAmount.length}`)
   const receivedData = await response.json()
   updateSelectedOfficeInformation(receivedData)
-  constructList()
-  userTextInput.value = target.dataset.user
-  outletTextInput.value = target.dataset.outlet
-  outletTextInput.dataset.position = target.dataset.position
+  constructList(target)
+  autofillText(target)
+  selectClickedUserFromSearch()
   queryResultsList.innerHTML=''
   searchBar.value=''
 })

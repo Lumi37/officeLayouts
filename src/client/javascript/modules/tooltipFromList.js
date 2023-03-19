@@ -1,4 +1,4 @@
-export function tooltipByList(hoverUser){
+export function tooltipFromList(hoverUser){
     if(hoverUser){
         const tooltip = document.createElement('div')
         tooltip.innerHTML = `User:<span>${hoverUser.dataset.user}</span>&nbsp;PO:<span>${hoverUser.dataset.outlet}</span>`
