@@ -159,7 +159,7 @@ ellipse{
 }
 .info{
     display: grid;
-    grid-template-rows: 26.8vh 73vh;
+    grid-template-rows:26.7vh 73vh;
     border: solid 1px rgb(255, 255, 255, 0.2);
 
 }
