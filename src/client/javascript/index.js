@@ -41,7 +41,7 @@ window.addEventListener('resize',()=>{
   if(windowWidth>1201)
     svg.style.width = '1200px'
   else
-  svg.style.width = String(windowWidth - 274)+'px
+  svg.style.width = String(windowWidth - 274)+'px'
 
 })
 
