@@ -27,6 +27,24 @@ let selectedUser;
 let hoverUser
 let selectListedUser
 
+
+window.addEventListener('resize',()=>{
+  const svg = document.querySelector('.chosenOffice')
+  // const rectContainer = document.querySelector('.chosenOffice .rectContainer')
+  // const rect = document.querySelector('.chosenOffice .rectUser')
+  const windowWidth = window.innerWidth
+  const windowHeight = window.innerHeight
+  if(windowHeight>801)
+    svg.style.height = '800px'
+  else
+  svg.style.height = String(windowHeight - 167)+'px'
+  if(windowWidth>1201)
+    svg.style.width = '1200px'
+  else
+  svg.style.width = String(windowWidth - 274)+'px
+
+})
+
 svgContainer.addEventListener("click", (e) => {
   if (e.target.dataset.position) {
     selectedUser = selectUser(e.target, selectedUser);
@@ -83,6 +101,8 @@ selectedOfficeUsersList.addEventListener('mouseover' ,e=>{
     hoverUser = highlightCorrespondingUser(e.target,hoverUser)
     tooltipFromList(hoverUser,e.target)
   }
+  else if(e.target === 'span')
+    console.log(e.target)
 })
 
 selectedOfficeUsersList.addEventListener('mouseout',e=>{
