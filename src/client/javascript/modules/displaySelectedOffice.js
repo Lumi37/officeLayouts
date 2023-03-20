@@ -5,6 +5,7 @@ export function displaySelectedOffice(target,selectedOffice){
         if(office.dataset.office === target.dataset.office){
             office.classList.add('chosenOffice')
             selectedOffice = office.dataset.office 
+
         }
     })
     console.log(selectedOffice)

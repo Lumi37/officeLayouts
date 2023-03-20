@@ -12,6 +12,7 @@ import { autofillText } from "./modules/autofillText.js";
 import { deleteText } from "./modules/deleteText.js";
 import { queryRequest } from "./modules/queryRequest.js";
 import { selectClickedUserFromSearch } from "./modules/selectClickedUserFromSearch.js";
+import { resizeSvg } from "./modules/resizeSvg.js";
 
 export const svgContainer = document.querySelector("#svgs");
 export const userTextInput = document.querySelector('#user')
@@ -88,11 +89,15 @@ document.querySelectorAll('.listedOffices li').forEach(office=>{
     selectedOffice.innerHTML = displaySelectedOffice(e.target,selectedOffice)
     const userAmount = document.querySelectorAll(`[data-office='${selectedOffice.innerHTML}'] rect[data-position]`)
     console.log(userAmount)
+    console.log(document.querySelector('.chosenOffice'))
+    resizeSvg()
     const response = await fetch(`/getoffice/${selectedOffice.innerHTML}/${userAmount.length}`)
     const receivedData = await response.json()
     updateSelectedOfficeInformation(receivedData)
     constructList()
+
   })
+
 })
 
 
@@ -132,6 +137,7 @@ queryResultsList.addEventListener('click',async e=>{
   constructList(target)
   autofillText(target)
   selectClickedUserFromSearch()
+  resizeSvg()
   queryResultsList.innerHTML=''
   searchBar.value=''
 })
