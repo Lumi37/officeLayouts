@@ -8,7 +8,6 @@ export function displaySelectedOffice(target,selectedOffice){
 
         }
     })
-    console.log(selectedOffice)
     return selectedOffice
 }
 

@@ -13,11 +13,15 @@ import { deleteText } from "./modules/deleteText.js";
 import { queryRequest } from "./modules/queryRequest.js";
 import { selectClickedUserFromSearch } from "./modules/selectClickedUserFromSearch.js";
 import { resizeSvg } from "./modules/resizeSvg.js";
+import { moveInputCursor } from "./modules/moveInputCursor.js";
 
 export const svgContainer = document.querySelector("#svgs");
 export const userTextInput = document.querySelector('#user')
 export const outletTextInput = document.querySelector("#dataOutlet");
-export const offices = document.querySelectorAll('svg')
+export const offices = Array.from(document.querySelectorAll('svg'))
+    .sort((a, b)=>{                                                           //sorted list by data-office
+      return a.dataset.office.localeCompare(b.dataset.office);   
+    });
 export let selectedOfficeUsersList = document.querySelector('.listedUsers')
 export const selectedOffice = document.querySelector('#office')
 export const searchBar = document.querySelector('#search')
@@ -50,6 +54,7 @@ svgContainer.addEventListener("click", (e) => {
   if (e.target.dataset.position) {
     selectedUser = selectUser(e.target, selectedUser);
     selectListedUser = selectCorrespondingListedUser(e.target, selectListedUser)
+    moveInputCursor()
     autofillText(e.target)
   } else {
     selectedUser = selectUser(e.target, selectedUser);
@@ -75,10 +80,10 @@ svgContainer.addEventListener('mouseout',e=>{
 })
 
 
+
 offices.forEach(svg=>{
   officesList.innerHTML += `<li data-office ="${svg.dataset.office}">${svg.dataset.office}</li>`
 })
-
 
 
 document.querySelectorAll('.listedOffices li').forEach(office=>{
@@ -88,8 +93,6 @@ document.querySelectorAll('.listedOffices li').forEach(office=>{
     deleteText()
     selectedOffice.innerHTML = displaySelectedOffice(e.target,selectedOffice)
     const userAmount = document.querySelectorAll(`[data-office='${selectedOffice.innerHTML}'] rect[data-position]`)
-    console.log(userAmount)
-    console.log(document.querySelector('.chosenOffice'))
     resizeSvg()
     const response = await fetch(`/getoffice/${selectedOffice.innerHTML}/${userAmount.length}`)
     const receivedData = await response.json()
@@ -106,8 +109,6 @@ selectedOfficeUsersList.addEventListener('mouseover' ,e=>{
     hoverUser = highlightCorrespondingUser(e.target,hoverUser)
     tooltipFromList(hoverUser,e.target)
   }
-  else if(e.target === 'span')
-    console.log(e.target)
 })
 
 selectedOfficeUsersList.addEventListener('mouseout',e=>{
@@ -123,6 +124,7 @@ selectedOfficeUsersList.addEventListener("click", (e) => {
     selectedUser = selectUserFromList(e.target.closest('li[data-user]'), selectedUser);
     selectListedUser = selectCorrespondingListedUser(e.target.closest('li[data-user]'), selectListedUser)
     autofillText(e.target.closest('li[data-position]'))
+    moveInputCursor()
 });
 
 queryResultsList.addEventListener('click',async e=>{
@@ -130,7 +132,6 @@ queryResultsList.addEventListener('click',async e=>{
   const target = e.target.closest('li[data-office]')
   selectedOffice.innerHTML = displaySelectedOffice(target,selectedOffice)
   const userAmount = document.querySelectorAll(`[data-office='${selectedOffice.innerHTML}'] rect[data-position]`)
-  console.log(userAmount)
   const response = await fetch(`/getoffice/${selectedOffice.innerHTML}/${userAmount.length}`)
   const receivedData = await response.json()
   updateSelectedOfficeInformation(receivedData)

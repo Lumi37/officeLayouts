@@ -1,0 +1,32 @@
+[
+  {
+    "user": "spapaioa",
+    "outlet": "D04",
+    "office": "B12",
+    "position": "1"
+  },
+  {
+    "user": "f.himonakou",
+    "outlet": "D33",
+    "office": "B12",
+    "position": "2"
+  },
+  {
+    "user": "athanassouli",
+    "outlet": "D34",
+    "office": "B12",
+    "position": "3"
+  },
+  {
+    "user": "unused",
+    "outlet": "tavani",
+    "office": "B12",
+    "position": "4"
+  },
+  {
+    "user": "unused",
+    "outlet": "D05",
+    "office": "B12",
+    "position": "5"
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "user": "f.belafemine",
+    "outlet": "D97",
+    "office": "I40",
+    "position": "1"
+  },
+  {
+    "user": "i.mitsakou",
+    "outlet": "D106",
+    "office": "I40",
+    "position": "2"
+  },
+  {
+    "user": "alberti",
+    "outlet": "D104",
+    "office": "I40",
+    "position": "3"
+  },
+  {
+    "user": "e.theodoraki",
+    "outlet": "D101",
+    "office": "I40",
+    "position": "4"
+  },
+  {
+    "user": "z.papakonstantinou",
+    "outlet": "D103",
+    "office": "I40",
+    "position": "5"
+  },
+  {
+    "user": "p.kouniaki",
+    "outlet": "D100",
+    "office": "I40",
+    "position": "6"
+  }
+]
