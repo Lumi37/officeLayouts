@@ -24,14 +24,14 @@
     "position": "4"
   },
   {
-    "user": "z.papakonstantinou",
-    "outlet": "D103",
+    "user": "p.kouniaki",
+    "outlet": "D100",
     "office": "I40",
     "position": "5"
   },
   {
-    "user": "p.kouniaki",
-    "outlet": "D100",
+    "user": "unused",
+    "outlet": "D103",
     "office": "I40",
     "position": "6"
   }
