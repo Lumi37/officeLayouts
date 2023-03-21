@@ -5,7 +5,10 @@ html {
   background-color: #333;
   color: rgb(255, 255, 255);
 }
-
+input[type="checkbox"]{
+  margin: 0;
+  align-self: flex-end;
+}
 body {
   padding: 0;
   margin: 0;
@@ -64,14 +67,27 @@ ul {
 #submitChanges:active {
   background-color: #828181;
 }
-
+div[data-floor]{
+    display: flex;
+    gap: 10px;
+    cursor: pointer;
+    user-select: none;
+    border: solid 0.5px rgb(255, 255, 255, 0.2);
+    justify-content: center;
+}
+div[data-floor]:hover {
+    background-color: rgb(255, 255, 255, 0.2);
+  }
+  
+div[data-floor]:active {
+    background-color: #333;
+  }
 .listedOffices li {
-  display: flex;
-  cursor: pointer;
-  align-items: center;
-  justify-content: center;
-  user-select: none;
-  border: solid 0.5px rgb(255, 255, 255, 0.2);
+    display: flex;
+    cursor: pointer;
+    user-select: none;
+    border: solid 0.5px rgb(255, 255, 255, 0.2);
+    justify-content: center;
 }
 
 .listedOffices li:hover {

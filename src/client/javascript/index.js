@@ -14,6 +14,7 @@ import { queryRequest } from "./modules/queryRequest.js";
 import { selectClickedUserFromSearch } from "./modules/selectClickedUserFromSearch.js";
 import { resizeSvg } from "./modules/resizeSvg.js";
 import { moveInputCursor } from "./modules/moveInputCursor.js";
+import { constructOfficeList } from "./modules/constructOfficeList.js";
 
 export const svgContainer = document.querySelector("#svgs");
 export const userTextInput = document.querySelector('#user')
@@ -26,6 +27,7 @@ export let selectedOfficeUsersList = document.querySelector('.listedUsers')
 export const selectedOffice = document.querySelector('#office')
 export const searchBar = document.querySelector('#search')
 export const queryResultsList = document.querySelector('.queryResultsList')
+const officeListButtons = document.querySelectorAll('[data-floor]')
 const officesList = document.querySelector('.listedOffices')
 const changeButton = document.querySelector('#submitChanges')
 let selectedUser;
@@ -79,7 +81,9 @@ svgContainer.addEventListener('mouseout',e=>{
   if(tooltip) tooltip.remove()
 })
 
-
+officeListButtons.forEach(button=>{
+  button.addEventListener('click',constructOfficeList)
+})
 
 offices.forEach(svg=>{
   officesList.innerHTML += `<li data-office ="${svg.dataset.office}">${svg.dataset.office}</li>`
