@@ -3,7 +3,8 @@ import { createFileIfNotExists } from "./modules/createFileIfNotExists.js";
 import { readToFile } from "./modules/readFile.js";
 import { writeToFile } from "./modules/writeFile.js";
 import { searchQuery } from "./modules/searchQuery.js";
-
+import { getAllOffices } from "./modules/getAllOffices.js";
+import { getOfficesList } from "./modules/getOfficesList.js";
 
 const server = express();
 export const _dirname = new URL('.',import.meta.url).pathname
@@ -18,7 +19,13 @@ server.get('/getoffice/:name/:useramount', async (req, res) => {
     res.end()
 })
 
-
+server.get('/getofficeslist/:checkedboxes',async (req,res)=>{
+    const { checkedboxes } = req.params
+    const requestedFloors = JSON.parse(checkedboxes)
+    const officesList = getOfficesList( requestedFloors, await getAllOffices() ) 
+    res.send(officesList)
+    res.end()
+})
 
 server.post('/updateuserinfo',async (req,res)=>{
     let updatedContent
@@ -32,7 +39,6 @@ server.post('/updateuserinfo',async (req,res)=>{
 server.get('/search/:key',async (req,res)=>{
     
     const {key} = req.params
-    console.log(key)
     const result = await searchQuery(key)
     res.send(JSON.stringify(result))
     res.end()

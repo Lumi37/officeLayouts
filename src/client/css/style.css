@@ -77,8 +77,10 @@ ul {
     display: flex;
     cursor: pointer;
     user-select: none;
-    border: solid 0.5px rgb(255, 255, 255, 0.2);
+    border: solid 0.5px rgb(177 177 177);
     padding: 2px;
+    padding-top: 5px;
+    padding-bottom: 5px;
     justify-content: space-between;
 }
 .checkboxDiv:hover {
@@ -198,7 +200,10 @@ ellipse {
 }
 
 .dropdownMenu {
+  display: flex;
   border: solid 1px rgb(255, 255, 255, 0.2);
+  flex-direction: column-reverse;
+  justify-content: space-between;
 }
 
 .content {

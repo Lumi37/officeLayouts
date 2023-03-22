@@ -15,6 +15,10 @@ import { selectClickedUserFromSearch } from "./modules/selectClickedUserFromSear
 import { resizeSvg } from "./modules/resizeSvg.js";
 import { moveInputCursor } from "./modules/moveInputCursor.js";
 import { constructOfficeList } from "./modules/constructOfficeList.js";
+import { enableCheckBoxes } from './modules/enableCheckboxes.js'
+import { disableCheckboxes } from "./modules/disableCheckboxes.js";
+import { checkCheckbox } from "./modules/checkCheckbox.js";
+import { uncheckCheckbox } from "./modules/uncheckCheckbox.js";
 
 export const svgContainer = document.querySelector("#svgs");
 export const userTextInput = document.querySelector('#user')
@@ -27,12 +31,19 @@ export let selectedOfficeUsersList = document.querySelector('.listedUsers')
 export const selectedOffice = document.querySelector('#office')
 export const searchBar = document.querySelector('#search')
 export const queryResultsList = document.querySelector('.queryResultsList')
-const officeListButtons = document.querySelectorAll('[data-floor]')
-const officesList = document.querySelector('.listedOffices')
+export const checkboxes = document.querySelectorAll('input[type="checkbox"]')
+export const officesList = document.querySelector('.listedOffices')
 const changeButton = document.querySelector('#submitChanges')
+document.querySelector('.listedOffices').click()
 let selectedUser;
 let hoverUser
 let selectListedUser
+export let checkboxSelection = [
+  {checkbox:'AllOffices',isChecked:true},
+  {checkbox:'Isogeio',isChecked:false},
+  {checkbox:'ProtosOrofos',isChecked:false},
+  {checkbox:'DeuterosOrofos',isChecked:false}
+]
 
 window.addEventListener('resize',()=>{
   if(document.querySelector('.chosenOffice')){
@@ -50,6 +61,25 @@ window.addEventListener('resize',()=>{
   
   }
   
+})
+checkboxes.forEach(checkbox=>{
+  checkbox.addEventListener('change',async e=>{
+    if(e.target.checked  && e.target.dataset.floor === 'AllOffices') disableCheckboxes(e)
+    else if(!e.target.checked  && e.target.dataset.floor === 'AllOffices'){
+      enableCheckBoxes(e)
+      officesList.innerHTML = ''
+    } 
+    if(e.target.checked){
+      checkCheckbox(e)
+      const response = await fetch(`/getofficeslist/${JSON.stringify(checkboxSelection)}`)
+      constructOfficeList(await response.json())
+    }
+    else{
+      uncheckCheckbox(e)
+      const response = await fetch(`/getofficeslist/${JSON.stringify(checkboxSelection)}`)
+      constructOfficeList(await response.json())
+    }
+  })
 })
 
 svgContainer.addEventListener("click", (e) => {
@@ -81,31 +111,50 @@ svgContainer.addEventListener('mouseout',e=>{
   if(tooltip) tooltip.remove()
 })
 
-officeListButtons.forEach(button=>{
-  button.addEventListener('click',constructOfficeList)
-})
+
 
 offices.forEach(svg=>{
   officesList.innerHTML += `<li data-office ="${svg.dataset.office}">${svg.dataset.office}</li>`
 })
 
 
-document.querySelectorAll('.listedOffices li').forEach(office=>{
-  office.addEventListener('click',async e=>{
-    selectedOfficeUsersList.innerHTML=''
-    queryResultsList.innerHTML = ''
-    deleteText()
-    selectedOffice.innerHTML = displaySelectedOffice(e.target,selectedOffice)
-    const userAmount = document.querySelectorAll(`[data-office='${selectedOffice.innerHTML}'] rect[data-position]`)
-    resizeSvg()
-    const response = await fetch(`/getoffice/${selectedOffice.innerHTML}/${userAmount.length}`)
-    const receivedData = await response.json()
-    updateSelectedOfficeInformation(receivedData)
-    constructList()
-
-  })
-
+document.querySelector('.listedOffices').addEventListener('click',e=>{
+  if(document.querySelectorAll('.listedOffices li')){
+    document.querySelectorAll('.listedOffices li').forEach(office=>{
+      office.addEventListener('click',async e=>{
+        selectedOfficeUsersList.innerHTML=''
+        queryResultsList.innerHTML = ''
+        deleteText()
+        selectedOffice.innerHTML = displaySelectedOffice(e.target,selectedOffice)
+        const userAmount = document.querySelectorAll(`[data-office='${selectedOffice.innerHTML}'] rect[data-position]`)
+        resizeSvg()
+        const response = await fetch(`/getoffice/${selectedOffice.innerHTML}/${userAmount.length}`)
+        const receivedData = await response.json()
+        updateSelectedOfficeInformation(receivedData)
+        constructList()
+    
+      })
+    })
+  }
 })
+document.querySelector('.listedOffices').click()
+
+// document.querySelectorAll('.listedOffices li').forEach(office=>{
+//   office.addEventListener('click',async e=>{
+//     selectedOfficeUsersList.innerHTML=''
+//     queryResultsList.innerHTML = ''
+//     deleteText()
+//     selectedOffice.innerHTML = displaySelectedOffice(e.target,selectedOffice)
+//     const userAmount = document.querySelectorAll(`[data-office='${selectedOffice.innerHTML}'] rect[data-position]`)
+//     resizeSvg()
+//     const response = await fetch(`/getoffice/${selectedOffice.innerHTML}/${userAmount.length}`)
+//     const receivedData = await response.json()
+//     updateSelectedOfficeInformation(receivedData)
+//     constructList()
+
+//   })
+
+// })
 
 
 selectedOfficeUsersList.addEventListener('mouseover' ,e=>{

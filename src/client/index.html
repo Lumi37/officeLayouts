@@ -14,10 +14,12 @@
     <!-- <button id="baton">adasd</button> -->
     <div class="mainContainer">
         <div class="dropdownMenu">
-            <div class="checkboxDiv"><div>All Offices</div>         <input data-floor="AllOffices"      type="checkbox" checked></div>
-            <div class="checkboxDiv"><div>Isogeio</div>             <input data-floor="Isogeio"         type="checkbox"></div>
-            <div class="checkboxDiv"><div>Protos Orofos</div>       <input data-floor="ProtosOrofos"    type="checkbox"></div>
-            <div class="checkboxDiv"><div>Deuteros Orofos</div>     <input data-floor="DeuterosOrofos"  type="checkbox"></div>
+            <div class="checkboxContainer">
+                <div class="checkboxDiv"><div>All Offices</div>         <input data-floor="AllOffices"      type="checkbox" checked></div>
+                <div class="checkboxDiv"><div>Isogeio</div>             <input data-floor="Isogeio"         type="checkbox" disabled checked></div>
+                <div class="checkboxDiv"><div>Protos Orofos</div>       <input data-floor="ProtosOrofos"    type="checkbox" disabled checked></div>
+                <div class="checkboxDiv"><div>Deuteros Orofos</div>     <input data-floor="DeuterosOrofos"  type="checkbox" disabled checked></div>
+            </div>
             <ul class="listedOffices"></ul>
         </div>
         <div class="content" id="svgs">
