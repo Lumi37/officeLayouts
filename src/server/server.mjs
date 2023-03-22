@@ -5,6 +5,7 @@ import { writeToFile } from "./modules/writeFile.js";
 import { searchQuery } from "./modules/searchQuery.js";
 import { getAllOffices } from "./modules/getAllOffices.js";
 import { getOfficesList } from "./modules/getOfficesList.js";
+import { getSvgElement } from "./modules/getSvgElement.js";
 
 const server = express();
 export const _dirname = new URL('.',import.meta.url).pathname
@@ -24,6 +25,13 @@ server.get('/getofficeslist/:checkedboxes',async (req,res)=>{
     const requestedFloors = JSON.parse(checkedboxes)
     const officesList = getOfficesList( requestedFloors, await getAllOffices() ) 
     res.send(officesList)
+    res.end()
+})
+
+server.get('/getsvgelement/:requestedSvg',async (req,res)=>{
+    const {requestedSvg} = req.params
+    const svg = await getSvgElement(requestedSvg)
+    res.send(svg)
     res.end()
 })
 

@@ -1,0 +1,10 @@
+<svg data-office="B56"  viewBox="-0.5 -0.5 1201 802">
+                    <g>
+                        <rect class='rectContainer'/>
+                        <path d="M 305 736 L 365 736 L 365 715 L 405 750 L 365 785 L 365 764 L 305 764 L 305 750 Z"
+                            fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10"
+                            transform="rotate(270,355,750)" pointer-events="all" />
+                        <rect  data-user="" data-outlet="" data-position="1" class="rectUser" x="360" y="93"
+                            transform="rotate(90,420,123)"/>
+                    </g>
+                </svg>

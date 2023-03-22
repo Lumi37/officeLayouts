@@ -20,6 +20,7 @@ import { disableCheckboxes } from "./modules/disableCheckboxes.js";
 import { checkCheckbox } from "./modules/checkCheckbox.js";
 import { uncheckCheckbox } from "./modules/uncheckCheckbox.js";
 import { selectListedOffice } from "./modules/selectListedOffice.js";
+import { appendSvg } from "./modules/appendSvg.js";
 
 export const svgContainer = document.querySelector("#svgs");
 export const userTextInput = document.querySelector('#user')
@@ -135,8 +136,11 @@ document.querySelector('.listedOffices').addEventListener('click',e=>{
         const receivedData = await response.json()
         updateSelectedOfficeInformation(receivedData)
         constructList()
-
-    
+        if(e.target.dataset.office){
+          const fetchsvg = await fetch(`/getsvgelement/${e.target.dataset.office}`)
+          const receivedSvg = await fetchsvg.text()
+          appendSvg(receivedSvg)
+        }
       })
     })
   }

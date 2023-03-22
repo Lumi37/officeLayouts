@@ -1,7 +1,9 @@
+import { _dirname } from "../server.mjs";
 import fs from 'fs/promises'
-import {_dirname} from '../server.mjs'
-export async function readToFile(office){
-    let  requestedFile = `${_dirname}/../../offices/${office}.json`
+
+export async function getSvgElement(svg){
+    let  requestedFile = `${_dirname}/../../svgs/${svg}.txt`
+    
     try{    
         const content = await fs.readFile(requestedFile,{encoding: 'utf-8'})
         return content
