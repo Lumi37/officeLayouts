@@ -199,7 +199,7 @@ ellipse {
   width: 100vw;
 }
 
-.dropdownMenu {
+.officeMenu {
   display: flex;
   border: solid 1px rgb(255, 255, 255, 0.2);
   flex-direction: column-reverse;
@@ -251,5 +251,7 @@ div::-webkit-scrollbar-thumb {
   border-radius: 5px;
 }
 
-.queryResultsList {
+.chosenOfficeListItem{
+  border: 1px solid white;
+  background-color: rgb(255, 255, 255, 0.3);
 }

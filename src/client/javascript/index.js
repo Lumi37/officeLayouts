@@ -19,6 +19,7 @@ import { enableCheckBoxes } from './modules/enableCheckboxes.js'
 import { disableCheckboxes } from "./modules/disableCheckboxes.js";
 import { checkCheckbox } from "./modules/checkCheckbox.js";
 import { uncheckCheckbox } from "./modules/uncheckCheckbox.js";
+import { selectListedOffice } from "./modules/selectListedOffice.js";
 
 export const svgContainer = document.querySelector("#svgs");
 export const userTextInput = document.querySelector('#user')
@@ -120,10 +121,12 @@ offices.forEach(svg=>{
 
 document.querySelector('.listedOffices').addEventListener('click',e=>{
   if(document.querySelectorAll('.listedOffices li')){
+    let chosenOfficeListItem
     document.querySelectorAll('.listedOffices li').forEach(office=>{
       office.addEventListener('click',async e=>{
         selectedOfficeUsersList.innerHTML=''
         queryResultsList.innerHTML = ''
+        chosenOfficeListItem = selectListedOffice(e.target,chosenOfficeListItem)
         deleteText()
         selectedOffice.innerHTML = displaySelectedOffice(e.target,selectedOffice)
         const userAmount = document.querySelectorAll(`[data-office='${selectedOffice.innerHTML}'] rect[data-position]`)
@@ -132,6 +135,7 @@ document.querySelector('.listedOffices').addEventListener('click',e=>{
         const receivedData = await response.json()
         updateSelectedOfficeInformation(receivedData)
         constructList()
+
     
       })
     })
