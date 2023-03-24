@@ -1,8 +1,0 @@
-<svg data-office="B09"  viewBox="-0.5 -0.5 1201 802">
-                    <g>
-                        <rect class="rectContainer" />
-                        <rect data-user="" data-outlet="" data-position="1" x="690" y="140" class="rectUserBig"
-                            transform="rotate(90,835,225)" />
-                        <path d="M 0 611 L 60 611 L 60 590 L 100 625 L 60 660 L 60 639 L 0 639 L 0 625 Z" />
-                    </g>
-                </svg>
