@@ -35,14 +35,6 @@ server.get('/getsvgelement/:requestedSvg',async (req,res)=>{
     res.end()
 })
 
-server.post('/updateuserinfo',async (req,res)=>{
-    let updatedContent
-    await writeToFile(req.body)
-    updatedContent = await readToFile(req.body.office)
-    res.send(updatedContent)
-    res.end()
-})
-
 
 server.get('/search/:key',async (req,res)=>{
     
@@ -51,4 +43,13 @@ server.get('/search/:key',async (req,res)=>{
     res.send(JSON.stringify(result))
     res.end()
 })
+
+server.post('/updateuserinfo',async (req,res)=>{
+    let updatedContent
+    await writeToFile(req.body)
+    updatedContent = await readToFile(req.body.office)
+    res.send(updatedContent)
+    res.end()
+})
+
 server.listen(3000, console.log("listens to 3000"));

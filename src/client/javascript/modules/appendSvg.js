@@ -1,5 +1,6 @@
 
-const svgContainer = document.querySelector('.svgContainer')
+import { svgContainer } from "../index.js"
+
 export function appendSvg(svg){
     svgContainer.innerHTML = svg
 }

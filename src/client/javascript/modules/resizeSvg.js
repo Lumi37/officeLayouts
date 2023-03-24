@@ -1,6 +1,6 @@
 export function resizeSvg(){
-    if(document.querySelector('.chosenOffice')){
-        const svg = document.querySelector('.chosenOffice')
+    if(document.querySelector('svg')){
+        const svg = document.querySelector('svg')
         const svgHeight = 800
         const svgWidth = 1200
         if(window.innerHeight < svgHeight)
