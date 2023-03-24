@@ -10,7 +10,7 @@
   "scripts": {
     "deploy": "rsync -avz ../officeLayouts/* kostas:officeLayouts",
     "getOfficeData":"rsync -avz kostas:officeLayouts/offices ../officeLayouts/",
-    "r":"node src/server/index.cjs",
+    "start":"node src/server/index.cjs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

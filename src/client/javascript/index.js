@@ -1,5 +1,5 @@
-import { selectUser } from "./modules/selectUser.js";
-// import { displaySelectedOffice } from "./modules/displaySelectedOffice.js";
+import { selectUser } from "./modules/selectUser.js";tooltipFromList
+import { displaySelectedOffice } from "./modules/displaySelectedOffice.js";
 import { highlightCorrespondingUser } from "./modules/highlightCorrespondingUser.js";
 import { selectUserFromList } from "./modules/selectUserFromList.js";
 import { selectCorrespondingListedUser } from "./modules/selectCorrespondingListedUser.js";
@@ -20,11 +20,14 @@ import { disableCheckboxes } from "./modules/disableCheckboxes.js";
 import { checkCheckbox } from "./modules/checkCheckbox.js";
 import { uncheckCheckbox } from "./modules/uncheckCheckbox.js";
 import { selectListedOffice } from "./modules/selectListedOffice.js";
-import { appendSvg } from "./modules/appendSvg.js";
 
 export const svgContainer = document.querySelector("#svgs");
 export const userTextInput = document.querySelector('#user')
 export const outletTextInput = document.querySelector("#dataOutlet");
+export const offices = Array.from(document.querySelectorAll('svg'))
+    .sort((a, b)=>{                                                           //sorted list by data-office
+      return a.dataset.office.localeCompare(b.dataset.office);   
+    });
 export let selectedOfficeUsersList = document.querySelector('.listedUsers')
 export const selectedOffice = document.querySelector('#office')
 export const searchBar = document.querySelector('#search')
@@ -42,12 +45,10 @@ export let checkboxSelection = [
   {checkbox:'ProtosOrofos',isChecked:false},
   {checkbox:'DeuterosOrofos',isChecked:false}
 ]
-const responseOfficeList = await fetch(`/getofficeslist/${JSON.stringify(checkboxSelection)}`)
-constructOfficeList(await responseOfficeList.json())
 
 window.addEventListener('resize',()=>{
-  if(document.querySelector('svg')){
-    const svg = document.querySelector('svg')
+  if(document.querySelector('.chosenOffice')){
+    const svg = document.querySelector('.chosenOffice')
     const windowWidth = window.innerWidth
     const windowHeight = window.innerHeight
     if(windowHeight>801)
@@ -113,9 +114,12 @@ svgContainer.addEventListener('mouseout',e=>{
 
 
 
+offices.forEach(svg=>{
+  officesList.innerHTML += `<li data-office ="${svg.dataset.office}">${svg.dataset.office}</li>`
+})
 
 
-officesList.addEventListener('click',e=>{
+document.querySelector('.listedOffices').addEventListener('click',e=>{
   if(document.querySelectorAll('.listedOffices li')){
     let chosenOfficeListItem
     document.querySelectorAll('.listedOffices li').forEach(office=>{
@@ -123,19 +127,16 @@ officesList.addEventListener('click',e=>{
         selectedOfficeUsersList.innerHTML=''
         queryResultsList.innerHTML = ''
         chosenOfficeListItem = selectListedOffice(e.target,chosenOfficeListItem)
-        selectedOffice.innerHTML = chosenOfficeListItem.innerHTML 
         deleteText()
+        selectedOffice.innerHTML = displaySelectedOffice(e.target,selectedOffice)
         const userAmount = document.querySelectorAll(`[data-office='${selectedOffice.innerHTML}'] rect[data-position]`)
-        if(e.target.dataset.office){
-          const fetchsvg = await fetch(`/getsvgelement/${e.target.dataset.office}`)
-          const receivedSvg = await fetchsvg.text()
-          appendSvg(receivedSvg)
-          resizeSvg()
-          const response = await fetch(`/getoffice/${chosenOfficeListItem.innerHTML}/${userAmount.length}`)
-          const receivedData = await response.json()
-          updateSelectedOfficeInformation(receivedData)
-          constructList()
-        }
+        resizeSvg()
+        const response = await fetch(`/getoffice/${selectedOffice.innerHTML}/${userAmount.length}`)
+        const receivedData = await response.json()
+        updateSelectedOfficeInformation(receivedData)
+        constructList()
+
+    
       })
     })
   }
@@ -186,8 +187,7 @@ selectedOfficeUsersList.addEventListener("click", (e) => {
 queryResultsList.addEventListener('click',async e=>{
   selectedOfficeUsersList.innerHTML=''
   const target = e.target.closest('li[data-office]')
-  // selectedOffice.innerHTML = displaySelectedOffice(target,selectedOffice)
-  selectedOffice.innerHTML = target.dataset.office
+  selectedOffice.innerHTML = displaySelectedOffice(target,selectedOffice)
   const userAmount = document.querySelectorAll(`[data-office='${selectedOffice.innerHTML}'] rect[data-position]`)
   const response = await fetch(`/getoffice/${selectedOffice.innerHTML}/${userAmount.length}`)
   const receivedData = await response.json()

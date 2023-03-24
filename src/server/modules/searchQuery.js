@@ -21,7 +21,8 @@ export async function searchQuery(str){
           }
         });
         const arr = _.flatten(await Promise.all(promises));
-        filteredArr = arr.filter(user=>( (user.user.toLowerCase().startsWith(str.toLowerCase())) || (user.outlet.toLowerCase().startsWith(str.toLowerCase())) ))
+        filteredArr = arr.filter(user=>( (user.user.toLowerCase().includes(str.toLowerCase())) || (user.outlet.toLowerCase().includes(str.toLowerCase())) ))
+        // filteredArr = arr.filter(user=>( (user.user.toLowerCase().startsWith(str.toLowerCase())) || (user.outlet.toLowerCase().startsWith(str.toLowerCase())) ))
         resolve(filteredArr);
       } catch (error) {
         console.log(error);

@@ -148,6 +148,7 @@ rect[data-user]:hover {
 svg {
   width: 1202px;
   height: 802px;
+  display: none;
 }
 
 .chosenOffice {

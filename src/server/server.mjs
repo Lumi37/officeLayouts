@@ -5,7 +5,6 @@ import { writeToFile } from "./modules/writeFile.js";
 import { searchQuery } from "./modules/searchQuery.js";
 import { getAllOffices } from "./modules/getAllOffices.js";
 import { getOfficesList } from "./modules/getOfficesList.js";
-import { getSvgElement } from "./modules/getSvgElement.js";
 
 const server = express();
 export const _dirname = new URL('.',import.meta.url).pathname
@@ -28,10 +27,11 @@ server.get('/getofficeslist/:checkedboxes',async (req,res)=>{
     res.end()
 })
 
-server.get('/getsvgelement/:requestedSvg',async (req,res)=>{
-    const {requestedSvg} = req.params
-    const svg = await getSvgElement(requestedSvg)
-    res.send(svg)
+server.post('/updateuserinfo',async (req,res)=>{
+    let updatedContent
+    await writeToFile(req.body)
+    updatedContent = await readToFile(req.body.office)
+    res.send(updatedContent)
     res.end()
 })
 
@@ -43,13 +43,4 @@ server.get('/search/:key',async (req,res)=>{
     res.send(JSON.stringify(result))
     res.end()
 })
-
-server.post('/updateuserinfo',async (req,res)=>{
-    let updatedContent
-    await writeToFile(req.body)
-    updatedContent = await readToFile(req.body.office)
-    res.send(updatedContent)
-    res.end()
-})
-
 server.listen(3000, console.log("listens to 3000"));

@@ -1,6 +1,6 @@
 import {selectedOfficeUsersList} from '../index.js'
 export function constructList(){
-    let selectedOfficeUsers = document.querySelectorAll('svg rect[data-user]')
+    let selectedOfficeUsers = document.querySelectorAll('.chosenOffice rect[data-user]')
     selectedOfficeUsersList.innerHTML=''
     selectedOfficeUsers.forEach(user=>{
       selectedOfficeUsersList.innerHTML += `

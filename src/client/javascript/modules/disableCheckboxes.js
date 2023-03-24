@@ -1,6 +1,7 @@
 import { checkboxes ,checkboxSelection} from "../index.js";
 
 export function disableCheckboxes(e){
+  console.log(e.target.dataset.floor)
     checkboxes.forEach(checkbox=>{
         if(!(checkbox.dataset.floor === 'AllOffices')){
           checkbox.checked = true
@@ -10,4 +11,6 @@ export function disableCheckboxes(e){
     checkboxSelection.forEach(checkboxObj=>{
             checkboxObj.isChecked = false
     })
+
+  
 }
