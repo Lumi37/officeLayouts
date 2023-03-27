@@ -1,4 +1,4 @@
-import{outletTextInput,userTextInput} from '../index.js'
+import{outletTextInput,userTextInput} from './editUser.js'
 
 export function deleteText(){
     outletTextInput.value = ''

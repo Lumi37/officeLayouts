@@ -1,7 +1,7 @@
 import { constructList } from "./constructList.js"
 import { deleteText } from "./deleteText.js"
 import { selectedOfficeUsersList } from "../index.js"
-import {queryResultsList}  from "../index.js"
+import {queryResultsList}  from "./searchEngine.js"
 import {selectedOffice} from "../index.js"
 import { updateSelectedOfficeInformation } from "./updateSelectedOfficeInfo.js"
 
@@ -17,6 +17,7 @@ let checkboxSelection = [
 ]
 const allOfficesReq = await  fetch(`/getofficeslist/${JSON.stringify(checkboxSelection)}`)
 renderOfficeList(await allOfficesReq.json())
+listedOffices()
 
 checkboxes.forEach(checkbox=>{
     checkbox.addEventListener('change',async e=>{
@@ -30,40 +31,44 @@ checkboxes.forEach(checkbox=>{
             checkCheckbox(e)
             const response = await fetch(`/getofficeslist/${JSON.stringify(checkboxSelection)}`)
             renderOfficeList(await response.json())
+            listedOffices()
         }
         else{
             uncheckCheckbox(e)
             const response = await fetch(`/getofficeslist/${JSON.stringify(checkboxSelection)}`)
             renderOfficeList(await response.json())
+            listedOffices()
         }
     })
 })
 
 
 
-document.querySelectorAll('.listedOffices li').forEach(office=>{
-    office.addEventListener('click',async e=>{
-        selectedOfficeUsersList.innerHTML=''
-        queryResultsList.innerHTML = ''
-        chosenOfficeListItem = selectListedOffice(e.target,chosenOfficeListItem)
-        deleteText()
-        selectedOffice.innerHTML = chosenOfficeListItem.dataset.office
-        const userAmount = document.querySelectorAll(`[data-office='${selectedOffice.innerHTML}'] rect[data-position]`)
-        const fetchSvg = await fetch(`/getsvgelement/${e.target.dataset.office}`)
-        const receivedSvg = await fetchSvg.text()
-        appendSvg(receivedSvg)
-        resizeSvg()
-        const fetchOffice = await fetch(`/getoffice/${selectedOffice.innerHTML}/${userAmount.length}`)
-        const receivedOffice = await fetchOffice.json()
-        updateSelectedOfficeInformation(receivedOffice)
-        constructList()
-    })
-})
-
-
 
 
 //FUNCTIONS
+
+function listedOffices(){
+    document.querySelectorAll('.listedOffices li').forEach(office=>{
+        office.addEventListener('click',async e=>{
+            selectedOfficeUsersList.innerHTML=''
+            queryResultsList.innerHTML = ''
+            chosenOfficeListItem = selectListedOffice(e.target,chosenOfficeListItem)
+            deleteText()
+            selectedOffice.innerHTML = chosenOfficeListItem.dataset.office
+            const userAmount = document.querySelectorAll(`[data-office='${selectedOffice.innerHTML}'] rect[data-position]`)
+            const fetchSvg = await fetch(`/getsvgelement/${e.target.dataset.office}`)
+            const receivedSvg = await fetchSvg.text()
+            appendSvg(receivedSvg)
+            resizeSvg()
+            const fetchOffice = await fetch(`/getoffice/${selectedOffice.innerHTML}/${userAmount.length}`)
+            const receivedOffice = await fetchOffice.json()
+            updateSelectedOfficeInformation(receivedOffice)
+            constructList()
+        })
+    })
+}
+
 
 
 function appendSvg(svg){ 
@@ -125,7 +130,7 @@ function selectListedOffice(target,chosenOfficeListItem){
     return chosenOfficeListItem
 }
 
-function resizeSvg(){
+export function resizeSvg(){
         if(document.querySelector('svg')){
             const svg = document.querySelector('svg')
             const svgHeight = 800
