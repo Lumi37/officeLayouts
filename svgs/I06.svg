@@ -1,0 +1,14 @@
+<!DOCTYPE svg >
+<svg data-office="I06"   xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+    width="1202px" height="801px" viewBox="-0.5 -0.5 1202 802">
+                    <g>
+                        <rect class='rectContainer'/>
+                        <path d="M 915 736 L 975 736 L 975 715 L 1015 750 L 975 785 L 975 764 L 915 764 L 915 750 Z"
+                            fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10"
+                            transform="rotate(270,965,750)" pointer-events="all" />
+                        <rect  data-user="" data-outlet="" data-position="1" class="rectUser" x="620" y="630"/>
+                        <rect  data-user="" data-outlet="" data-position="2" class="rectUser" x="310" y="630"/>
+                        <rect  data-user="" data-outlet="" data-position="3" class="rectUser" x="110" y="300" transform="rotate(90,170,330)" />
+                        <rect  data-user="" data-outlet="" data-position="4" class="rectUser" x="500" y="130"/>
+                    </g>
+                </svg>

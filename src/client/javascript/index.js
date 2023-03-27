@@ -1,55 +1,34 @@
-import { selectUser } from "./modules/selectUser.js";tooltipFromList
-import { displaySelectedOffice } from "./modules/displaySelectedOffice.js";
 import { highlightCorrespondingUser } from "./modules/highlightCorrespondingUser.js";
 import { selectUserFromList } from "./modules/selectUserFromList.js";
 import { selectCorrespondingListedUser } from "./modules/selectCorrespondingListedUser.js";
-import { highlightCorrespondingListedUser } from "./modules/highlightCorrespondingListedUser.js";
+// import { highlightCorrespondingListedUser } from "./modules/highlightCorrespondingListedUser.js";
 import { constructList } from "./modules/constructList.js";
 import { updateSelectedOfficeInformation } from "./modules/updateSelectedOfficeInfo.js";
-import { tooltip } from "./modules/tooltip.js";
+// import { tooltip } from "./modules/tooltip.js";
 import { tooltipFromList } from "./modules/tooltipFromList.js";
 import { autofillText } from "./modules/autofillText.js";
-import { deleteText } from "./modules/deleteText.js";
 import { queryRequest } from "./modules/queryRequest.js";
 import { selectClickedUserFromSearch } from "./modules/selectClickedUserFromSearch.js";
-import { resizeSvg } from "./modules/resizeSvg.js";
-import { moveInputCursor } from "./modules/moveInputCursor.js";
-import { constructOfficeList } from "./modules/constructOfficeList.js";
-import { enableCheckBoxes } from './modules/enableCheckboxes.js'
-import { disableCheckboxes } from "./modules/disableCheckboxes.js";
-import { checkCheckbox } from "./modules/checkCheckbox.js";
-import { uncheckCheckbox } from "./modules/uncheckCheckbox.js";
-import { selectListedOffice } from "./modules/selectListedOffice.js";
-import { appendSvg } from "./modules/appendSvg.js";
+import { moveInputCursor } from "./modules/mainContentDisplay.js";
+import './modules/officeList.js'
+import './modules/mainContentDisplay.js'
 
-export const svgContainer = document.querySelector("#svgs");
+export const selectedOfficeUsersList = document.querySelector('.listedUsers')
+// export const svgContainer = document.querySelector("#svgs");
 export const userTextInput = document.querySelector('#user')
 export const outletTextInput = document.querySelector("#dataOutlet");
-export const offices = Array.from(document.querySelectorAll('svg'))
-    .sort((a, b)=>{                                                           //sorted list by data-office
-      return a.dataset.office.localeCompare(b.dataset.office);   
-    });
-export let selectedOfficeUsersList = document.querySelector('.listedUsers')
 export const selectedOffice = document.querySelector('#office')
 export const searchBar = document.querySelector('#search')
 export const queryResultsList = document.querySelector('.queryResultsList')
-export const checkboxes = document.querySelectorAll('input[type="checkbox"]')
-export const officesList = document.querySelector('.listedOffices')
 const changeButton = document.querySelector('#submitChanges')
-document.querySelector('.listedOffices').click()
 let selectedUser;
 let hoverUser
 let selectListedUser
-export let checkboxSelection = [
-  {checkbox:'AllOffices',isChecked:true},
-  {checkbox:'Isogeio',isChecked:false},
-  {checkbox:'ProtosOrofos',isChecked:false},
-  {checkbox:'DeuterosOrofos',isChecked:false}
-]
+
 
 window.addEventListener('resize',()=>{
-  if(document.querySelector('.chosenOffice')){
-    const svg = document.querySelector('.chosenOffice')
+  if(document.querySelector('svg')){
+    const svg = document.querySelector('svg')
     const windowWidth = window.innerWidth
     const windowHeight = window.innerHeight
     if(windowHeight>801)
@@ -62,107 +41,9 @@ window.addEventListener('resize',()=>{
       svg.style.width = String(windowWidth - 274)+'px'
   
   }
-  
-})
-checkboxes.forEach(checkbox=>{
-  checkbox.addEventListener('change',async e=>{
-    if(e.target.checked  && e.target.dataset.floor === 'AllOffices') disableCheckboxes(e)
-    else if(!e.target.checked  && e.target.dataset.floor === 'AllOffices'){
-      enableCheckBoxes(e)
-      officesList.innerHTML = ''
-    } 
-    if(e.target.checked){
-      checkCheckbox(e)
-      const response = await fetch(`/getofficeslist/${JSON.stringify(checkboxSelection)}`)
-      constructOfficeList(await response.json())
-    }
-    else{
-      uncheckCheckbox(e)
-      const response = await fetch(`/getofficeslist/${JSON.stringify(checkboxSelection)}`)
-      constructOfficeList(await response.json())
-    }
-  })
-})
-
-svgContainer.addEventListener("click", (e) => {
-  if (e.target.dataset.position) {
-    selectedUser = selectUser(e.target, selectedUser);
-    selectListedUser = selectCorrespondingListedUser(e.target, selectListedUser)
-    moveInputCursor()
-    autofillText(e.target)
-  } else {
-    selectedUser = selectUser(e.target, selectedUser);
-    selectListedUser = selectCorrespondingListedUser(e.target, selectListedUser)
-    deleteText()
-  }
-});
-
-svgContainer.addEventListener('mouseover' ,e=>{
-  if(e.target.dataset.position){
-    hoverUser = highlightCorrespondingListedUser(e.target,hoverUser)
-    tooltip(selectedOffice,e.target)
-  }
-  else{
-    hoverUser = highlightCorrespondingListedUser(e.target,hoverUser)
-  }
-})
-
-svgContainer.addEventListener('mouseout',e=>{
-  if(hoverUser)hoverUser.classList.remove('highlightUserListItem')
-  const tooltip = document.querySelector('.tooltip');
-  if(tooltip) tooltip.remove()
 })
 
 
-
-offices.forEach(svg=>{
-  officesList.innerHTML += `<li data-office ="${svg.dataset.office}">${svg.dataset.office}</li>`
-})
-
-
-document.querySelector('.listedOffices').addEventListener('click',e=>{
-  if(document.querySelectorAll('.listedOffices li')){
-    let chosenOfficeListItem
-    document.querySelectorAll('.listedOffices li').forEach(office=>{
-      office.addEventListener('click',async e=>{
-        selectedOfficeUsersList.innerHTML=''
-        queryResultsList.innerHTML = ''
-        chosenOfficeListItem = selectListedOffice(e.target,chosenOfficeListItem)
-        deleteText()
-        selectedOffice.innerHTML = displaySelectedOffice(e.target,selectedOffice)
-        const userAmount = document.querySelectorAll(`[data-office='${selectedOffice.innerHTML}'] rect[data-position]`)
-        resizeSvg()
-        const response = await fetch(`/getoffice/${selectedOffice.innerHTML}/${userAmount.length}`)
-        const receivedData = await response.json()
-        updateSelectedOfficeInformation(receivedData)
-        constructList()
-        if(e.target.dataset.office){
-          const fetchsvg = await fetch(`/getsvgelement/${e.target.dataset.office}`)
-          const receivedSvg = await fetchsvg.text()
-          appendSvg(receivedSvg)
-        }
-      })
-    })
-  }
-})
-document.querySelector('.listedOffices').click()
-
-// document.querySelectorAll('.listedOffices li').forEach(office=>{
-//   office.addEventListener('click',async e=>{
-//     selectedOfficeUsersList.innerHTML=''
-//     queryResultsList.innerHTML = ''
-//     deleteText()
-//     selectedOffice.innerHTML = displaySelectedOffice(e.target,selectedOffice)
-//     const userAmount = document.querySelectorAll(`[data-office='${selectedOffice.innerHTML}'] rect[data-position]`)
-//     resizeSvg()
-//     const response = await fetch(`/getoffice/${selectedOffice.innerHTML}/${userAmount.length}`)
-//     const receivedData = await response.json()
-//     updateSelectedOfficeInformation(receivedData)
-//     constructList()
-
-//   })
-
-// })
 
 
 selectedOfficeUsersList.addEventListener('mouseover' ,e=>{
@@ -238,7 +119,7 @@ outletTextInput.addEventListener('keydown',e=>{
 
 searchBar.addEventListener('keyup',e=>{
   if(searchBar.value)selectedOfficeUsersList.innerHTML = ''
-  else if(document.querySelector('.chosenOffice')){
+  else if(document.querySelector('svg')){
     constructList()
     queryResultsList.innerHTML=''
   }

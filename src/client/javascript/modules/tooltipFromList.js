@@ -1,7 +1,7 @@
 export function tooltipFromList(hoverUser){
     if(hoverUser){
         const tooltip = document.createElement('div')
-        tooltip.innerHTML = `User:<span>${hoverUser.dataset.user}</span>&nbsp;PO:<span>${hoverUser.dataset.outlet}</span>`
+        tooltip.innerHTML = /*html*/`User:<span>${hoverUser.dataset.user}</span>&nbsp;PO:<span>${hoverUser.dataset.outlet}</span>`
         tooltip.classList.add('tooltip')
         document.body.appendChild(tooltip)
         const rectBounds = hoverUser.getBoundingClientRect()
