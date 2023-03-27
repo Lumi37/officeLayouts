@@ -25,14 +25,12 @@ server.get('/getofficeslist/:checkedboxes',async (req,res)=>{
     const requestedFloors = JSON.parse(checkedboxes)
     const officesList = getOfficesList( requestedFloors, await getAllOffices() ) 
     res.send(officesList)
-    res.end()
 })
 
 server.get('/getsvgelement/:requestedSvg',async (req,res)=>{
     const {requestedSvg} = req.params
     const svg = await getSvgElement(requestedSvg)
     res.send(svg)
-    res.end()
 })
 
 server.post('/updateuserinfo',async (req,res)=>{
@@ -40,7 +38,6 @@ server.post('/updateuserinfo',async (req,res)=>{
     await writeToFile(req.body)
     updatedContent = await readToFile(req.body.office)
     res.send(updatedContent)
-    res.end()
 })
 
 
@@ -49,6 +46,5 @@ server.get('/search/:key',async (req,res)=>{
     const {key} = req.params
     const result = await searchQuery(key)
     res.send(JSON.stringify(result))
-    res.end()
 })
 server.listen(3000, console.log("listens to 3000"));

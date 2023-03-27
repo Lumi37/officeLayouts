@@ -8,6 +8,7 @@ import { updateSelectedOfficeInformation } from "./updateSelectedOfficeInfo.js"
 
 const checkboxes = document.querySelectorAll('input[type="checkbox"]')
 const officesList = document.querySelector('.listedOffices')
+let chosenOfficeListItem
 let checkboxSelection = [
   {checkbox:'AllOffices',isChecked:true},
   {checkbox:'Isogeio',isChecked:false},
@@ -39,7 +40,7 @@ checkboxes.forEach(checkbox=>{
 })
 
 
-let chosenOfficeListItem
+
 document.querySelectorAll('.listedOffices li').forEach(office=>{
     office.addEventListener('click',async e=>{
         selectedOfficeUsersList.innerHTML=''
@@ -62,10 +63,10 @@ document.querySelectorAll('.listedOffices li').forEach(office=>{
 
 
 
+//FUNCTIONS
 
 
-
-export function appendSvg(svg){ 
+function appendSvg(svg){ 
     document.querySelector('.svgContainer').innerHTML = svg
 }
 
@@ -115,7 +116,6 @@ function renderOfficeList(list){
             <li data-office ="${office}">${office}</li>`
         
     });
-    document.querySelector('.listedOffices').click()
 }
 
 function selectListedOffice(target,chosenOfficeListItem){
