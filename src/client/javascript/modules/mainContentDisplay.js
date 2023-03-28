@@ -1,11 +1,7 @@
-import { tooltip } from "./tooltip.js";
-import { deleteText } from "./deleteText.js";
-import { autofillText } from "./autofillText.js";
-import { selectedOffice } from "../index.js";
+import { deleteText,autofillText,selectUser,selectCorrespondingListedUser,moveInputCursor} from "./utilities.js";
 
 export const svgContainer = document.querySelector("#svgs");
 let selectedUser;
-let hoverUser
 let selectListedUser
 
 svgContainer.addEventListener("click", (e) => {
@@ -21,60 +17,18 @@ svgContainer.addEventListener("click", (e) => {
   }
 });
 
-svgContainer.addEventListener('mouseover' ,e=>{
-  if(e.target.dataset.position){
-    hoverUser = highlightCorrespondingListedUser(e.target,hoverUser)
-    tooltip(selectedOffice,e.target)
-  }
-  else{
-    hoverUser = highlightCorrespondingListedUser(e.target,hoverUser)
-  }
-})
 
-svgContainer.addEventListener('mouseout',e=>{
-  if(hoverUser)hoverUser.classList.remove('highlightUserListItem')
-  const tooltip = document.querySelector('.tooltip');
-  if(tooltip) tooltip.remove()
-})
+export async function  refreshSelectedOfficeInfo(updatedInfo){
+  const selectedOfficeUsers = document.querySelectorAll('rect[data-position]')
+  for(let i=0; i<updatedInfo.length; i++)
+      selectedOfficeUsers.forEach(user=>{
+          if(user.dataset.position === updatedInfo[i].position){
+              user.dataset.user = updatedInfo[i].user
+              user.dataset.outlet = updatedInfo[i].outlet
+          }
 
-//FUNCTIONS
-
-//temp ?/*
-export function moveInputCursor(){
-    const input = document.querySelector('#user')
-    input.setSelectionRange(0,0)
-    input.focus(); 
-    input.select()
+  })
 }
-// */
-function selectUser(target, selectedUser) {
-    if (selectedUser) selectedUser.classList.remove("highlighted");
-    selectedUser = target;
-    selectedUser.classList.add("highlighted");
-    return selectedUser;
-  }
+
+
   
-
-  function highlightCorrespondingListedUser(target, hoverListedUser){
-    let selectedOfficeListedUsers = document.querySelectorAll('.userListItem') 
-    if(hoverListedUser)hoverListedUser.classList.remove('highlightUserListItem')
-    selectedOfficeListedUsers.forEach(user =>{
-        if(user.dataset.position === target.dataset.position){
-            hoverListedUser = user 
-            hoverListedUser.classList.add('highlightUserListItem')
-        }
-    })
-    return hoverListedUser 
-}
-
-function selectCorrespondingListedUser(target,hoverListedUser){
-    let selectedOfficeListedUsers = document.querySelectorAll('.userListItem')
-    if(hoverListedUser) hoverListedUser.classList.remove('selectUserListItem')
-    selectedOfficeListedUsers.forEach(user => {
-        if(user.dataset.position === target.dataset.position){
-            hoverListedUser = user
-            hoverListedUser.classList.add('selectUserListItem')
-        }
-    })
-    return hoverListedUser
-}   

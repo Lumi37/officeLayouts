@@ -1,8 +1,9 @@
-import { updateSelectedOfficeInformation } from "./updateSelectedOfficeInfo.js"
-import { constructList } from "./constructList.js"
+import { refreshSelectedOfficeInfo } from "./mainContentDisplay.js"
+import { constructList } from "./userList.js"
 
 
 const changeButton = document.querySelector('#submitChanges')
+export const selectedOffice = document.querySelector('#office')
 export const userTextInput = document.querySelector('#user')
 export const outletTextInput = document.querySelector("#dataOutlet");
 
@@ -20,7 +21,7 @@ changeButton.addEventListener('click',async e=>{
         )}
     const response  = await fetch('/updateuserinfo',userInfo)
     const receivedData = await response.json()
-    updateSelectedOfficeInformation(receivedData)
+    refreshSelectedOfficeInfo(receivedData)
     constructList()
     }
     
@@ -37,4 +38,5 @@ changeButton.addEventListener('click',async e=>{
         changeButton.click()
     }
 })
+
 

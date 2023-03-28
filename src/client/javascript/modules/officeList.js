@@ -1,9 +1,8 @@
-import { constructList } from "./constructList.js"
-import { deleteText } from "./deleteText.js"
-import { selectedOfficeUsersList } from "../index.js"
+import { constructList,selectedOfficeUsersList } from "./userList.js"
+import { deleteText,resizeSvg } from "./utilities.js"
 import {queryResultsList}  from "./searchEngine.js"
-import {selectedOffice} from "../index.js"
-import { updateSelectedOfficeInformation } from "./updateSelectedOfficeInfo.js"
+import {selectedOffice} from "./editUser.js"
+import { refreshSelectedOfficeInfo } from "./mainContentDisplay.js"
 
 
 const checkboxes = document.querySelectorAll('input[type="checkbox"]')
@@ -63,7 +62,7 @@ function listedOffices(){
             resizeSvg()
             const fetchOffice = await fetch(`/getoffice/${selectedOffice.innerHTML}/${userAmount.length}`)
             const receivedOffice = await fetchOffice.json()
-            updateSelectedOfficeInformation(receivedOffice)
+            refreshSelectedOfficeInfo(receivedOffice)
             constructList()
         })
     })
@@ -130,14 +129,3 @@ function selectListedOffice(target,chosenOfficeListItem){
     return chosenOfficeListItem
 }
 
-export function resizeSvg(){
-        if(document.querySelector('svg')){
-            const svg = document.querySelector('svg')
-            const svgHeight = 800
-            const svgWidth = 1200
-            if(window.innerHeight < svgHeight)
-              svg.style.height = String(window.innerHeight - 167)+'px'
-            if(window.innerWidth < svgWidth)
-              svg.style.width = String(window.innerWidth - 274)+'px'
-          }
-    }

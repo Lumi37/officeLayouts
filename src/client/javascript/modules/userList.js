@@ -1,4 +1,6 @@
-import {selectedOfficeUsersList} from '../index.js'
+export const selectedOfficeUsersList = document.querySelector('.listedUsers')
+
+
 export function constructList(){
     let selectedOfficeUsers = document.querySelectorAll('rect[data-user]')
     selectedOfficeUsersList.innerHTML=''

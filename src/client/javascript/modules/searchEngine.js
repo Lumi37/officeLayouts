@@ -1,7 +1,8 @@
-import { updateSelectedOfficeInformation } from "./updateSelectedOfficeInfo.js"
-import { constructList } from "./constructList.js"
-import { autofillText } from "./autofillText.js"
-import {resizeSvg} from "./officeList.js"
+import { refreshSelectedOfficeInfo } from "./refreshSelectedOfficeInfo.js"
+import { constructList } from "./userList.js"
+import { autofillText } from "./utilities.js"
+import {resizeSvg} from "./utilities.js"
+import { selectedOfficeUsersList } from "./userList.js"
 
 export const queryResultsList = document.querySelector('.queryResultsList')
 export const searchBar = document.querySelector('#search')
@@ -23,7 +24,7 @@ searchBar.addEventListener('keyup',e=>{
     const userAmount = document.querySelectorAll(`[data-office='${selectedOffice.innerHTML}'] rect[data-position]`)
     const response = await fetch(`/getoffice/${selectedOffice.innerHTML}/${userAmount.length}`)
     const receivedData = await response.json()
-    updateSelectedOfficeInformation(receivedData)
+    refreshSelectedOfficeInfo(receivedData)
     constructList(target)
     autofillText(target)
     selectClickedUserFromSearch()
