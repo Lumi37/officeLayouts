@@ -20,11 +20,18 @@ server.get('/getoffice/:name/:useramount', async (req, res) => {
     res.end()
 })
 
-server.get('/getofficeslist/:checkedboxes',async (req,res)=>{
+server.get('/getofficeslist/:checkedboxes/:a/:b',async (req,res)=>{
     const { checkedboxes } = req.params
     const requestedFloors = JSON.parse(checkedboxes)
     const officesList = getOfficesList( requestedFloors, await getAllOffices() ) 
     res.send(officesList)
+})
+
+server.get('/offices/',async (req,res)=>{
+    const { floor, username } = req.query
+    const offices = await getAllOffices()
+    const filterred = offices.filter(o => !floor || o.floor === floor)
+    res.send(filterred)
 })
 
 server.get('/getsvgelement/:requestedSvg',async (req,res)=>{
