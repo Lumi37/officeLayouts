@@ -1,8 +1,6 @@
-import { refreshSelectedOfficeInfo } from "./refreshSelectedOfficeInfo.js"
-import { constructList } from "./userList.js"
-import { autofillText } from "./utilities.js"
-import {resizeSvg} from "./utilities.js"
-import { selectedOfficeUsersList } from "./userList.js"
+import { refreshSelectedOfficeInfo } from "./mainContentDisplay.js"
+import { constructList, selectedOfficeUsersList } from "./userList.js"
+import { autofillText, resizeSvg} from "./utilities.js"
 
 export const queryResultsList = document.querySelector('.queryResultsList')
 export const searchBar = document.querySelector('#search')
@@ -38,8 +36,10 @@ async function queryRequest(){
     if(searchBar.value.length > 2){
         const response =  await fetch(`/search/${searchBar.value.trim()}`)
         const searchArray = await response.json()
-        if(searchArray)
-        constructQueryResultsList(searchArray)
+        console.log(searchArray)
+        if(searchArray){
+          constructQueryResultsList(searchArray)
+        }
     }else{
         queryResultsList.innerHTML=''
     }

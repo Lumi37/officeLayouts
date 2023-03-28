@@ -20,7 +20,7 @@ export async function searchQuery(str){
             throw new Error('something went wrong reading file ' + file);
           }
         });
-        const arr = (await Promise.all([...promises]));
+        const arr = _.flatten(await Promise.all(promises));
         filteredArr = arr.filter(user=>( (user.user.toLowerCase().includes(str.toLowerCase())) || (user.outlet.toLowerCase().includes(str.toLowerCase())) ))
         resolve(filteredArr);
       } catch (error) {
