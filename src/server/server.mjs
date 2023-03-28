@@ -20,7 +20,7 @@ server.get('/getoffice/:name/:useramount', async (req, res) => {
     res.end()
 })
 
-server.get('/getofficeslist/:checkedboxes/:a/:b',async (req,res)=>{
+server.get('/getofficeslist/:checkedboxes',async (req,res)=>{
     const { checkedboxes } = req.params
     const requestedFloors = JSON.parse(checkedboxes)
     const officesList = getOfficesList( requestedFloors, await getAllOffices() ) 

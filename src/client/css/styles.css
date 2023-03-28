@@ -1,0 +1,66 @@
+* { box-sizing: border-box; }
+
+html {
+    font-size: 16px;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+      "Lucida Sans", Arial, sans-serif;
+    background-color: #333;
+    color: rgb(255, 255, 255);
+  }
+
+body{
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: max-content 1fr max-content;
+    height: 100vh;
+}
+::placeholder {
+    color: rgba(255, 255, 255, 0.3);
+  }
+
+body > * {
+    border:solid 1px #999;
+}
+
+.office-list-container{
+    display: grid;
+    grid-template-rows: 1fr  max-content;
+    padding: 5px
+}
+
+
+
+.office-view{
+    display: grid;
+    grid-template-rows: 1fr 2fr;
+}
+
+.office-view > * {
+    border: solid 1px #999;
+}
+
+.office-user-details{
+    display:flex;
+    gap: 1rem;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5rem;
+}
+
+.office-user-details > input[type="text"]{
+        padding: 0.3rem;
+        background-color: #3a4341;
+        outline-width: 0;
+        color: white;
+        text-align: center;
+
+}
+.searchbar{
+    padding: 0.3rem;
+    background-color: #999;
+    outline-width: 0;
+    color: white;
+    text-align: center;  
+}

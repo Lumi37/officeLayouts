@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="./app.js" type="module"></script>
+</head>
+<body>
+    <div class="office-list-container">
+            <div class="office-list"></div>
+            <div class="office-filters">
+                <div>
+                    <input data-floor='all-offices' type="checkbox">All Offices 
+                </div>
+                <div>
+                    <input data-floor='b-floor' type="checkbox">B Orofos 
+                </div>
+                <div>
+                    <input data-floor='a-floor' type="checkbox">A Orofos 
+                </div>
+                <div>
+                    <input data-floor='ground-floor' type="checkbox">Isogeio 
+                </div>
+            </div>
+    </div>
+    <main>asdasd</main>
+    <div class="office-view">
+        <div class="office-user-details">
+            <div id="office"></div>
+            <input type="text" id="user" placeholder="User" />
+            <input type="text" id="dataOutlet" data-position="" placeholder="Data Outlet" />
+            <input type="submit" value="Change" id="submit"/>
+        </div>
+        <div class="office-user-list">
+            <input type='text' class='searchbar' id="searchbar" placeholder="search"></input>
+            <div class="user-list-items"></div>
+        </div>
+    </div>
+</body>
+</html>
