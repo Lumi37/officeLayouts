@@ -2,7 +2,7 @@ import { _dirname } from "../server.mjs";
 import fs from 'fs/promises'
 
 export async function getSvgElement(svg){
-    let  requestedFile = `${_dirname}/../../svgs/${svg}.svg`
+    let  requestedFile = `${_dirname}/../../content/svgs/${svg}.svg`
     
     try{    
         const content = await fs.readFile(requestedFile,{encoding: 'utf-8'})

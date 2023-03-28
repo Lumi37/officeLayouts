@@ -3,7 +3,7 @@ import fs from 'fs'
 import { _dirname } from '../server.mjs'
 
 export async function createFileIfNotExists(office,userAmount){
-    let fileLocation = `${_dirname}/../../offices/${office}.json`
+    let fileLocation = `${_dirname}/../../content/offices/${office}.json`
     if(!fs.existsSync(fileLocation)){
         let fileContent = []
         
