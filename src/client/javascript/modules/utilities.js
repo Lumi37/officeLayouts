@@ -24,6 +24,19 @@ window.addEventListener('resize',()=>{
       svg.style.width = String(windowWidth - 274)+'px'
   }
 })
+svgContainer.addEventListener("click", (e) => {
+  if (e.target.dataset.position) {
+    selectedUser = selectUser(e.target, selectedUser);
+    selectListedUser = selectCorrespondingListedUser(e.target, selectListedUser)
+    moveInputCursor()
+    autofillText(e.target)
+  } else {
+    selectedUser = selectUser(e.target, selectedUser);
+    selectListedUser = selectCorrespondingListedUser(e.target, selectListedUser)
+    deleteText()
+  }
+});
+
 svgContainer.addEventListener('mouseover' ,e=>{
   if(e.target.dataset.position){
     hoverUser = highlightCorrespondingListedUser(e.target,hoverUser)
@@ -43,7 +56,7 @@ svgContainer.addEventListener('mouseout',e=>{
 selectedOfficeUsersList.addEventListener('mouseover' ,e=>{
   if(e.target.dataset.position){
     hoverUser = highlightCorrespondingUser(e.target,hoverUser)
-    tooltipFromList(hoverUser,e.target)
+    // tooltipFromList(hoverUser,e.target)
   }
 })
 

@@ -1,21 +1,9 @@
-import { deleteText,autofillText,selectUser,selectCorrespondingListedUser,moveInputCursor} from "./utilities.js";
+// import { deleteText,autofillText,selectUser,selectCorrespondingListedUser,moveInputCursor} from "./utilities.js";
 
 export const svgContainer = document.querySelector("#svgs");
 let selectedUser;
 let selectListedUser
 
-svgContainer.addEventListener("click", (e) => {
-  if (e.target.dataset.position) {
-    selectedUser = selectUser(e.target, selectedUser);
-    selectListedUser = selectCorrespondingListedUser(e.target, selectListedUser)
-    moveInputCursor()
-    autofillText(e.target)
-  } else {
-    selectedUser = selectUser(e.target, selectedUser);
-    selectListedUser = selectCorrespondingListedUser(e.target, selectListedUser)
-    deleteText()
-  }
-});
 
 
 export async function  refreshSelectedOfficeInfo(updatedInfo){
