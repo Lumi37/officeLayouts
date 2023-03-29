@@ -1,7 +1,6 @@
 {
   "dependencies": {
-    "express": "^4.18.2",
-    "lodash": "^4.17.21"
+    "express": "^4.18.2"
   },
   "name": "officelayouts",
   "version": "1.0.0",
@@ -10,7 +9,7 @@
   "scripts": {
     "deploy": "rsync -avz ../officeLayouts/* kostas:officeLayouts",
     "getOfficeData": "rsync -avz kostas:officeLayouts/offices ../officeLayouts/",
-    "start": "nodemon src/server/index.cjs",
+    "start": "nodemon src/server/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

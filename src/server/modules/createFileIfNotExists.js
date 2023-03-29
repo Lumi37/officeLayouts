@@ -1,6 +1,6 @@
 import fileSystem from 'fs/promises'
 import fs from 'fs'
-import { _dirname } from '../server.mjs'
+import { _dirname } from '../server.js'
 
 export async function createFileIfNotExists(office,userAmount){
     let fileLocation = `${_dirname}/../../content/offices/${office}.json`

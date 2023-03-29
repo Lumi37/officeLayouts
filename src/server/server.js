@@ -27,7 +27,7 @@ server.get('/getofficeslist/:checkedboxes',async (req,res)=>{
     res.send(officesList)
 })
 
-server.get('/offices/',async (req,res)=>{
+server.get('/offices123/',async (req,res)=>{
     const { floor, username } = req.query
     const offices = await getAllOffices()
     const filterred = offices.filter(o => !floor || o.floor === floor)
@@ -54,4 +54,21 @@ server.get('/search/:key',async (req,res)=>{
     const result = await searchQuery(key)
     res.send(JSON.stringify(result))
 })
+
+
+server.get('/offices',async (req,res)=>{
+    const {floor} = req.query
+    const offices = await getAllOffices()
+    .then( allOffices => allOffices.filter(of=> !floor || floor === of.floor))
+    res.send(offices)
+})
+
+server.get('/getsvgelement/',async (req,res)=>{
+    const {requestedSvg} = req.query
+    console.log(requestedSvg)
+    const svg = await getSvgElement(requestedSvg)
+    res.send(svg)
+})
+
+
 server.listen(3000, console.log("listens to 3000"));

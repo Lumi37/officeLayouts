@@ -1,6 +1,6 @@
 import fs from 'fs/promises'
-import _ from 'lodash'
-import { _dirname } from '../server.mjs';
+
+import { _dirname } from '../server.js';
 
 export async function searchQuery(str){
     let result
@@ -20,8 +20,9 @@ export async function searchQuery(str){
             throw new Error('something went wrong reading file ' + file);
           }
         });
-        const arr = _.flatten(await Promise.all(promises));
-        filteredArr = arr.filter(user=>( (user.user.toLowerCase().includes(str.toLowerCase())) || (user.outlet.toLowerCase().includes(str.toLowerCase())) ))
+        const arr = await Promise.all(promises);
+        const flattenedArr = [...arr.flat()]
+        filteredArr = flattenedArr.filter(user=>( (user.user.toLowerCase().includes(str.toLowerCase())) || (user.outlet.toLowerCase().includes(str.toLowerCase())) ))
         resolve(filteredArr);
       } catch (error) {
         console.log(error);

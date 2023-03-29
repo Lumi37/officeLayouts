@@ -1,4 +1,4 @@
-import { _dirname } from "../server.mjs";
+import { _dirname } from "../server.js";
 import fs from 'fs/promises'
 
 export async function getSvgElement(svg){

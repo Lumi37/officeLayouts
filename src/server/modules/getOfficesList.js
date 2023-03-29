@@ -1,5 +1,3 @@
-import _ from 'lodash'
- 
 export function getOfficesList(requestedFloors, allOffices){
     let officesList = []
     if(requestedFloors[0].isChecked) return allOffices
@@ -9,17 +7,17 @@ export function getOfficesList(requestedFloors, allOffices){
             if(requestedFloors[i].checkbox === 'Isogeio'){
                 console.log('isogeio')
                 let tempArr = allOffices.filter(office=>office.startsWith('I') || office.startsWith('m') || office.startsWith('d'))
-                officesList = _.concat(officesList,tempArr)
+                officesList = officesList.concat(tempArr)
             }
             else if(requestedFloors[i].checkbox === 'ProtosOrofos'){
                 console.log('ProtosOrofos')
                 let tempArr = allOffices.filter(office=>office.startsWith('A'))
-                officesList = _.concat(officesList,tempArr)
+                officesList = officesList.concat(tempArr)
             }
             else if(requestedFloors[i].checkbox === 'DeuterosOrofos'){
                 console.log('DeuterosOrofos')
                 let tempArr = allOffices.filter(office=>office.startsWith('B'))
-                officesList = _.concat(officesList,tempArr)
+                officesList = officesList.concat(tempArr)
             }
     }
     return officesList

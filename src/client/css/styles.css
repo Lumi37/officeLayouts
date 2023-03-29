@@ -7,6 +7,13 @@ html {
     background-color: #333;
     color: rgb(255, 255, 255);
   }
+  ul {
+    list-style-type: none;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
+
 
 body{
     margin: 0;
@@ -20,10 +27,25 @@ body{
 body > * { border:solid 1px #999 ;}
 
 .office-list-container { display: grid; grid-template-rows: 1fr  max-content; }
-.office-filters > * { border: 1px solid #999; padding: 5px; }
+  .office-list  li{ cursor: pointer; border: 1px solid #999;}
+  .office-list  li:hover{background-color: rgb(136, 136, 136,0.3);} 
+  .office-filters > * { border: 1px solid #999; padding: 5px; }
+
+.office-content{display: flex; align-items: center; justify-content: center;}
+  rect{ fill:rgb(99 99 99); stroke:rgb(0, 0, 0); }
+  .rectUser { width:120px; height:60px; cursor: pointer; }
+  .rectUserBig { width:170px; height:290px; cursor: pointer;  }
+  .rectContainer {
+    width: 1200px;
+    height: 800px;
+    fill: #434343;
+    stroke: white;
+  }
+  .selectedRect{fill: white;}
+  path { fill: rgb(99 99 99); stroke: rgb(0, 0, 0); }
+
 .office-view { display: grid; grid-template-rows: 1fr 2fr; }
 .office-view > * { border: solid 1px #999; }
-
 .office-user-details{
     display:flex;
     gap: 1rem;
@@ -50,4 +72,8 @@ body > * { border:solid 1px #999 ;}
     outline-width: 0;
     color: white;
     text-align: center;  
+}
+
+.selected{
+  background-color: #999;
 }
