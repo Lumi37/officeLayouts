@@ -2,10 +2,10 @@
 <svg data-office="B66"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
     width="1202px" height="801px" viewBox="-0.5 -0.5 1202 802">
                     <g>
-                        <rect class='rectContainer' />
-                        <path d="M 550 736 L 610 736 L 610 715 L 650 750 L 610 785 L 610 764 L 550 764 L 550 750 Z"
-                            fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10"
+                        <rect class="rectContainer" width="1200" height="800"  fill="#434343" stroke="rgb(0, 0, 0)" />
+                        <path fill="rgb(99 99 99)" stroke="rgb(0, 0, 0)" d="M 550 736 L 610 736 L 610 715 L 650 750 L 610 785 L 610 764 L 550 764 L 550 750 Z"
+                              stroke-miterlimit="10"
                             transform="rotate(270,600,750)" pointer-events="all" />
-                        <rect data-user="" data-outlet="" data-position="1" class="rectUser" x="990" y="150" transform="rotate(90,1050,180)"/>
+                        <rect data-user="" data-outlet="" data-position="1" class="rectUser" width="120px" height="60px"  fill="rgb(99 99 99)" stroke="rgb(0, 0, 0)" x="990" y="150" transform="rotate(90,1050,180)"/>
                     </g>
                 </svg>

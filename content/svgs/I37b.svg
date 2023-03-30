@@ -2,13 +2,13 @@
 <svg data-office="I37b"   xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
     width="1202px" height="801px" viewBox="-0.5 -0.5 1202 802">
                     <g>
-                        <rect class='rectContainer' />
-                        <rect data-user="" data-outlet="" data-position="1" class='rectUser' x="930" y="80"/>
-                        <rect data-user="" data-outlet="" data-position="2" class='rectUser' x="270" y="80" />
-                        <rect data-user="" data-outlet="" data-position="3" class='rectUser' x="270" y="660"/>
-                        <rect data-user="" data-outlet="" data-position="4" class='rectUser' x="930" y="640"/>
-                        <path d="M 65 736 L 125 736 L 125 715 L 165 750 L 125 785 L 125 764 L 65 764 L 65 750 Z"
-                            fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10"
+                        <rect class="rectContainer" width="1200" height="800"  fill="#434343" stroke="rgb(0, 0, 0)" />
+                        <rect data-user="" data-outlet="" data-position="1" class="rectUser" width="120px" height="60px"  fill="rgb(99 99 99)" stroke="rgb(0, 0, 0)" x="930" y="80"/>
+                        <rect data-user="" data-outlet="" data-position="2" class="rectUser" width="120px" height="60px"  fill="rgb(99 99 99)" stroke="rgb(0, 0, 0)" x="270" y="80" />
+                        <rect data-user="" data-outlet="" data-position="3" class="rectUser" width="120px" height="60px"  fill="rgb(99 99 99)" stroke="rgb(0, 0, 0)" x="270" y="660"/>
+                        <rect data-user="" data-outlet="" data-position="4" class="rectUser" width="120px" height="60px"  fill="rgb(99 99 99)" stroke="rgb(0, 0, 0)" x="930" y="640"/>
+                        <path fill="rgb(99 99 99)" stroke="rgb(0, 0, 0)" d="M 65 736 L 125 736 L 125 715 L 165 750 L 125 785 L 125 764 L 65 764 L 65 750 Z"
+                              stroke-miterlimit="10"
                             transform="rotate(270,115,750)" pointer-events="all" />
                     </g>
                 </svg>

@@ -2,17 +2,17 @@
 <svg data-office='B40' xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
     width="1202px" height="801px" viewBox="-0.5 -0.5 1202 802">
                     <g>
-                        <rect class='rectContainer'/>
-                        <rect data-user="" data-outlet="" data-position="1" class='rectUser' x="100" y="80"/>
-                        <rect data-user="" data-outlet="" data-position="2" class='rectUser' x="1020" y="80" />
-                        <rect data-user="" data-outlet="" data-position="3" class='rectUser' x="990" y="180"  transform="rotate(90,1050,210)"/>
-                        <rect data-user="" data-outlet="" data-position="4" class='rectUser' x="1020" y="670"/>
-                        <rect data-user="" data-outlet="" data-position="5" class='rectUser' x="100" y="660" />
-                        <path d="M 595 736 L 655 736 L 655 715 L 695 750 L 655 785 L 655 764 L 595 764 L 595 750 Z"
-                            fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10"
+                        <rect class="rectContainer" width="1200" height="800"  fill="#434343" stroke="rgb(0, 0, 0)"/>
+                        <rect data-user="" data-outlet="" data-position="1" class="rectUser" width="120px" height="60px"  fill="rgb(99 99 99)" stroke="rgb(0, 0, 0)" x="100" y="80"/>
+                        <rect data-user="" data-outlet="" data-position="2" class="rectUser" width="120px" height="60px"  fill="rgb(99 99 99)" stroke="rgb(0, 0, 0)" x="1020" y="80" />
+                        <rect data-user="" data-outlet="" data-position="3" class="rectUser" width="120px" height="60px"  fill="rgb(99 99 99)" stroke="rgb(0, 0, 0)" x="990" y="180"  transform="rotate(90,1050,210)"/>
+                        <rect data-user="" data-outlet="" data-position="4" class="rectUser" width="120px" height="60px"  fill="rgb(99 99 99)" stroke="rgb(0, 0, 0)" x="1020" y="670"/>
+                        <rect data-user="" data-outlet="" data-position="5" class="rectUser" width="120px" height="60px"  fill="rgb(99 99 99)" stroke="rgb(0, 0, 0)" x="100" y="660" />
+                        <path fill="rgb(99 99 99)" stroke="rgb(0, 0, 0)" d="M 595 736 L 655 736 L 655 715 L 695 750 L 655 785 L 655 764 L 595 764 L 595 750 Z"
+                              stroke-miterlimit="10"
                             transform="rotate(270,645,750)" pointer-events="all" />
-                        <path d="M 595 36 L 655 36 L 655 15 L 695 50 L 655 85 L 655 64 L 595 64 L 595 50 Z"
-                            fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10"
+                        <path fill="rgb(99 99 99)" stroke="rgb(0, 0, 0)" d="M 595 36 L 655 36 L 655 15 L 695 50 L 655 85 L 655 64 L 595 64 L 595 50 Z"
+                              stroke-miterlimit="10"
                             transform="rotate(90,645,50)" pointer-events="all" />
                     </g>
                 </svg>
