@@ -22,19 +22,21 @@ export function initUserList(hostElement){
                     }, 
                     bubbles: true })
                 host.dispatchEvent(userSelectionEvent)
+                const userSelectionByList = new CustomEvent('user-selection-by-list',{ detail:userData.position, bubbles:true})
+                host.dispatchEvent(userSelectionByList)
             })
         })
-        document.addEventListener('initiated-search',()=>{
-            host.querySelector('.user-list').innerHTML = ''
-        })
-        document.addEventListener('canceled-search',()=>{
-            console.log('canceled-search')
-            constructList(officeData)
+
+        document.addEventListener('initiated-search',()=> host.querySelector('.user-list').innerHTML = '' )
+        document.addEventListener('canceled-search',()=> constructList(officeData) )
+        document.addEventListener('user-updated',e => updateList(e.detail) )
+        document.addEventListener('user-selection-by-rect',e=>{
+            const userListItem = host.querySelector(`li[data-position="${e.detail}"]`)
+            if(selected)selected.classList.remove('selected')
+            userListItem.classList.add('selected')
+            selected = userListItem
         })
 
-        document.addEventListener('user-updated',e=>{
-            updateList(e.detail)
-        })
     })
 
 
@@ -63,7 +65,8 @@ export function initUserList(hostElement){
 function constructList(data){
     host.querySelector('.user-list').innerHTML = /*html*/`
     <ul>
-        ${data.map(user=>` <li data-user="${user.user}" data-office="${user.office}" data-outlet="${user.outlet}" data-position="${user.position}" class="userListItem">User:&nbsp; 
+        ${data.map(user=>`
+        <li data-user="${user.user}" data-office="${user.office}" data-outlet="${user.outlet}" data-position="${user.position}" class="userListItem">User:&nbsp; 
           <span>${user.user}</span>
           &nbsp; Outlet:&nbsp; 
           <span>${user.outlet}</span>
@@ -74,15 +77,14 @@ function constructList(data){
 
 
 function updateList(updatedData){
-    console.log(updatedData)
     host.querySelectorAll('li').forEach(li=>{
         if(updatedData.position === li.dataset.position){
             li.dataset.user = updatedData.user
             li.dataset.outlet = updatedData.outlet
             li.innerHTML = `User:&nbsp; 
-            <span>${user.user}</span>
+            <span>${updatedData.user}</span>
             &nbsp; Outlet:&nbsp; 
-            <span>${user.outlet}</span>`
+            <span>${updatedData.outlet}</span>`
         }
     })
 }

@@ -12,6 +12,8 @@ export function initOfficeUserDetails(hostElement){
 
     document.addEventListener('office-selection', async e=>{
         office.innerHTML = e.detail
+        userField.value  = ''
+        outletField.value = ''
     })
     document.addEventListener('user-selection', e=>{
         userField.value = e.detail.user

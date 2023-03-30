@@ -29,10 +29,16 @@ export function initOfficeContent(hostElement){
                     }, 
                     bubbles: true })
                 host.dispatchEvent(userSelectionEvent)
+                const userSelectionByRect = new CustomEvent('user-selection-by-rect',{ detail:userData.position, bubbles:true})
+                host.dispatchEvent(userSelectionByRect)
             })
         }); 
-        document.addEventListener('user-updated',e=>{
-            updateRectInfo(e.detail)
+        document.addEventListener('user-updated',e=> updateRectInfo(e.detail) )
+        document.addEventListener('user-selection-by-list',e=>{
+            const userRect = host.querySelector(`rect[data-position="${e.detail}"]`)
+            if(selected)selected.classList.remove('selectedRect')
+            userRect.classList.add('selectedRect')
+            selected = userRect
         })
     })
 }
@@ -55,8 +61,8 @@ function matchOfficeDataWithSvg(data){
 function updateRectInfo(updatedData){
     host.querySelectorAll('rect[data-position]').forEach(rect=>{
         if(updatedData.position === rect.dataset.position){
-            rect.user = updatedData.user
-            rect.outlet = updatedData.outlet
+            rect.dataset.user = updatedData.user
+            rect.dataset.outlet = updatedData.outlet
         }
     })
 }
