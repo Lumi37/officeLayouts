@@ -4,7 +4,7 @@ import { _dirname } from '../server.js';
 
 export async function searchQuery(str){
     let result
-    const directoryPath = `${_dirname}/../../offices/`;
+    const directoryPath = `${_dirname}/../../content/offices/`;
     const searchPromise = new Promise(async (resolve, reject) => {
       try {
         let filteredArr = []

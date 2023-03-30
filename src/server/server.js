@@ -17,7 +17,6 @@ server.get('/getoffice/:name/:useramount', async (req, res) => {
     await createFileIfNotExists(name,useramount)
     let content =  await readToFile(name)
     res.send(content)
-    res.end()
 })
 
 server.get('/getofficeslist/:checkedboxes',async (req,res)=>{
@@ -27,31 +26,31 @@ server.get('/getofficeslist/:checkedboxes',async (req,res)=>{
     res.send(officesList)
 })
 
-server.get('/offices123/',async (req,res)=>{
-    const { floor, username } = req.query
-    const offices = await getAllOffices()
-    const filterred = offices.filter(o => !floor || o.floor === floor)
-    res.send(filterred)
-})
+// server.get('/offices123/',async (req,res)=>{
+//     const { floor, username } = req.query
+//     const offices = await getAllOffices()
+//     const filterred = offices.filter(o => !floor || o.floor === floor)
+//     res.send(filterred)
+// })
 
-server.get('/getsvgelement/:requestedSvg',async (req,res)=>{
-    const {requestedSvg} = req.params
-    const svg = await getSvgElement(requestedSvg)
-    res.send(svg)
-})
+// server.get('/getsvgelement/:requestedSvg',async (req,res)=>{
+//     const {requestedSvg} = req.params
+//     const svg = await getSvgElement(requestedSvg)
+//     res.send(svg)
+// })
 
-server.post('/updateuserinfo',async (req,res)=>{
-    let updatedContent
+server.post('/updateuserinfo/',async (req,res)=>{
+    console.log(req.body)
     await writeToFile(req.body)
-    updatedContent = await readToFile(req.body.office)
-    res.send(updatedContent)
+    res.send()
 })
 
 
-server.get('/search/:key',async (req,res)=>{
-    
-    const {key} = req.params
+server.get('/search/',async (req,res)=>{
+    const {key} = req.query
+    console.log(key)
     const result = await searchQuery(key)
+    console.log(result)
     res.send(JSON.stringify(result))
 })
 
@@ -68,6 +67,12 @@ server.get('/getsvgelement/',async (req,res)=>{
     console.log(requestedSvg)
     const svg = await getSvgElement(requestedSvg)
     res.send(svg)
+})
+
+server.get('/getofficeinformation/', async (req, res) => {
+    const { office } = req.query
+    let content =  await readToFile(office)
+    res.send(content)
 })
 
 

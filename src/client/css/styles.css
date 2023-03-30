@@ -7,14 +7,15 @@ html {
     background-color: #333;
     color: rgb(255, 255, 255);
   }
-  ul {
-    list-style-type: none;
-    text-align: center;
-    margin: 0;
-    padding: 0;
-  }
-
-
+ul {
+  list-style-type: none;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+span {
+  color: #6baf6b;
+}
 body{
     margin: 0;
     padding: 0;
@@ -27,22 +28,23 @@ body{
 body > * { border:solid 1px #999 ;}
 
 .office-list-container { display: grid; grid-template-rows: 1fr  max-content; }
-  .office-list  li{ cursor: pointer; border: 1px solid #999;}
-  .office-list  li:hover{background-color: rgb(136, 136, 136,0.3);} 
-  .office-filters > * { border: 1px solid #999; padding: 5px; }
+.office-list  li{ cursor: pointer; border: 1px solid #999;}
+.office-list  li:hover{background-color: rgb(136, 136, 136,0.3);} 
+.office-list  li:active{background-color: rgba(206, 205, 205, 0.456);} 
+.office-filters > * { border: 1px solid #999; padding: 5px; }
 
 .office-content{display: flex; align-items: center; justify-content: center;}
-  rect{ fill:rgb(99 99 99); stroke:rgb(0, 0, 0); }
-  .rectUser { width:120px; height:60px; cursor: pointer; }
-  .rectUserBig { width:170px; height:290px; cursor: pointer;  }
-  .rectContainer {
-    width: 1200px;
-    height: 800px;
-    fill: #434343;
-    stroke: white;
-  }
-  .selectedRect{fill: white;}
-  path { fill: rgb(99 99 99); stroke: rgb(0, 0, 0); }
+rect{ fill:rgb(99 99 99); stroke:rgb(0, 0, 0); }
+.rectUser { width:120px; height:60px; cursor: pointer; }
+.rectUserBig { width:170px; height:290px; cursor: pointer;  }
+.rectContainer {
+  width: 1200px;
+  height: 800px;
+  fill: #434343;
+  stroke: white;
+}
+path { fill: rgb(99 99 99); stroke: rgb(0, 0, 0); }
+.selectedRect{fill: white;}
 
 .office-view { display: grid; grid-template-rows: 1fr 2fr; }
 .office-view > * { border: solid 1px #999; }
@@ -54,18 +56,34 @@ body > * { border:solid 1px #999 ;}
     align-items: center;
     padding: 1.5rem;
 }
-
 .office-user-details > input[type="text"]{
         padding: 0.3rem;
         background-color: #3a4341;
         outline-width: 0;
         color: white;
         text-align: center;
-
 }
-
+#office { font-size: 2rem; padding: 1rem; }
+#submit {
+  border: 1px solid #6b6b6b;
+  padding: 10px;
+  cursor: pointer;
+  background-color: #535353;
+  color: white;
+}
+#submit:active { background-color: #828181; }
 .office-user-list{ display: flex; flex-direction: column; }
-
+.office-user-list li:active { background-color: #333; }
+.office-user-list li:hover { background-color: rgb(255, 255, 255, 0.2); }
+.office-user-list li {
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  padding: 0.5rem;
+  border: solid 0.5px rgb(255, 255, 255, 0.2);
+}
 .searchbar{
     padding: 0.3rem;
     background-color: #999;
@@ -73,7 +91,4 @@ body > * { border:solid 1px #999 ;}
     color: white;
     text-align: center;  
 }
-
-.selected{
-  background-color: #999;
-}
+.selected{ background-color: #6c6c6c; }
