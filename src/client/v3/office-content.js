@@ -1,4 +1,3 @@
-import { resizeSvg } from "./util.js"
 
 /**@type {HTMLELEMENT} */
 let host
@@ -14,7 +13,8 @@ export function initOfficeContent(hostElement){
         const selection = e.detail
         const svg = await fetch(`/getsvgelement/?requestedSvg=${selection}`).then(s=>s.text())
         host.innerHTML = svg
-        resizeSvg()
+        const svgLoadedEvent = new CustomEvent('svg-loaded',{bubbles:true})
+        host.dispatchEvent(svgLoadedEvent)
         const officeData = await fetch(`/getofficeinformation/?office=${selection}`).then(o=>o.json())
         matchOfficeDataWithSvg(officeData)
             
@@ -47,7 +47,8 @@ export function initOfficeContent(hostElement){
                 const hoverEvent = new CustomEvent('unhovered-item',{bubbles:true})
                 host.dispatchEvent(hoverEvent)
             })
-        }); 
+        });
+        document.addEventListener('office-filter-changed',()=>host.innerHTML='')
         document.addEventListener('user-updated',e=> updateRectInfo(e.detail) )
         document.addEventListener('user-selection-by-list',e=>{
             const userRect = host.querySelector(`rect[data-position="${e.detail}"]`)

@@ -10,8 +10,14 @@ export function initOfficeUserDetails(hostElement){
     const office = host.querySelector('#office')
 
 
-    document.addEventListener('office-selection', async e=>{
+    document.addEventListener('office-selection', e=>{
         office.innerHTML = e.detail
+        userField.value  = ''
+        outletField.value = ''
+        outletField.dataset.position=''
+    })
+    document.addEventListener('office-filter-changed',()=>{
+        office.innerHTML = ''
         userField.value  = ''
         outletField.value = ''
         outletField.dataset.position=''

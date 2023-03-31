@@ -17,15 +17,16 @@ export function utilities(){
     })
   document.addEventListener('hovered-item',e=> tooltip(e.detail) )
   document.addEventListener('unhovered-item',()=>document.querySelector('.tooltip').remove())
+  document.addEventListener('svg-loaded',()=>resizeSvg())
 }
 
-export function resizeSvg(){
+   function resizeSvg(){
     if(document.querySelector('svg')){
         const svg = document.querySelector('svg')
         if(window.innerHeight < 800)
           svg.style.height = String(window.innerHeight - 167)+'px'
         if(window.innerWidth < 1600)
-          svg.style.width = String(window.innerWidth - 274)+'px'
+          svg.style.width = String(window.innerWidth - 450)+'px'
       }
   }
   

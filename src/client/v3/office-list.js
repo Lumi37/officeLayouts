@@ -15,27 +15,27 @@ export async function initOfficeList(hostElement) {
         checkbox.addEventListener('click', async e=>{
             const floor = e.target.dataset.floor
             const checked = e.target.checked
-            if( floor === 'all-offices' && checked ){
+            if( floor === 'all-offices' && checked )
                 disableCheckboxes()
-            }else if( floor === 'all-offices' && !checked ){
+            else if( floor === 'all-offices' && !checked ){
                 filter = ''
                 enableCheckboxes()
             }
 
-            if(!checked){
-                console.log(floor,checked)
+            if(!checked)
                filter =  filter.replace(floor,'')
-            }else{
-                filter+=floor
-            }
+            else
+                filter += floor
+            
 
             if(filter){
                 const officeListArray = await fetch(`/offices/?floor=${filter}`).then(res => res.json())
                 constructOfficeList(officeListArray)
-            }else{
+                addEventListenerOnList()
+            }else
                 host.querySelector('.office-list').innerHTML=''
-
-            }
+            const officeFilterChangedEvent = new CustomEvent('office-filter-changed',{bubbles:true})
+            host.dispatchEvent(officeFilterChangedEvent)
         })
     })
     
@@ -90,4 +90,16 @@ function constructOfficeList(officeListArr){
     <ul>
         ${officeListArr.map( office => `<li data-office=${office.name}>${office.name}</li>`).join('\n')}
     </ul>`
+}
+
+function addEventListenerOnList(){
+    host.querySelectorAll('ul > li').forEach(li => {
+        li.addEventListener('click', e => {
+            if(selected)selected.classList.remove('selected')
+            e.target.classList.add('selected')
+            selected = e.target
+            const officeSelectionEvent = new CustomEvent('office-selection', { detail: li.textContent, bubbles: true })
+            host.dispatchEvent(officeSelectionEvent)
+        })
+    })
 }

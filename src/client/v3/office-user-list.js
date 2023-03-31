@@ -38,7 +38,7 @@ export function initUserList(hostElement){
                 host.dispatchEvent(hoverEvent)
             })
         })
-
+        document.addEventListener('office-filter-changed',()=> host.querySelector('.user-list').innerHTML = '' )
         document.addEventListener('initiated-search',()=> host.querySelector('.user-list').innerHTML = '' )
         document.addEventListener('canceled-search',()=> constructList(officeData) )
         document.addEventListener('user-updated',e => updateList(e.detail) )

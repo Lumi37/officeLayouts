@@ -36,7 +36,6 @@ server.get('/getofficeslist/:checkedboxes',async (req,res)=>{
 
 
 server.post('/updateuserinfo/',async (req,res)=>{
-    console.log(req.body)
     await writeToFile(req.body)
     res.send()
 })
@@ -44,9 +43,7 @@ server.post('/updateuserinfo/',async (req,res)=>{
 
 server.get('/search/',async (req,res)=>{
     const {key} = req.query
-    console.log(key)
     const result = await searchQuery(key)
-    console.log(result)
     res.send(JSON.stringify(result))
 })
 
@@ -60,7 +57,6 @@ server.get('/offices',async (req,res)=>{
 
 server.get('/getsvgelement/',async (req,res)=>{
     const {requestedSvg} = req.query
-    console.log(requestedSvg)
     const svg = await getSvgElement(requestedSvg)
     res.send(svg)
 })
