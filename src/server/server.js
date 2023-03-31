@@ -54,7 +54,7 @@ server.get('/search/',async (req,res)=>{
 server.get('/offices',async (req,res)=>{
     const {floor} = req.query
     const offices = await getAllOffices()
-    .then( allOffices => allOffices.filter(of=> !floor || floor === of.floor))
+    .then( allOffices => allOffices.filter(of=> floor==='all-offices' || floor.includes(of.floor)))
     res.send(offices)
 })
 
