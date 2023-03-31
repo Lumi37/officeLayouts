@@ -7,7 +7,7 @@ let selected
 export async function initOfficeList(hostElement) {
     host = hostElement
     const officeList = host.querySelector('.office-list')
-    const officeListArr = await fetch(`/offices/`).then(res => res.json())
+    const officeListArr = await fetch(`/offices/?floor=${}`).then(res => res.json())
     officeList.innerHTML=/*html*/`
     <ul>
         ${officeListArr.map( office => `<li data-office=${office.name}>${office.name}</li>`).join('\n')}

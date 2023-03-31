@@ -25,6 +25,18 @@ export function initUserList(hostElement){
                 const userSelectionByList = new CustomEvent('user-selection-by-list',{ detail:userData.position, bubbles:true})
                 host.dispatchEvent(userSelectionByList)
             })
+            li.addEventListener('mouseover',e=>{
+                const hoveredLi = e.target.closest('li')
+                const hoverEvent = new CustomEvent('hovered-item',{
+                    detail:hoveredLi.dataset.position,
+                    bubbles:true
+                })
+                host.dispatchEvent(hoverEvent)
+            })
+            li.addEventListener('mouseout',e=>{
+                const hoverEvent = new CustomEvent('unhovered-item',{bubbles:true})
+                host.dispatchEvent(hoverEvent)
+            })
         })
 
         document.addEventListener('initiated-search',()=> host.querySelector('.user-list').innerHTML = '' )
@@ -60,6 +72,7 @@ export function initUserList(hostElement){
         })
     })
 }
+
 //FUNCTIONS 
 
 function constructList(data){

@@ -1,3 +1,5 @@
+import { resizeSvg } from "./util.js"
+
 /**@type {HTMLELEMENT} */
 let host
 
@@ -12,6 +14,7 @@ export function initOfficeContent(hostElement){
         const selection = e.detail
         const svg = await fetch(`/getsvgelement/?requestedSvg=${selection}`).then(s=>s.text())
         host.innerHTML = svg
+        resizeSvg()
         const officeData = await fetch(`/getofficeinformation/?office=${selection}`).then(o=>o.json())
         matchOfficeDataWithSvg(officeData)
             
@@ -31,6 +34,18 @@ export function initOfficeContent(hostElement){
                 host.dispatchEvent(userSelectionEvent)
                 const userSelectionByRect = new CustomEvent('user-selection-by-rect',{ detail:userData.position, bubbles:true})
                 host.dispatchEvent(userSelectionByRect)
+            })
+            rect.addEventListener('mouseover',e=>{
+                const hoveredRect = e.target
+                const hoverEvent = new CustomEvent('hovered-item',{
+                    detail:hoveredRect.dataset.position,
+                    bubbles:true
+                })
+                host.dispatchEvent(hoverEvent)
+            })
+            rect.addEventListener('mouseout',e=>{
+                const hoverEvent = new CustomEvent('unhovered-item',{bubbles:true})
+                host.dispatchEvent(hoverEvent)
             })
         }); 
         document.addEventListener('user-updated',e=> updateRectInfo(e.detail) )

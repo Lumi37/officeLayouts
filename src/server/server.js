@@ -33,11 +33,7 @@ server.get('/getofficeslist/:checkedboxes',async (req,res)=>{
 //     res.send(filterred)
 // })
 
-// server.get('/getsvgelement/:requestedSvg',async (req,res)=>{
-//     const {requestedSvg} = req.params
-//     const svg = await getSvgElement(requestedSvg)
-//     res.send(svg)
-// })
+
 
 server.post('/updateuserinfo/',async (req,res)=>{
     console.log(req.body)
