@@ -7,7 +7,6 @@ export function initSearchEngine(hostElement){
     searchBar.addEventListener('keyup', e=>{
         if(searchBar.value.length > 2){
             queryRequest(searchBar)
-            // setTimeout(queryRequest(searchBar),300)
             const initiatedSearch = new CustomEvent('initiated-search',{bubbles:true})
             host.dispatchEvent(initiatedSearch)
         }else if(searchBar.value.length === 0){

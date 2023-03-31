@@ -1,45 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Office Layouts</title>
-    <link rel="stylesheet" href=" ./css/style.css" />
-    <script type="module" src="javascript/index.js"></script>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <script src="./javascript/app.js" type="module"></script>
 </head>
-
 <body>
-    <div class="mainContainer">
-        <div class="officeMenu">
-            <div class="checkboxContainer">
-                <div class="checkboxDiv"><div>All Offices</div>         <input data-floor="AllOffices"      type="checkbox" checked></div>
-                <div class="checkboxDiv"><div>Isogeio</div>             <input data-floor="Isogeio"         type="checkbox" disabled checked></div>
-                <div class="checkboxDiv"><div>Protos Orofos</div>       <input data-floor="ProtosOrofos"    type="checkbox" disabled checked></div>
-                <div class="checkboxDiv"><div>Deuteros Orofos</div>     <input data-floor="DeuterosOrofos"  type="checkbox" disabled checked></div>
-            </div>
-            <ul class="listedOffices"></ul>
-        </div>
-        <div class="content" id="svgs">
-            <div class="svgContainer">
+    <div class="office-list-container">
 
+            <div class="office-list"></div>
+
+            <div class="office-filters">
+                <div>
+                    <input data-floor='all-offices' type="checkbox" checked>All Offices 
+                </div>
+                <div>
+                    <input data-floor='b-floor' type="checkbox" disabled checked>B Orofos 
+                </div>
+                <div>
+                    <input data-floor='a-floor' type="checkbox" disabled checked>A Orofos 
+                </div>
+                <div>
+                    <input data-floor='ground-floor' type="checkbox" disabled checked>Isogeio 
+                </div>
             </div>
+
+    </div>
+
+    <main class="office-content"></main>
+
+    <div class="office-view">
+
+        <div class="office-user-details">
+            <div id="office"></div>
+            <input type="text" id="user" placeholder="User" />
+            <input type="text" id="dataOutlet" data-position="" placeholder="Data Outlet" />
+            <input type="submit" value="Change" id="submit"/>
         </div>
-        <div class="info">
-            <div class="infoEditing">
-                <div id="office"></div>
-                <input type="text" id="user" placeholder="User" />
-                <input type="text" id="dataOutlet" data-position="" placeholder="Data Outlet" />
-                <input type="submit" value="Change" id="submitChanges" />
-            </div>
-            <div class="infoDisplay">
-                <input type="text" id="search" placeholder="search" />
-                <ul class="listedUsers"></ul>
-                <ul class="queryResultsList"></ul>
-            </div>
+
+        <div class="office-user-list">
+            <input type='text' class='searchbar' id="searchbar" placeholder="search"></input>
+            <div class="user-list"></div>
         </div>
+        
     </div>
 </body>
-
 </html>
