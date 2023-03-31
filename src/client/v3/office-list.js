@@ -10,13 +10,6 @@ export async function initOfficeList(hostElement) {
     const officeFiltersCheckboxes = host.querySelectorAll('input[type="checkbox"]')
     const officeListArr = await fetch(`/offices/?floor=all-offices`).then(res => res.json())
     constructOfficeList(officeListArr)
-    // const officeListArr = await fetch(`/offices/?floor=${}`).then(res => res.json())
-    // let checkbox
-    // const checkedboxes = host.querySelectorAll('input[type="checkbox"]')
-    // officeList.innerHTML=/*html*/`
-    // <ul>
-    //     ${officeListArr.map( office => `<li data-office=${office.name}>${office.name}</li>`).join('\n')}
-    // </ul>`
 
     officeFiltersCheckboxes.forEach(checkbox=>{
         checkbox.addEventListener('click', async e=>{
