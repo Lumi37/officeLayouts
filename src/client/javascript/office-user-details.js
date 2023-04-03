@@ -65,7 +65,7 @@ export function initOfficeUserDetails(hostElement){
     
     officeDownload.addEventListener('click',async e=>{
         if(office.innerHTML){
-            const data = await fetch(`/download-csv/?office=${office.innerHTML}`);
+            const data = await fetch(`/download-selected-office/?office=${office.innerHTML}`);
             const blob = await data.blob();
             const url = URL.createObjectURL(blob);
             const link = document.createElement('a');

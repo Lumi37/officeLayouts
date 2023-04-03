@@ -4,6 +4,7 @@ import { writeToFile } from "./modules/writeFile.js";
 import { searchQuery } from "./modules/searchQuery.js";
 import { getAllOffices } from "./modules/getAllOffices.js";
 import { getSvgElement } from "./modules/getSvgElement.js";
+// import { getUsers } from "./modules/getUsers.js";
 
 const server = express();
 export const _dirname = new URL('.',import.meta.url).pathname
@@ -42,17 +43,22 @@ server.get('/getofficeinformation/', async (req, res) => {
     res.send(content)
 })
 
-server.get('/download/', async (req, res)=>{
-    const {office} = req.query
-    const content = await readToFile(office)
-    res.setHeader('Content-Type', 'text/csv');
-    res.setHeader('Content-Disposition', 'attachment; filename=data.xlsx');
-    console.log(res)
-    res.send(content)
-})
+// server.get('/download-selected-office-list/', async (req, res) => {
+//     const {office} = req.query
+//     const content = JSON.parse(await readToFile(office))
+//     let data = []
+//     data.push(['User','Outlet','Office'])
+//     content.forEach(user => {
+//         data.push([user.user,user.outlet,user.office])
+//     });
+//     const csv = data.map(row => row.join(',')).join('\n');
+//     res.set('Content-Disposition', 'attachment; filename=data.csv');
+//     res.set('Content-Type', 'text/csv');
+//     res.send(csv);
+//   });
 
 
-server.get('/download-csv', async (req, res) => {
+server.get('/download-selected-office/', async (req, res) => {
     const {office} = req.query
     const content = JSON.parse(await readToFile(office))
     let data = []
