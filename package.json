@@ -8,13 +8,8 @@
   "type": "module",
   "scripts": {
     "deploy": "rsync -avz ../officeLayouts/* kostas:officeLayouts",
-<<<<<<< HEAD
-    "getOfficeData":"rsync -avz kostas:officeLayouts/offices ../officeLayouts/",
-    "start":"node src/server/index.cjs",
-=======
     "getOfficeData": "rsync -avz kostas:officeLayouts/offices ../officeLayouts/",
     "start": "nodemon src/server/server.js",
->>>>>>> test
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

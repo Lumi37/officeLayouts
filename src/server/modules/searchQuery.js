@@ -20,15 +20,9 @@ export async function searchQuery(str){
             throw new Error('something went wrong reading file ' + file);
           }
         });
-<<<<<<< HEAD
-        const arr = _.flatten(await Promise.all(promises));
-        filteredArr = arr.filter(user=>( (user.user.toLowerCase().includes(str.toLowerCase())) || (user.outlet.toLowerCase().includes(str.toLowerCase())) ))
-        // filteredArr = arr.filter(user=>( (user.user.toLowerCase().startsWith(str.toLowerCase())) || (user.outlet.toLowerCase().startsWith(str.toLowerCase())) ))
-=======
         const arr = await Promise.all(promises);
         const flattenedArr = [...arr.flat()]
         filteredArr = flattenedArr.filter(user=>( (user.user.toLowerCase().includes(str.toLowerCase())) || (user.outlet.toLowerCase().includes(str.toLowerCase())) ))
->>>>>>> test
         resolve(filteredArr);
       } catch (error) {
         console.log(error);
