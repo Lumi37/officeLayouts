@@ -82,6 +82,14 @@ path { fill: rgb(99 99 99); stroke: rgb(0, 0, 0); }
         text-align: center;
 }
 #office { font-size: 2rem; padding: 1rem; }
+#download {
+  border: 1px solid #6b6b6b;
+  padding: 10px;
+  cursor: pointer;
+  background-color: #535353;
+  color: white;
+}
+#download:active { background-color: #828181; }
 #submit {
   border: 1px solid #6b6b6b;
   padding: 10px;

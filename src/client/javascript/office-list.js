@@ -51,7 +51,6 @@ export async function initOfficeList(hostElement) {
 
     document.addEventListener('user-selection-by-search',e=>{
         const office = host.querySelector(`li[data-office ="${e.detail}"]`)
-        console.log(office)
         if(selected)selected.classList.remove('selected')
         office.classList.add('selected')
         selected = office

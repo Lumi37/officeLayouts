@@ -8,7 +8,7 @@ export function initOfficeUserDetails(hostElement){
     const userField = host.querySelector('#user')
     const outletField = host.querySelector('#dataOutlet')
     const office = host.querySelector('#office')
-
+    const officeDownload =host.querySelector('#download')
 
     document.addEventListener('office-selection', e=>{
         office.innerHTML = e.detail
@@ -61,6 +61,21 @@ export function initOfficeUserDetails(hostElement){
     
     outletField.addEventListener('keyup',e=>{
         if(e.key === 'Enter')  submitButton.click()
+    })
+    
+    officeDownload.addEventListener('click',async e=>{
+        if(office.innerHTML){
+            const data = await fetch(`/download-csv/?office=${office.innerHTML}`);
+            const blob = await data.blob();
+            const url = URL.createObjectURL(blob);
+            const link = document.createElement('a');
+            link.href = url;
+            link.download = `${office.innerHTML}.csv`;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+            
     })
 }
 

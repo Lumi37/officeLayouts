@@ -42,5 +42,28 @@ server.get('/getofficeinformation/', async (req, res) => {
     res.send(content)
 })
 
+server.get('/download/', async (req, res)=>{
+    const {office} = req.query
+    const content = await readToFile(office)
+    res.setHeader('Content-Type', 'text/csv');
+    res.setHeader('Content-Disposition', 'attachment; filename=data.xlsx');
+    console.log(res)
+    res.send(content)
+})
+
+
+server.get('/download-csv', async (req, res) => {
+    const {office} = req.query
+    const content = JSON.parse(await readToFile(office))
+    let data = []
+    data.push(['User','Outlet'])
+    content.forEach(user => {
+        data.push([user.user,user.outlet])
+    });
+    const csv = data.map(row => row.join(',')).join('\n');
+    res.set('Content-Disposition', 'attachment; filename=data.csv');
+    res.set('Content-Type', 'text/csv');
+    res.send(csv);
+  });
 
 server.listen(3000, console.log("listens to 3000"));
