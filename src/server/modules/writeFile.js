@@ -1,8 +1,8 @@
 import fs from 'fs/promises'
-import { _dirname } from '../server.mjs'
+import { _dirname } from '../server.js'
 
 export async function writeToFile(body){
-    let  requestedFile = `${_dirname}../../offices/${body.office}.json`
+    let  requestedFile = `${_dirname}../../content/offices/${body.office}.json`
     let requestedFileContent
     try{
         requestedFileContent = JSON.parse(await fs.readFile(requestedFile,{encoding: 'utf-8'}))

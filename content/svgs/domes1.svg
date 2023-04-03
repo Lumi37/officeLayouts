@@ -1,0 +1,14 @@
+<!DOCTYPE svg >
+ <svg data-office='domes1'  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+    width="1202px" height="801px" viewBox="-0.5 -0.5 1202 802">
+                    <g>
+                        <rect class="rectContainer" width="1200" height="800"  fill="#434343" stroke="rgb(0, 0, 0)" />
+                        <rect data-user="" data-outlet="" data-position="1" class="rectUser" width="120px" height="60px"  fill="rgb(99 99 99)" stroke="rgb(0, 0, 0)" x="1020" y="90"  transform="rotate(90,1080,120)"/>
+                        <rect data-user="" data-outlet="" data-position="2" class="rectUser" width="120px" height="60px"  fill="rgb(99 99 99)" stroke="rgb(0, 0, 0)" x="540" y="93" />
+                        <rect data-user="" data-outlet="" data-position="3" class="rectUser" width="120px" height="60px"  fill="rgb(99 99 99)" stroke="rgb(0, 0, 0)" x="70" y="93"  transform="rotate(90,130,123)"/>
+                        <rect data-user="" data-outlet="" data-position="4" class="rectUser" width="120px" height="60px"  fill="rgb(99 99 99)" stroke="rgb(0, 0, 0)" x="540" y="660" />
+                        <path fill="rgb(99 99 99)" stroke="rgb(0, 0, 0)" d="M 0 641 L 60 641 L 60 620 L 100 655 L 60 690 L 60 669 L 0 669 L 0 655 Z"
+                          stroke-miterlimit="10"
+                        pointer-events="all" />
+                    </g>
+                </svg>

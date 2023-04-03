@@ -1,0 +1,13 @@
+<!DOCTYPE svg >
+<svg data-office="B65" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+    width="1202px" height="801px" viewBox="-0.5 -0.5 1202 802">
+                    <g>
+                        <rect class="rectContainer" width="1200" height="800"  fill="#434343" stroke="rgb(0, 0, 0)" />
+                        <path fill="rgb(99 99 99)" stroke="rgb(0, 0, 0)"
+                            d="M 1110 386 L 1170 386 L 1170 365 L 1210 400 L 1170 435 L 1170 414 L 1110 414 L 1110 400 Z"
+                              stroke-miterlimit="10"
+                            transform="translate(1160,0)scale(-1,1)translate(-1160,0)" pointer-events="all" />
+                        <rect data-user="" data-outlet="" data-position="1" class="rectUserBig"  width="170px" height="290px"  fill="rgb(99 99 99)" stroke="rgb(0, 0, 0)" x="1020" y="140" transform="rotate(90,1080,170)" />
+                        <rect data-user="" data-outlet="" data-position="2" class="rectUserBig"  width="170px" height="290px"  fill="rgb(99 99 99)" stroke="rgb(0, 0, 0)" x="230" y="140" transform="rotate(90,290,170)" />
+                    </g>
+                </svg>

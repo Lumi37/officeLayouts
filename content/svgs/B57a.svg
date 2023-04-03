@@ -1,0 +1,12 @@
+<!DOCTYPE svg >
+
+<svg data-office="B57a"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+    width="1202px" height="801px" viewBox="-0.5 -0.5 1202 802">
+                    <g>
+                        <rect class="rectContainer" width="1200" height="800"  fill="#434343" stroke="rgb(0, 0, 0)" />
+                        <path fill="rgb(99 99 99)" stroke="rgb(0, 0, 0)" d="M 0 471 L 60 471 L 60 450 L 100 485 L 60 520 L 60 499 L 0 499 L 0 485 Z"
+                              stroke-miterlimit="10"
+                            pointer-events="all" />
+                        <rect data-user="" data-outlet="" data-position="1" class="rectUserBig"  width="170px" height="290px"  fill="rgb(99 99 99)" stroke="rgb(0, 0, 0)" x="360" y="110"/>
+                    </g>
+                </svg>

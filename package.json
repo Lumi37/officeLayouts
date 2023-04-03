@@ -1,7 +1,6 @@
 {
   "dependencies": {
-    "express": "^4.18.2",
-    "lodash": "^4.17.21"
+    "express": "^4.18.2"
   },
   "name": "officelayouts",
   "version": "1.0.0",
@@ -9,8 +8,13 @@
   "type": "module",
   "scripts": {
     "deploy": "rsync -avz ../officeLayouts/* kostas:officeLayouts",
+<<<<<<< HEAD
     "getOfficeData":"rsync -avz kostas:officeLayouts/offices ../officeLayouts/",
     "start":"node src/server/index.cjs",
+=======
+    "getOfficeData": "rsync -avz kostas:officeLayouts/offices ../officeLayouts/",
+    "start": "nodemon src/server/server.js",
+>>>>>>> test
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -24,5 +28,8 @@
     "url": "https://github.com/Lumi37/officeLayouts/issues"
   },
   "homepage": "https://github.com/Lumi37/officeLayouts#readme",
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
 }

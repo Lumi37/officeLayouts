@@ -1,0 +1,11 @@
+<!DOCTYPE svg >
+<svg data-office="B20" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+    width="1202px" height="801px" viewBox="-0.5 -0.5 1202 802">
+                    <g>
+                        <rect class="rectContainer" width="1200" height="800"  fill="#434343" stroke="rgb(0, 0, 0)"/>
+                        <rect  data-user="" data-outlet="" data-position="1" class="rectUserBig"  width="170px" height="290px"  fill="rgb(99 99 99)" stroke="rgb(0, 0, 0)" x="830" y="50"/>
+                        <path fill="rgb(99 99 99)" stroke="rgb(0, 0, 0)" d="M 575 736 L 635 736 L 635 715 L 675 750 L 635 785 L 635 764 L 575 764 L 575 750 Z"
+                              stroke-miterlimit="10"
+                            transform="rotate(270,625,750)" pointer-events="all" />
+                    </g>
+                </svg>

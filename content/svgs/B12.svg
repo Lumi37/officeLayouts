@@ -1,0 +1,16 @@
+<!DOCTYPE svg >
+<svg data-office="B12" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+    width="1202px" height="801px" viewBox="-0.5 -0.5 1202 802">
+                        <rect class="rectContainer" width="1200" height="800"  fill="#434343" stroke="rgb(0, 0, 0)" />
+                        <path fill="rgb(99 99 99)" stroke="rgb(0, 0, 0)"
+                            d="M 1100 551 L 1160 551 L 1160 530 L 1200 565 L 1160 600 L 1160 579 L 1100 579 L 1100 565 Z"
+                              stroke-miterlimit="10"
+                            transform="translate(1150,0)scale(-1,1)translate(-1150,0)" pointer-events="all" />
+                        <rect x="930" y="670"  data-user="" data-outlet="" data-position="1" class="rectUser" width="120px" height="60px"  fill="rgb(99 99 99)" stroke="rgb(0, 0, 0)" />
+                        <rect x="60" y="640" data-user="" data-outlet="" data-position="2" class="rectUser" width="120px" height="60px"  fill="rgb(99 99 99)" stroke="rgb(0, 0, 0)"
+                            transform="rotate(90,120,670)"/>
+                        <rect x="90" y="50" data-user="" data-outlet="" data-position="3" class="rectUser" width="120px" height="60px"  fill="rgb(99 99 99)" stroke="rgb(0, 0, 0)" />
+                        <!-- <rect x="960" y="260" data-user="" data-outlet="" data-position="4" class="rectUser" width="120px" height="60px"  fill="rgb(99 99 99)" stroke="rgb(0, 0, 0)" transform="rotate(90,1020,290)"/> -->
+                        <rect x="790" y="230" data-user="" data-outlet="" data-position="5" class="rectUser" width="120px" height="60px"  fill="rgb(99 99 99)" stroke="rgb(0, 0, 0)" />
+                    </g>
+                </svg>

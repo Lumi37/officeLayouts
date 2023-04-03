@@ -1,0 +1,12 @@
+<!DOCTYPE svg >
+ <svg data-office="B63"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+    width="1202px" height="801px" viewBox="-0.5 -0.5 1202 802">
+                    <g>
+                        <rect class="rectContainer" width="1200" height="800"  fill="#434343" stroke="rgb(0, 0, 0)" />
+                        <rect data-user="" data-outlet="" data-position="1" class="rectUserBig"  width="170px" height="290px"  fill="rgb(99 99 99)" stroke="rgb(0, 0, 0)" x="300" y="340" transform="rotate(90,360,370)" />
+                        <path fill="rgb(99 99 99)" stroke="rgb(0, 0, 0)"
+                            d="M 1100 356 L 1160 356 L 1160 335 L 1200 370 L 1160 405 L 1160 384 L 1100 384 L 1100 370 Z"
+                              stroke-miterlimit="10"
+                            transform="translate(1150,0)scale(-1,1)translate(-1150,0)" pointer-events="all" />
+                    </g>
+                </svg>
