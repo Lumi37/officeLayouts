@@ -18,20 +18,17 @@ export async function initOfficeList(hostElement) {
             const floor = e.target.dataset.floor
             const checked = e.target.checked
             if( floor === 'all-offices' && checked ){
-                // filter = 'all-offices'
+                filter = 'all-offices'
                 disableCheckboxes()
             }
             else if( floor === 'all-offices' && !checked ){
                 filter = ''
                 enableCheckboxes()
             }
-
             if(!checked)
                filter =  filter.replace(floor,'')
-            else
+            else if(!(floor==='all-offices'))
                 filter += floor
-            console.log('filter->',filter)
-            console.log('floor->',floor)
 
             if(filter){
                 const officeListArray = await fetch(`/offices/?floor=${filter}`).then(res => res.json())
