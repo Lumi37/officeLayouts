@@ -26,6 +26,8 @@ export function initOfficeUserDetails(hostElement){
         userField.value = e.detail.user
         outletField.value = e.detail.outlet 
         outletField.dataset.position = e.detail.position
+        // userField.focus()
+        userField.select()
     })
 
     submitButton.addEventListener('click', async e=>{
@@ -77,6 +79,7 @@ export function initOfficeUserDetails(hostElement){
         }
             
     })
+
 }
 
 

@@ -18,6 +18,7 @@ export function utilities(){
   document.addEventListener('hovered-item',e=> tooltip(e.detail) )
   document.addEventListener('unhovered-item',()=>document.querySelector('.tooltip').remove())
   document.addEventListener('svg-loaded',()=>resizeSvg())
+ 
 }
 
    function resizeSvg(){
