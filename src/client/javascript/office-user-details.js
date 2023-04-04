@@ -1,3 +1,4 @@
+import { downloadCsv } from "./lib.js"
 /** @type {HTMLElement} */
 let host
 
@@ -26,7 +27,6 @@ export function initOfficeUserDetails(hostElement){
         userField.value = e.detail.user
         outletField.value = e.detail.outlet 
         outletField.dataset.position = e.detail.position
-        // userField.focus()
         userField.select()
     })
 
@@ -68,14 +68,7 @@ export function initOfficeUserDetails(hostElement){
     officeDownload.addEventListener('click',async e=>{
         if(office.innerHTML){
             const data = await fetch(`/download-selected-office/?office=${office.innerHTML}`);
-            const blob = await data.blob();
-            const url = URL.createObjectURL(blob);
-            const link = document.createElement('a');
-            link.href = url;
-            link.download = `${office.innerHTML}.csv`;
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
+            downloadCsv(data,office.innerHTML)
         }
             
     })

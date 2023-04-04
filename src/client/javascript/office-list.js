@@ -1,3 +1,4 @@
+import { downloadCsv } from "./lib.js"
 /**@type {HTMLELEMENT} */
 let host
 
@@ -5,8 +6,9 @@ let host
 let selected
 
 export async function initOfficeList(hostElement) {
-    let filter = ''
+    let filter = 'all-offices'
     host = hostElement
+    const officeListDownloadButton = host.querySelector('#officeListButton')
     const officeFiltersCheckboxes = host.querySelectorAll('input[type="checkbox"]')
     const officeListArr = await fetch(`/offices/?floor=all-offices`).then(res => res.json())
     constructOfficeList(officeListArr)
@@ -15,8 +17,10 @@ export async function initOfficeList(hostElement) {
         checkbox.addEventListener('click', async e=>{
             const floor = e.target.dataset.floor
             const checked = e.target.checked
-            if( floor === 'all-offices' && checked )
+            if( floor === 'all-offices' && checked ){
+                // filter = 'all-offices'
                 disableCheckboxes()
+            }
             else if( floor === 'all-offices' && !checked ){
                 filter = ''
                 enableCheckboxes()
@@ -26,7 +30,8 @@ export async function initOfficeList(hostElement) {
                filter =  filter.replace(floor,'')
             else
                 filter += floor
-            
+            console.log('filter->',filter)
+            console.log('floor->',floor)
 
             if(filter){
                 const officeListArray = await fetch(`/offices/?floor=${filter}`).then(res => res.json())
@@ -37,6 +42,12 @@ export async function initOfficeList(hostElement) {
             const officeFilterChangedEvent = new CustomEvent('office-filter-changed',{bubbles:true})
             host.dispatchEvent(officeFilterChangedEvent)
         })
+    })
+    officeListDownloadButton.addEventListener('click',async e=>{
+        
+            const data = await fetch(`/download-selected-office-list/?floor=${filter}`)
+            downloadCsv(data,'offices')
+        
     })
     
     host.querySelectorAll('ul > li').forEach(li => {
@@ -57,6 +68,7 @@ export async function initOfficeList(hostElement) {
         const officeSelectionEvent = new CustomEvent('office-selection', { detail: office.innerHTML, bubbles: true })
         host.dispatchEvent(officeSelectionEvent)
     })
+
 
 }
 

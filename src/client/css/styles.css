@@ -97,6 +97,14 @@ path { fill: rgb(99 99 99); stroke: rgb(0, 0, 0); }
   background-color: #535353;
   color: white;
 }
+#officeListButton {
+  border: 1px solid #6b6b6b;
+  padding: 10px;
+  cursor: pointer;
+  background-color: #413f3f;
+  color: white;
+}
+#officeListButton:active { background-color: #828181; }
 #submit:active { background-color: #828181; }
 .office-user-list{ display: flex; flex-direction: column;overflow-y: auto; }
 .office-user-list li:active { background-color: #333; }
