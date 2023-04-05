@@ -98,7 +98,6 @@ async function writeToFile(body) {
   requestedFileContent = JSON.parse(
     await fs.readFile(requestedFile, { encoding: "utf-8" })
   );
-  console.log("filecontent", requestedFileContent);
 
   for (let i = 0; i < requestedFileContent.length; i++) {
     if (requestedFileContent[i].position === body.position) {
@@ -123,7 +122,6 @@ async function getSvgElement(svg){
 
 
 async function getUsersByOfficeNames(offices){
-    console.log(offices)
     return await Promise.all(
         offices.map(async office => {
             return JSON.parse( await fs.readFile(`${_dirname}/../../content/offices/${office.name}.json`, 'utf-8') )
