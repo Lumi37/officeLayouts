@@ -20,7 +20,6 @@ export function initSearchEngine(hostElement){
 async function queryRequest(searchBar){
         const searchArray =  await fetch(`/search/?key=${searchBar.value.trim()}`).then(res=>res.json())
         if(searchArray){
-        //   constructQueryResultsList(searchArray)
         const resolvedSearch = new CustomEvent('resolved-search',{detail:searchArray,bubbles:true})
         host.dispatchEvent(resolvedSearch)
         }
