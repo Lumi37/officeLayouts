@@ -17,6 +17,7 @@ export function initOfficeContent(hostElement){
         host.dispatchEvent(svgLoadedEvent)
         const officeData = await fetch(`/getofficeinformation/?office=${selection}`).then(o=>o.json())
         matchOfficeDataWithSvg(officeData)
+        
             
         host.querySelectorAll('rect[data-position]').forEach(rect => {
             rect.addEventListener('click',e=>{

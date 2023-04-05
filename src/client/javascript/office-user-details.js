@@ -1,4 +1,4 @@
-import { downloadCsv } from "./lib.js"
+import { downloadCsv, downloadSvg } from "./lib.js"
 /** @type {HTMLElement} */
 let host
 
@@ -9,7 +9,9 @@ export function initOfficeUserDetails(hostElement){
     const userField = host.querySelector('#user')
     const outletField = host.querySelector('#dataOutlet')
     const office = host.querySelector('#office')
-    const officeDownload =host.querySelector('#download')
+    const officeDownloadCsv = host.querySelector('#downloadCsv')
+    const officeDownloadSvg = host.querySelector('#downloadSvg')
+
 
     document.addEventListener('office-selection', e=>{
         office.innerHTML = e.detail
@@ -65,13 +67,18 @@ export function initOfficeUserDetails(hostElement){
         if(e.key === 'Enter')  submitButton.click()
     })
     
-    officeDownload.addEventListener('click',async e=>{
+    officeDownloadCsv.addEventListener('click',async e=>{
         if(office.innerHTML){
             const data = await fetch(`/download-selected-office/?office=${office.innerHTML}`);
             downloadCsv(data,office.innerHTML)
         }
             
     })
+    officeDownloadSvg.addEventListener('click',async e=>{
+        if(office.innerHTML)
+            downloadSvg(office.innerHTML)        
+    })
+
 
 }
 
