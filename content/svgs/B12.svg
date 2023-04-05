@@ -10,7 +10,6 @@
                         <rect x="60" y="640" data-user="" data-outlet="" data-position="2" class="rectUser" width="120px" height="60px"  fill="rgb(99 99 99)" stroke="rgb(0, 0, 0)"
                             transform="rotate(90,120,670)"/>
                         <rect x="90" y="50" data-user="" data-outlet="" data-position="3" class="rectUser" width="120px" height="60px"  fill="rgb(99 99 99)" stroke="rgb(0, 0, 0)" />
-                        <!-- <rect x="960" y="260" data-user="" data-outlet="" data-position="4" class="rectUser" width="120px" height="60px"  fill="rgb(99 99 99)" stroke="rgb(0, 0, 0)" transform="rotate(90,1020,290)"/> -->
-                        <rect x="790" y="230" data-user="" data-outlet="" data-position="5" class="rectUser" width="120px" height="60px"  fill="rgb(99 99 99)" stroke="rgb(0, 0, 0)" />
+                        <rect x="790" y="230" data-user="" data-outlet="" data-position="4" class="rectUser" width="120px" height="60px"  fill="rgb(99 99 99)" stroke="rgb(0, 0, 0)" />
                     </g>
                 </svg>

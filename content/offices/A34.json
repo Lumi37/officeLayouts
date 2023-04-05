@@ -2,37 +2,37 @@
   {
     "user": "kyatz",
     "outlet": "D25",
-    "office": "A35",
+    "office": "A34",
     "position": "1"
   },
   {
     "user": "v.karras",
     "outlet": "D26",
-    "office": "A35",
+    "office": "A34",
     "position": "2"
   },
   {
     "user": "mike",
     "outlet": "D102",
-    "office": "A35",
+    "office": "A34",
     "position": "3"
   },
   {
     "user": "k.skamagkas",
     "outlet": "D103",
-    "office": "A35",
+    "office": "A34",
     "position": "4"
   },
   {
     "user": "g.petrou",
     "outlet": "D98",
-    "office": "A35",
+    "office": "A34",
     "position": "5"
   },
   {
     "user": "unused",
     "outlet": "D21",
-    "office": "A35",
+    "office": "A34",
     "position": "6"
   }
 ]
