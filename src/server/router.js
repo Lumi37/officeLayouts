@@ -75,7 +75,6 @@ r.get('/download-selected-office/', async (req, res) => {
 
 async function  getAllOffices(){
   const directoryPath = `${_dirname}/../../content/offices/`
-  
   const files = await fs.readdir(directoryPath)
   const fileNames = files.map(file=>file.replace('.json',''))
   const offices = fileNames.map(f => {
@@ -90,6 +89,8 @@ async function  getAllOffices(){
   })
   return offices
 }
+
+
 
 async function writeToFile(body) {
   let requestedFile = `${_dirname}../../content/offices/${body.office}.json`;
@@ -113,12 +114,14 @@ async function writeToFile(body) {
 }
 
 
+
 async function getSvgElement(svg){
     let  requestedFile = `${_dirname}/../../content/svgs/${svg}.svg`    
     const content = await fs.readFile(requestedFile,{encoding: 'utf-8'})
     return content
 
 }
+
 
 
 async function getUsersByOfficeNames(offices){
@@ -128,6 +131,8 @@ async function getUsersByOfficeNames(offices){
         })
     )
 }
+
+
 
 async function searchQuery(str) {
   let result;
@@ -161,6 +166,8 @@ async function searchQuery(str) {
   );
   return result;
 }
+
+
 
 async function readToFile(office){
     let  requestedFile = `${_dirname}/../../content/offices/${office}.json`
