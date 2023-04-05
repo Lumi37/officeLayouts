@@ -1,10 +1,6 @@
 import {Router} from "express";
-import { readToFile } from "./modules/readFile.js";
-import { writeToFile } from "./modules/writeFile.js";
-import { searchQuery } from "./modules/searchQuery.js";
-import { getAllOffices } from "./modules/getAllOffices.js";
-import { getSvgElement } from "./modules/getSvgElement.js";
-import { getUsersByOfficeNames } from "./modules/getUsersByOfficeNames.js";
+import fs from 'fs/promises'
+import {_dirname} from './server.js'
 export const r = Router()
 
 
@@ -72,3 +68,104 @@ r.get('/download-selected-office/', async (req, res) => {
   res.send(csv);
 });
 
+
+
+
+// FUNCTIONS 
+
+async function  getAllOffices(){
+  const directoryPath = `${_dirname}/../../content/offices/`
+  
+  const files = await fs.readdir(directoryPath)
+  const fileNames = files.map(file=>file.replace('.json',''))
+  const offices = fileNames.map(f => {
+      let floor
+      if( f[0] === 'B')floor = 'b-floor'
+      else if(f[0] === 'A')floor = 'a-floor'
+      else floor = 'ground-floor'
+      return {
+          name: f,
+          floor: floor
+      }
+  })
+  return offices
+}
+
+async function writeToFile(body) {
+  let requestedFile = `${_dirname}../../content/offices/${body.office}.json`;
+  let requestedFileContent;
+
+  requestedFileContent = JSON.parse(
+    await fs.readFile(requestedFile, { encoding: "utf-8" })
+  );
+  console.log("filecontent", requestedFileContent);
+
+  for (let i = 0; i < requestedFileContent.length; i++) {
+    if (requestedFileContent[i].position === body.position) {
+      requestedFileContent[i].user = body.user;
+      requestedFileContent[i].outlet = body.outlet;
+    }
+  }
+
+  await fs.writeFile(
+    requestedFile,
+    JSON.stringify(requestedFileContent, null, 2)
+  );
+}
+
+
+async function getSvgElement(svg){
+    let  requestedFile = `${_dirname}/../../content/svgs/${svg}.svg`    
+    const content = await fs.readFile(requestedFile,{encoding: 'utf-8'})
+    return content
+
+}
+
+
+async function getUsersByOfficeNames(offices){
+    console.log(offices)
+    return await Promise.all(
+        offices.map(async office => {
+            return JSON.parse( await fs.readFile(`${_dirname}/../../content/offices/${office.name}.json`, 'utf-8') )
+        })
+    )
+}
+
+async function searchQuery(str) {
+  let result;
+  const directoryPath = `${_dirname}/../../content/offices/`;
+  const searchPromise = new Promise(async (resolve, reject) => {
+    let filteredArr = [];
+    const files = await fs.readdir(directoryPath);
+    const promises = files.map(async (file) => {
+      const fileContent = JSON.parse(
+        await fs.readFile(`${directoryPath + file}`)
+      );
+      return fileContent;
+    });
+    const arr = await Promise.all(promises);
+    const flattenedArr = [...arr.flat()];
+    filteredArr = flattenedArr.filter(
+      (user) =>
+        user.user.toLowerCase().includes(str.toLowerCase()) ||
+        user.outlet.toLowerCase().includes(str.toLowerCase())
+    );
+    resolve(filteredArr);
+  });
+
+  result = searchPromise.then(
+    (arr) => {
+      return arr;
+    },
+    (error) => {
+      return error;
+    }
+  );
+  return result;
+}
+
+async function readToFile(office){
+    let  requestedFile = `${_dirname}/../../content/offices/${office}.json`
+    const content = await fs.readFile(requestedFile,{encoding: 'utf-8'})
+    return content
+}
