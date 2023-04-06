@@ -116,6 +116,9 @@ function emitSvgContentInfoToList(){
                 outlet:user.outlet
             })
     })
-    const contentReceivedEvent = new CustomEvent('content-received',{detail:svgContentInfo,bubbles:true})
+    const contentReceivedEvent = new CustomEvent('content-received',{
+        detail:svgContentInfo,
+        bubbles:true
+    })
     host.dispatchEvent(contentReceivedEvent)
 }
