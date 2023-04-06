@@ -50,7 +50,11 @@ export function initOfficeContent(hostElement){
             })
         });
         document.addEventListener('office-filter-changed',()=>host.innerHTML='')
-        document.addEventListener('user-updated',e=> updateRectInfo(e.detail) )
+        document.addEventListener('user-updated',async e=>{
+            await updateRectInfo(e.detail)
+            const updatedOfficeData = await fetch(`/getofficeinformation/?office=${selection}`).then(o=>o.json())
+            matchOfficeDataWithSvg(updatedOfficeData) 
+        })
         document.addEventListener('user-selection-by-list',e=>{
             const userRect = host.querySelector(`rect[data-position="${e.detail}"]`)
             if(selected)selected.classList.remove('selectedRect')
@@ -70,12 +74,18 @@ function matchOfficeDataWithSvg(data){
             if(rect.dataset.position === data[i].position){
                 rect.dataset.user = data[i].user
                 rect.dataset.outlet = data[i].outlet
+                if(data[i].displayName){
+                    rect.setAttribute('type', 'displayName')
+                    rect.setAttribute('type', 'cn')
+                    rect.dataset.displayName = data[i].displayName
+                    rect.dataset.cn = data[i].cn
+                }
             }
         }
     })
 }
 
-function updateRectInfo(updatedData){
+async function updateRectInfo(updatedData){
     host.querySelectorAll('rect[data-position]').forEach(rect=>{
         if(updatedData.position === rect.dataset.position){
             rect.dataset.user = updatedData.user

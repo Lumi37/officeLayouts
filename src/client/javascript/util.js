@@ -35,7 +35,10 @@ function tooltip(position){
   if(position){
     const tooltip = document.createElement('div')
     const rect = document.querySelector(`rect[data-position="${position}"`)
-    tooltip.innerHTML = /*html*/`User:<span>${rect.dataset.user}</span>&nbsp;PO:<span>${rect.dataset.outlet}</span>`
+    if(rect.dataset.displayName)
+      tooltip.innerHTML = /*html*/`User:<span>${rect.dataset.displayName}</span>&nbsp;PO:<span>${rect.dataset.outlet}</span>`
+    else
+      tooltip.innerHTML = /*html*/`User:<span>${rect.dataset.user}</span>&nbsp;PO:<span>${rect.dataset.outlet}</span>`
     tooltip.classList.add('tooltip')
     document.body.appendChild(tooltip)
     const rectBounds = rect.getBoundingClientRect()

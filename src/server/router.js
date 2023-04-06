@@ -1,4 +1,5 @@
 import {Router} from "express";
+import {appendInfoFromIdap} from './idapUsers.js'
 import fs from 'fs/promises'
 import {_dirname} from './server.js'
 export const r = Router()
@@ -34,6 +35,7 @@ r.get('/getsvgelement/',async (req,res)=>{
 r.get('/getofficeinformation/', async (req, res) => {
   const { office } = req.query
   let content =  await readToFile(office)
+    .then(async officeUsers =>await appendInfoFromIdap(officeUsers))
   res.send(content)
 })
 

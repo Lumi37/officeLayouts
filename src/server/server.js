@@ -4,14 +4,15 @@ import express from "express";
 import { r } from "./router.js";
 import fs from 'fs/promises'
 
+
 const server = express();
+
 export const _dirname = new URL('.',import.meta.url).pathname
 server.use(express.static(`${_dirname}/../client/`));
 server.use(express.json());
 server.use(r)
 initIdapUsers(await allStoredUsers())
 server.listen(3000, console.log("listens to 3000"));
-
 
 async function allStoredUsers(){
     const offices = await Promise.all(

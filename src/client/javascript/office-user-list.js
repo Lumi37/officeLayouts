@@ -6,6 +6,7 @@ export function initUserList(hostElement){
     document.addEventListener('office-selection',async e=>{
         const selection = e.detail
         const officeData = await fetch(`/getofficeinformation/?office=${selection}`).then(o=>o.json())
+        console.log(officeData )
         constructList(officeData)
     
         host.querySelectorAll('li').forEach(li=>{
