@@ -15,8 +15,11 @@ export function initOfficeContent(hostElement){
         host.innerHTML = svg
         const svgLoadedEvent = new CustomEvent('svg-loaded',{bubbles:true})
         host.dispatchEvent(svgLoadedEvent)
-        const officeData = await fetch(`/getofficeinformation/?office=${selection}`).then(o=>o.json())
-        matchOfficeDataWithSvg(officeData)
+        await fetch(`/getofficeinformation/?office=${selection}`)
+            .then(async o=> await matchOfficeDataWithSvg(await o.json()))
+            .then(emitSvgContentInfoToList())
+      
+        
         
             
         host.querySelectorAll('rect[data-position]').forEach(rect => {
@@ -33,8 +36,8 @@ export function initOfficeContent(hostElement){
                     }, 
                     bubbles: true })
                 host.dispatchEvent(userSelectionEvent)
-                const userSelectionByRect = new CustomEvent('user-selection-by-rect',{ detail:userData.position, bubbles:true})
-                host.dispatchEvent(userSelectionByRect)
+                const userSelectionByRectEvent = new CustomEvent('user-selection-by-rect',{ detail:userData.position, bubbles:true})
+                host.dispatchEvent(userSelectionByRectEvent)
             })
             rect.addEventListener('mouseover',e=>{
                 const hoveredRect = e.target
@@ -52,8 +55,10 @@ export function initOfficeContent(hostElement){
         document.addEventListener('office-filter-changed',()=>host.innerHTML='')
         document.addEventListener('user-updated',async e=>{
             await updateRectInfo(e.detail)
-            const updatedOfficeData = await fetch(`/getofficeinformation/?office=${selection}`).then(o=>o.json())
-            matchOfficeDataWithSvg(updatedOfficeData) 
+            .then(async()=>await fetch(`/getofficeinformation/?office=${selection}`))
+            .then(async o=> await matchOfficeDataWithSvg(await o.json()))
+            .then(emitSvgContentInfoToList())
+       
         })
         document.addEventListener('user-selection-by-list',e=>{
             const userRect = host.querySelector(`rect[data-position="${e.detail}"]`)
@@ -68,7 +73,7 @@ export function initOfficeContent(hostElement){
 
 //FUNCTIONS 
 
-function matchOfficeDataWithSvg(data){
+async function  matchOfficeDataWithSvg(data){
     host.querySelectorAll('rect[data-position]').forEach(rect=>{
         for(let i=0; i<data.length; i++){
             if(rect.dataset.position === data[i].position){
@@ -92,4 +97,25 @@ async function updateRectInfo(updatedData){
             rect.dataset.outlet = updatedData.outlet
         }
     })
+}
+
+function emitSvgContentInfoToList(){
+    let svgContentInfo = []
+    host.querySelectorAll('rect[data-position]').forEach(rect=>{
+        let user = rect.dataset
+        if(user.displayName)
+            svgContentInfo.push({ 
+                    user:user.user,
+                    outlet:user.outlet,
+                    cn:user.cn,
+                    displayName:user.displayName
+            })
+        else
+            svgContentInfo.push({ 
+                user:user.user,
+                outlet:user.outlet
+            })
+    })
+    const contentReceivedEvent = new CustomEvent('content-received',{detail:svgContentInfo,bubbles:true})
+    host.dispatchEvent(contentReceivedEvent)
 }
