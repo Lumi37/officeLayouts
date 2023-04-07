@@ -1,0 +1,3555 @@
+
+
+[
+    {
+      "sAMAccountName": "Guest",
+      "cn": "Guest",
+      "description": "Built-in account for guest access to the computer/domain",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "Administrator",
+      "cn": "Administrator",
+      "description": "Built-in account for administering the computer/domain",
+      "lastLogon": "133253405416722937",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "IUSR_NTSERVER",
+      "cn": "IUSR_NTSERVER",
+      "displayName": "Internet Guest Account",
+      "description": "Internet Server Anonymous Access",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "IWAM_NTSERVER",
+      "cn": "IWAM_NTSERVER",
+      "displayName": "Web Application Manager account",
+      "description": "Internet Server Web Application Manager identity",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "TsInternetUser",
+      "cn": "TsInternetUser",
+      "displayName": "TsInternetUser",
+      "description": "This user account is used by Terminal Services.",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "IWAM_SERVER",
+      "cn": "IWAM_SERVER",
+      "displayName": "Internet Guest Account",
+      "description": "Built-in account for anonymous access to Internet Information Services out of process applications",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "IUSR_SERVER",
+      "cn": "IUSR_SERVER",
+      "displayName": "Internet Guest Account",
+      "description": "Built-in account for anonymous access to Internet Information Services",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "IWAM_ZEUS",
+      "cn": "IWAM_ZEUS",
+      "displayName": "Launch IIS Process Account",
+      "description": "Built-in account for Internet Information Services to start out of process applications",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "IUSR_ZEUS",
+      "cn": "IUSR_ZEUS",
+      "displayName": "Internet Guest Account",
+      "description": "Built-in account for anonymous access to Internet Information Services",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "IUSR_OURANOS",
+      "cn": "IUSR_OURANOS",
+      "displayName": "Internet Guest Account",
+      "description": "Built-in account for anonymous access to Internet Information Services",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "backexec",
+      "cn": "Backup Exec",
+      "displayName": "Backup Exec",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "DefaultAccount",
+      "cn": "DefaultAccount",
+      "description": "A user account managed by the system.",
+      "userAccountControl": "514",
+      "active": false
+    },
+    {
+      "sAMAccountName": "krbtgt",
+      "cn": "krbtgt",
+      "description": "Key Distribution Center Service Account",
+      "userAccountControl": "514",
+      "active": false
+    },
+    {
+      "sAMAccountName": "SQLAgentCmdExec",
+      "cn": "SQLAgentCmdExec",
+      "displayName": "SQLAgentCmdExec",
+      "description": "SQL Server Agent CmdExec Job Step Account",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "aspuser",
+      "cn": "aspuser",
+      "displayName": "aspuser",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "SQLDebugger",
+      "cn": "SQLDebugger",
+      "displayName": "SQLDebugger",
+      "description": "This user account is used by the Visual Studio .NET Debugger",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "IME_USER",
+      "cn": "IME_USER",
+      "displayName": "IME_USER",
+      "description": "MailEnable IIS Service Account",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "IME_ADMIN",
+      "cn": "IME_ADMIN",
+      "displayName": "IME_ADMIN",
+      "description": "MailEnable Component Services Account",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "kyatz",
+      "cn": "Yatzoglou Kosmas",
+      "displayName": "Γιαγτζόγλου Κοσμάς",
+      "description": "Γιαγτζόγλου Κοσμάς",
+      "mail": "kyatz@eoppep.gr",
+      "telephoneNumber": "9027",
+      "info": "UserID=489\r\nEvaluatorID=19",
+      "lastLogon": "133253268158280160",
+      "physicalDeliveryOfficeName": "I40",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "cdesini",
+      "cn": "Desiniotis Christos",
+      "displayName": "Δεσινιώτης Χρήστος",
+      "description": "Δεσινιώτης Χρήστος",
+      "info": "UserID=909\r\nEvaluatorID=3523",
+      "lastLogon": "132170799118657657",
+      "physicalDeliveryOfficeName": "Α34",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "v.karras",
+      "cn": "Karras Vassilis",
+      "displayName": "Καρράς Βασίλης",
+      "description": "Καρράς Βασίλης",
+      "mail": "karras@eoppep.gr",
+      "telephoneNumber": "9025",
+      "info": "UserID=1369\r\nEvaluatorID=4905",
+      "lastLogon": "133253407209234616",
+      "physicalDeliveryOfficeName": "Α34",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "mike",
+      "cn": "Galakos Mike",
+      "displayName": "Γαλάκος Μιχαήλ",
+      "description": "Γαλάκος Μιχαήλ",
+      "mail": "mgalakos@eoppep.gr",
+      "telephoneNumber": "9023",
+      "info": "UserID=490\r\nEvaluatorID=18",
+      "lastLogon": "133252686182208577",
+      "physicalDeliveryOfficeName": "Α34",
+      "userAccountControl": "590336",
+      "active": false
+    },
+    {
+      "sAMAccountName": "ASPNET",
+      "cn": "ASPNET",
+      "userAccountControl": "512",
+      "active": true
+    },
+    {
+      "sAMAccountName": "dsochos",
+      "cn": "Σώχος",
+      "displayName": "Σώχος",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "IWAM_OURANOS",
+      "cn": "IWAM_OURANOS",
+      "displayName": "Launch IIS Process Account",
+      "description": "Built-in account for Internet Information Services to start out of process applications",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "gtsami",
+      "cn": "Γλυκερία Τσάμη",
+      "displayName": "Γλυκερία Τσάμη",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "mifanti",
+      "cn": "Μαρία Υφαντή",
+      "displayName": "Μαρία Υφαντή",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "xkotridi",
+      "cn": "Χρυσούλα Κοτρίδη",
+      "displayName": "Χρυσούλα Κοτρίδη",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "nanika",
+      "cn": "Θανα Νανικα",
+      "displayName": "Θανα Νανικα",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "epsihogiou",
+      "cn": "Ευαγγελία Ψυχογιού",
+      "displayName": "Ευαγγελία Ψυχογιού",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "gfilis",
+      "cn": "Γιαννης Φιλης",
+      "displayName": "Γιαννης Φιλης",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "lkaragian",
+      "cn": "Λένα Καραγιάννη",
+      "displayName": "Λένα Καραγιάννη",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "gmihailos",
+      "cn": "Γιάννης Μιχαήλος",
+      "displayName": "Γιάννης Μιχαήλος",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "ituser",
+      "cn": "ituser",
+      "displayName": "ituser",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "karatsikou",
+      "cn": "Vana Karatsikou",
+      "displayName": "Vana Karatsikou",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "amanika",
+      "cn": "Αθανασία Μανίκα",
+      "displayName": "Αθανασία Μανίκα",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "pavli",
+      "cn": "Χρυσούλα Παυλή",
+      "displayName": "Χρυσούλα Παυλή",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "nbourna",
+      "cn": "Νικος Μπουρνακης",
+      "displayName": "Νικος Μπουρνακης",
+      "description": "Stage",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "kstaga",
+      "cn": "Κατερίνα Στάγκα",
+      "displayName": "Κατερινα Σταγκα",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "gpap",
+      "cn": "Παπαδόπουλος",
+      "displayName": "Παπαδόπουλος",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "dsi",
+      "cn": "dsi",
+      "displayName": "dsi",
+      "userAccountControl": "514",
+      "active": false
+    },
+    {
+      "sAMAccountName": "gtseregof",
+      "cn": "Gregory Tseregof",
+      "displayName": "Τσερεγκώφ Γρηγόρης",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "edrosos",
+      "cn": "Ευθύμιος Δρόσος",
+      "displayName": "Δρόσος Ευθύμιος",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "mgeor",
+      "cn": "Γεοργιακώδης",
+      "displayName": "Γεοργιακώδης",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "genikos",
+      "cn": "Γενικός",
+      "displayName": "Γενικός",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "galanos",
+      "cn": "Γαλανός",
+      "displayName": "Γαλανός",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "Vamvakerou",
+      "cn": "Βαμβακερού",
+      "displayName": "Βαμβακερού",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "anyfanta1",
+      "cn": "Ανυφαντάκηpalio",
+      "displayName": "Ανυφαντάκη",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "vpn",
+      "cn": "VPN USER",
+      "displayName": "VPN USER",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "voiceweb",
+      "cn": "voiceweb",
+      "displayName": "voiceweb",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "fotinakis",
+      "cn": "V Fotinakis",
+      "displayName": "Φωτεινάκης Βαγγέλης",
+      "userAccountControl": "514",
+      "active": false
+    },
+    {
+      "sAMAccountName": "hatzis",
+      "cn": "Χατζής",
+      "displayName": "Χατζής",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "hliapi",
+      "cn": "Χαρά Λιάπη",
+      "displayName": "Χαρά Λιάπη",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "fdasaki",
+      "cn": "Φωτεινή Ντασάκη",
+      "displayName": "Ντασάκη Φωτεινή",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "rizas",
+      "cn": "Ριζάς",
+      "displayName": "Ριζάς",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "proedros",
+      "cn": "Πρόεδρος",
+      "displayName": "Πρόεδρος",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "maria",
+      "cn": "Παρασκευοπούλου",
+      "displayName": "Παρασκευοπούλου",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "Papadimitriou",
+      "cn": "Παπαδημητρίου",
+      "displayName": "Παπαδημητρίου",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "nizami",
+      "cn": "Νιζάμη",
+      "displayName": "Νιζάμη",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "hliap",
+      "cn": "Λιάπη",
+      "displayName": "Λιάπη",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "zlanara",
+      "cn": "Λαναρά",
+      "displayName": "Λαναρά",
+      "userAccountControl": "514",
+      "active": false
+    },
+    {
+      "sAMAccountName": "kokore",
+      "cn": "Κοκορέ",
+      "displayName": "Κοκορέ",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "klasogianni",
+      "cn": "Κλασογιάννη",
+      "displayName": "Κλασογιάννη",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "katsavaki",
+      "cn": "Κατσαβάκη",
+      "displayName": "Κατσαβάκη",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "theodorakis",
+      "cn": "Θεοδωράκης",
+      "displayName": "Θεοδωράκης",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "azairis",
+      "cn": "Ζαΐρης",
+      "displayName": "Ζαΐρης",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "aef",
+      "cn": "Ευστράτογλου",
+      "displayName": "Ευστράτογλου",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "mioteri",
+      "cn": "Despoina Mioteri",
+      "displayName": "Despoina Mioteri",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "douma",
+      "cn": "Χαρικλεια Δουμα",
+      "displayName": "Δουμα Χαρικλεια",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "vorgias",
+      "cn": "Vorgias Dimitris",
+      "displayName": "Βοργιάς Δημήτρης",
+      "description": "Βοργιάς Δημήτρης",
+      "lastLogon": "133106388337305761",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "mprabou",
+      "cn": "Mpravou Katerina",
+      "displayName": "Μπράβου Αικατερίνη",
+      "description": "Μπράβου Αικατερίνη",
+      "mail": "kbravou@eoppep.gr",
+      "telephoneNumber": "9045",
+      "info": "UserID=494\r\nEvaluatorID=3521",
+      "lastLogon": "132409461125146625",
+      "physicalDeliveryOfficeName": "I40",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "qnr",
+      "cn": "QNR",
+      "displayName": "QNR",
+      "lastLogon": "131824069207634262",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "k.theodorou",
+      "cn": "Theodorou Katerina",
+      "displayName": "Theodorou Katerina",
+      "info": "UserID=1321",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "d.dafna",
+      "cn": "Dafna Dionisia",
+      "displayName": "Dafna Dionisia",
+      "info": "UserID=1303",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "i.mitsakou",
+      "cn": "Mitsakou Irini",
+      "displayName": "Μητσάκου Ειρήνη",
+      "description": "Μητσάκου Ειρήνη",
+      "mail": "emitsakou@eoppep.gr",
+      "telephoneNumber": "9189",
+      "info": "UserID=1296",
+      "lastLogon": "133249812469425696",
+      "physicalDeliveryOfficeName": "Ι35",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "domes",
+      "cn": "domes",
+      "displayName": "domes",
+      "description": "Αξιολογητές Δομές",
+      "telephoneNumber": "9192",
+      "lastLogon": "133252673063902208",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "a.gioldasi",
+      "cn": "Gioldasi",
+      "displayName": "Γιολδάση A",
+      "description": "Γιολδάση A",
+      "userAccountControl": "514",
+      "active": false
+    },
+    {
+      "sAMAccountName": "k.mantzarlis",
+      "cn": "Mantzarlis Konstantinos",
+      "displayName": "Μαντζαρλής  Κωνσταντίνος",
+      "description": "Μαντζαρλής  Κωνσταντίνος",
+      "userAccountControl": "514",
+      "active": false
+    },
+    {
+      "sAMAccountName": "elgpn",
+      "cn": "elgpn",
+      "displayName": "elgpn",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "glaros",
+      "cn": "Glaros Antonis",
+      "displayName": "Γλάρος Αντώνης",
+      "description": "Γλάρος Αντώνης",
+      "mail": "aglaros@eoppep.gr",
+      "telephoneNumber": "9100",
+      "info": "UserID=950\r\nEvaluatorID=3701",
+      "lastLogon": "133246568734506035",
+      "physicalDeliveryOfficeName": "Β59",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "f.vlachaki",
+      "cn": "Vlachaki Fotini",
+      "displayName": "Βλαχάκη Φωτεινή",
+      "description": "Βλαχάκη Φωτεινή",
+      "mail": "fotinivlachaki@eoppep.gr",
+      "telephoneNumber": "9172",
+      "info": "UserID=1290",
+      "lastLogon": "132229959639724401",
+      "physicalDeliveryOfficeName": "Ι34",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "m.giatrakos",
+      "cn": "Giatrakos Michalis",
+      "displayName": "Γιατράκος Μιχάλης",
+      "description": "Γιατράκος Μιχάλης",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "k.liakos",
+      "cn": "Liakos Kiriakos",
+      "displayName": "Λιάκος Κυριάκος",
+      "description": "Λιάκος Κυριάκος",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "idelimaris",
+      "cn": "Delimaris Ioannis",
+      "displayName": "Δελημάρης Ιωάννης",
+      "description": "Δελημαρης Ιωάννης",
+      "mail": "idelimaris@eoppep.gr",
+      "telephoneNumber": "9103",
+      "info": "UserID=1069",
+      "physicalDeliveryOfficeName": "Β67",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "r.sgouraki",
+      "cn": "Sgouraki Rothanthi",
+      "displayName": "Σγουράκη Ροδάνθη",
+      "description": "Σγουράκη Ροδάνθη",
+      "mail": "reasgouraki@eoppep.gr",
+      "telephoneNumber": "9106",
+      "info": "UserID=1231",
+      "physicalDeliveryOfficeName": "Β42",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "k.brachou",
+      "cn": "Brachou Konstantina",
+      "displayName": "Μπράχου Κωνσταντίνα",
+      "description": "Μπράχου Κωνσταντίνα",
+      "mail": "k.brachou@eoppep.gr",
+      "telephoneNumber": "9005",
+      "info": "UserID=1332",
+      "lastLogon": "133252607485257910",
+      "physicalDeliveryOfficeName": "Β60",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "a.dandoulakis",
+      "cn": "Dandoulakis Andreas",
+      "displayName": "Δανδουλάκης Ανδρέας",
+      "description": "Δανδουλάκης Ανδρέας",
+      "mail": "a.dandoulakis@eoppep.gr",
+      "telephoneNumber": "9128",
+      "physicalDeliveryOfficeName": "Ισόγειο",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "b.vlachou",
+      "cn": "Vlachou Betty",
+      "displayName": "Βλάχου Μπέττυ",
+      "description": "Βλάχου Μπέττυ",
+      "mail": "b.vlachou@eoppep.gr",
+      "telephoneNumber": "9021",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "i.voutsinas",
+      "cn": "Voutsinas Ioannis",
+      "displayName": "Βουτσινάς Ιωάννης",
+      "description": "Βουτσινάς Ιωάννης",
+      "mail": "i.voutsinas@eoppep.gr",
+      "telephoneNumber": "9030",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "gtypas",
+      "cn": "Typas Georgios",
+      "displayName": "Τύπας Γεώργιος",
+      "description": "Τύπας Γεώργιος",
+      "mail": "proedros@eoppep.gr",
+      "telephoneNumber": "9032",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "v.dagdidelis",
+      "cn": "Dagdidelis Vassilis",
+      "displayName": "Δαγδιλέλης Βασίλειος",
+      "description": "Δαγδιλέλης Βασίλειος",
+      "mail": "proedros@eoppep.gr",
+      "telephoneNumber": "9030",
+      "lastLogon": "132112992504687208",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "filippop",
+      "cn": "Filipopoulou Pavlina",
+      "displayName": "Φιλιπποπούλου Παυλίνα",
+      "description": "Φιλιπποπούλου Παυλίνα",
+      "mail": "philip@eoppep.gr",
+      "telephoneNumber": "9013",
+      "info": "UserID=110",
+      "physicalDeliveryOfficeName": "Β07",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "anagnostopoulos",
+      "cn": "Anagnostopoulos Ioannis",
+      "displayName": "Αναγνωστόπουλος Ιωάννης",
+      "description": "Αναγνωστόπουλος Ιωάννης",
+      "mail": "i.anagnostopoulos@eoppep.gr",
+      "info": "UserID=912\r\nEvaluatorID=3621",
+      "physicalDeliveryOfficeName": "Β06",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "dede",
+      "cn": "Dede Ioanna",
+      "displayName": "Δέδε Ιωάννα",
+      "description": "Δέδε Ιωάννα",
+      "mail": "dede@eoppep.gr",
+      "telephoneNumber": "9054",
+      "info": "UserID=2\r\nEvaluatorID=996",
+      "lastLogon": "132198454238073267",
+      "physicalDeliveryOfficeName": "Β21",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "a.tatsiopoulou",
+      "cn": "Tatiopoulou Anna",
+      "displayName": "Τατσιοπούλου Άννα",
+      "description": "Τατσιοπούλου Άννα",
+      "userAccountControl": "514",
+      "active": false
+    },
+    {
+      "sAMAccountName": "athanassouli",
+      "cn": "Athanasouli Aggeliki",
+      "displayName": "Αθανασούλη Αγγελική",
+      "description": "Αθανασούλη Αγγελική",
+      "mail": "agatha@eoppep.gr",
+      "telephoneNumber": "9106",
+      "info": "UserID=311\r\nEvaluatorID=527",
+      "lastLogon": "133252630988134597",
+      "physicalDeliveryOfficeName": "Β21",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "panaleli",
+      "cn": "Panos Leliopoulos",
+      "displayName": "Λελιόπουλος Παναγιώτης",
+      "description": "Λελιόπουλος Παναγιώτης",
+      "mail": "pana.leli@eoppep.gr",
+      "physicalDeliveryOfficeName": "A34",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "dranidou",
+      "cn": "Dranidou Sofia",
+      "displayName": "Δρανίδου Σοφία",
+      "description": "Δρανίδου Σοφία",
+      "mail": "sdranidou@eoppep.gr",
+      "telephoneNumber": "9073",
+      "info": "UserID=889",
+      "physicalDeliveryOfficeName": "Β65",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "kataxoritis",
+      "cn": "kataxoritis",
+      "displayName": "kataxoritis",
+      "description": "Καταχωρητής Φακέλων Δομές",
+      "telephoneNumber": "9192, 9198",
+      "lastLogon": "132949232120403521",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "basilain",
+      "cn": "Vasilainas Thanasis",
+      "displayName": "Βασίλαινας Αθανάσιος",
+      "description": "Βασίλαινας Αθανάσιος",
+      "mail": "tvassilenas@eoppep.gr",
+      "info": "UserID=229\r\nEvaluatorID=1016",
+      "lastLogon": "0",
+      "physicalDeliveryOfficeName": "Β09",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "grammi",
+      "cn": "Anoikti Grammi",
+      "displayName": "Ανοιχτή Γραμμή",
+      "description": "Ανοιχτή Γραμμή",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "p.giemitzis",
+      "cn": "Giemitzis Panagiotis",
+      "displayName": "Giemitzis Panagiotis",
+      "userAccountControl": "514",
+      "active": false
+    },
+    {
+      "sAMAccountName": "r.dalachani",
+      "cn": "Ntalachani Roi",
+      "displayName": "Ntalachani Roi",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "e.tsitsou",
+      "cn": "Tsitsou Elisavet",
+      "displayName": "Tsitsou Elisavet",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "s.giatroudakis",
+      "cn": "Giatroudakis Stilianos",
+      "displayName": "Γιατρουδάκης Στυλιανός",
+      "description": "Γιατρουδάκης Στυλιανός",
+      "mail": "s.giatroudakis@eoppep.gr",
+      "telephoneNumber": "9193",
+      "info": "UserID=1324",
+      "physicalDeliveryOfficeName": "Βιβλιοθήκη",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "ppapaioa",
+      "cn": "Papaioannou Paraskevi",
+      "displayName": "Παπαιωάννου Παρασκευή",
+      "description": "Παπαιωάννου Παρασκευή",
+      "mail": "ppapai@eoppep.gr",
+      "telephoneNumber": "9057",
+      "info": "UserID=90\r\nEvaluatorID=1008",
+      "lastLogon": "133253391906086677",
+      "physicalDeliveryOfficeName": "Β11",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "glabopou",
+      "cn": "Glavopoulos Vaggelis",
+      "displayName": "Γκλαβόπουλος Ευάγγελος",
+      "description": "Γκλαβόπουλος Ευάγγελος",
+      "mail": "bglav@eoppep.gr",
+      "telephoneNumber": "9163",
+      "info": "UserID=4",
+      "physicalDeliveryOfficeName": "Β65",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "m.fiolitaki",
+      "cn": "Fiolitaki Maria",
+      "displayName": "Φιολιτάκη Μαρία",
+      "description": "Φιολιτάκη Μαρία",
+      "mail": "m.fiolitaki@eoppep.gr",
+      "telephoneNumber": "9044",
+      "info": "UserID=1339",
+      "physicalDeliveryOfficeName": "Β12",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "g.anagnostou",
+      "cn": "Anagnostou Georgios",
+      "displayName": "Αναγνώστου Γεώργιος",
+      "description": "Αναγνώστου Γεώργιος",
+      "mail": "g.anagnostou@eoppep.gr",
+      "telephoneNumber": "9041",
+      "info": "UserID=1529",
+      "physicalDeliveryOfficeName": "Β12",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "a.adamopoulou",
+      "cn": "Adamopoulou Agapi",
+      "displayName": "Αδαμοπούλου Αγάπη",
+      "description": "Αδαμοπούλου Αγάπη",
+      "mail": "adamopoulou@eoppep.gr",
+      "info": "UserID=1235",
+      "lastLogon": "0",
+      "physicalDeliveryOfficeName": "Ι38",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "a.vlachou",
+      "cn": "Vlachou Athanasia",
+      "displayName": "Vlachou Athanasia",
+      "info": "UserID=1292",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "i.skarlatidis",
+      "cn": "Skarlatidis Ilias",
+      "displayName": "Skarlatidis Ilias",
+      "info": "UserID=1293",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "c.samouchou",
+      "cn": "Samouchou Chariklia",
+      "displayName": "Samouchou Chariklia",
+      "info": "UserID=1318",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "v.sakellaropoulou",
+      "cn": "Sakellaropoulou Varvara",
+      "displayName": "Sakellaropoulou Varvara",
+      "info": "UserID=1299",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "a.raftopoulos",
+      "cn": "Raftopoulos Athanasios",
+      "displayName": "Athanasios Raftopoulos",
+      "info": "UserID=1328",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "panospap",
+      "cn": "Papathanasiou Panagiotis",
+      "displayName": "Panagiotis Papathanasiou",
+      "info": "UserID=1329",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "e.papadopoulou",
+      "cn": "Papadopoulou Eleni",
+      "displayName": "Papadopoulou Eleni",
+      "info": "UserID=1325",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "s.papadoliopoulou",
+      "cn": "Papadoliopoulou Stamatia",
+      "displayName": "Papadoliopoulou Stamatia",
+      "info": "UserID=1313",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "n.panagiotidis",
+      "cn": "Panagiotidis Nikolaos",
+      "displayName": "Panagiotidis Nikolaos",
+      "info": "UserID=1305",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "a.moschovis",
+      "cn": "Moschovis Andreas",
+      "displayName": "Moschovis Andreas",
+      "info": "UserID=1371",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "i.mastrokosta",
+      "cn": "Mastrokosta Ioanna",
+      "displayName": "Mastrokosta Ioanna",
+      "info": "UserID=1291",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "i.loukopoulos",
+      "cn": "Loukopoulos Ioannis",
+      "displayName": "Loukopoulos Ioannis",
+      "info": "UserID=1310",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "k.karaproimou",
+      "cn": "Karaproimou Kiriaki",
+      "displayName": "Karaproimou Kiriaki",
+      "info": "UserID=1297",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "v.irakleous",
+      "cn": "Irakleous Victoria",
+      "displayName": "Irakleous Victoria",
+      "info": "UserID=1320",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "g.chronopoulos",
+      "cn": "Chronopoulos Georgios",
+      "displayName": "Chronopoulos Georgios",
+      "info": "UserID=1311",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "k.boukorou",
+      "cn": "Boukorou Katerina",
+      "displayName": "Boukorou Katerina",
+      "info": "UserID=1330",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "s.amourgianos",
+      "cn": "Amourgianos Stefanos",
+      "displayName": "Amourgianos Stefanos",
+      "info": "UserID=1308",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "d.amorginou",
+      "cn": "Amorginou Dionisia",
+      "displayName": "Amorginou Dionisia",
+      "info": "UserID=1316",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "a.panagiotakis",
+      "cn": "Panagiotakis Alexandros",
+      "displayName": "Παναγιωτάκης Αλέξανδρος",
+      "description": "Παναγιωτάκης Αλέξανδρος",
+      "mail": "a.panagiotakis@eoppep.gr",
+      "telephoneNumber": "9123",
+      "info": "UserID=1334",
+      "physicalDeliveryOfficeName": "Β25",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "g.karagiannis",
+      "cn": "Karagiannis Georgios",
+      "displayName": "Καραγιάννης Γεώργιος",
+      "description": "Καραγιάννης Γεώργιος",
+      "mail": "g.karagiannis@eoppep.gr",
+      "telephoneNumber": "9122",
+      "info": "UserID=1307",
+      "physicalDeliveryOfficeName": "Β25",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "a.anifanti",
+      "cn": "Anifanti Antonia",
+      "displayName": "Ανυφαντή Αντωνία",
+      "description": "Ανυφαντή Αντωνία",
+      "mail": "a.anifanti@eoppep.gr",
+      "telephoneNumber": "9059",
+      "info": "UserID=1312",
+      "physicalDeliveryOfficeName": "Β11",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "a.anagnostopoulou",
+      "cn": "Anagnostopoulou Athanasia",
+      "displayName": "Αναγνωστοπούλου Αθανασία",
+      "description": "Αναγνωστοπούλου Αθανασία",
+      "mail": "a.anagnostopoulou@eoppep.gr",
+      "telephoneNumber": "9146",
+      "info": "UserID=1300",
+      "physicalDeliveryOfficeName": "Ι32",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "v.garozi",
+      "cn": "Garozi Vasiliki",
+      "displayName": "Γαρόζη Βασιλική",
+      "description": "Γαρόζη Βασιλική",
+      "mail": "v.garozi@eoppep.gr",
+      "telephoneNumber": "9120",
+      "info": "UserID=1341",
+      "physicalDeliveryOfficeName": "Β50",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "m.kampouri",
+      "cn": "Kampouri Maria",
+      "displayName": "Καμπούρη Μαρία",
+      "description": "Καμπούρη Μαρία",
+      "mail": "m.kambouri@eoppep.gr",
+      "telephoneNumber": "9084",
+      "info": "UserID=1317",
+      "physicalDeliveryOfficeName": "Β22",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "t.propatoridis",
+      "cn": "Propatoridis Theodoros",
+      "displayName": "Προπατορίδης Θεόδωρος",
+      "description": "Προπατορίδης Θεόδωρος",
+      "mail": "t.propatoridis@eoppep.gr",
+      "info": "UserID=1302",
+      "physicalDeliveryOfficeName": "Ι40",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "o.konstantopoulou",
+      "cn": "Konstantopoulou Olga",
+      "displayName": "Κωνσταντοπούλου Όλγα",
+      "description": "Κωνσταντοπούλου Όλγα",
+      "info": "UserID=1338",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "e.martoudi",
+      "cn": "Martoudi Eleftheria",
+      "displayName": "Μαρτούδη Ελευθερία",
+      "description": "Μαρτούδη Ελευθερία",
+      "info": "UserID=1298",
+      "physicalDeliveryOfficeName": "Ι32",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "ixnestor",
+      "cn": "Nestor Ioannidis",
+      "displayName": "Ιωαννίδης Νέστορας",
+      "description": "Ιωαννίδης Νέστορας",
+      "mail": "ixnestor@gmail.com",
+      "userAccountControl": "514",
+      "active": false
+    },
+    {
+      "sAMAccountName": "fois",
+      "cn": "Fois Christos",
+      "displayName": "Φόης Χρήστος",
+      "description": "Φόης Χρήστος",
+      "mail": "x.fois@eoppep.gr",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "gdimitrakopoulos",
+      "cn": "Dimitrakopoulos Giorgos",
+      "displayName": "Δημητρακόπουλος Γεώργιος",
+      "description": "Δημητρακόπουλος Γεώργιος",
+      "mail": "gdimitrako@eoppep.gr",
+      "telephoneNumber": "9069",
+      "physicalDeliveryOfficeName": "Β64",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "d.saroglou",
+      "cn": "Dimitris Saroglou",
+      "displayName": "Σαρόγλου Δημήτρης",
+      "description": "Σαρόγλου Δημήτρης",
+      "telephoneNumber": "9073",
+      "userAccountControl": "514",
+      "active": false
+    },
+    {
+      "sAMAccountName": "g.karvounis",
+      "cn": "Καρβούνης Γιώργος",
+      "displayName": "Καρβούνης Γιώργος",
+      "description": "Καρβούνης Γιώργος",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "examsit",
+      "cn": "Exams IT",
+      "displayName": "Exams IT",
+      "description": "Χρήστης Τμήματος Φορέων Πληροφορικής",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "k.ithakisios",
+      "cn": "Ithakisios Konstantinos",
+      "displayName": "Ιθακήσιος Κωνσταντίνος",
+      "description": "Ιθακήσιος Κωνσταντίνος",
+      "mail": "k.ithakisios@eoppep.gr",
+      "telephoneNumber": "9011",
+      "info": "UserID=1429",
+      "lastLogon": "133253322731169142",
+      "physicalDeliveryOfficeName": "Β63",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "loritis",
+      "cn": "Loritis Giorgos",
+      "displayName": "Λωρίτης Γεώργιος",
+      "description": "Λωρίτης Γεώργιος",
+      "mail": "gloritis@eoppep.gr",
+      "telephoneNumber": "9068",
+      "info": "UserID=1213",
+      "lastLogon": "132247739892676686",
+      "physicalDeliveryOfficeName": "Β64",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "papasaranti",
+      "cn": "Papasaranti Matina",
+      "displayName": "Παπασαράντη Ματίνα",
+      "description": "Παπασαράντη Ματίνα",
+      "mail": "mpapasara@eoppep.gr",
+      "telephoneNumber": "9065",
+      "info": "UserID=729",
+      "lastLogon": "133252462953233355",
+      "physicalDeliveryOfficeName": "Β62",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "p.lioupi",
+      "cn": "Lioupi Pelagia",
+      "displayName": "Λιούπη Πελαγία",
+      "description": "Λιούπη Πελαγία",
+      "mail": "lioupi.p.g@gmail.com",
+      "telephoneNumber": "9066",
+      "info": "UserID=1430",
+      "lastLogon": "132173370382585350",
+      "physicalDeliveryOfficeName": "Β63",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "f.mpaferou",
+      "cn": "Mpaferou Fotini",
+      "displayName": "Μπαφέρου Φωτεινή",
+      "description": "Μπαφέρου Φωτεινή",
+      "mail": "fbaferou@eoppep.gr",
+      "telephoneNumber": "9067",
+      "info": "UserID=1449",
+      "lastLogon": "132204507312816899",
+      "physicalDeliveryOfficeName": "Β62",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "v.zakkas",
+      "cn": "Zakkas Chrysovalantis",
+      "displayName": "Zakkas Chrysovalantis",
+      "description": "Ζάκκας Χρυσοβαλάντης",
+      "mail": "v.zakkas@eoppep.gr",
+      "telephoneNumber": "9069",
+      "lastLogon": "133252491570588452",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "i.zaloumi",
+      "cn": "Zaloumi Irini",
+      "displayName": "Ζαλούμη Ειρήνη",
+      "description": "Ζαλούμη Ειρήνη",
+      "mail": "ezaloumi@eoppep.gr",
+      "telephoneNumber": "9093",
+      "info": "UserID=1233",
+      "lastLogon": "132301393161830785",
+      "physicalDeliveryOfficeName": "Ι33",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "ds",
+      "cn": "ds",
+      "displayName": "ds",
+      "lastLogon": "133119537419055535",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "theoskarmou",
+      "cn": "Theodoros Skarmoutsos",
+      "displayName": "Σκαρμούτσος Θεόδωρος",
+      "description": "Σκαρμούτσος Θεόδωρος",
+      "mail": "theoskarmou@eoppep.gr",
+      "telephoneNumber": "9005",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "m.mourtziapi",
+      "cn": "Mourtziapi Melina",
+      "displayName": "Μουρτζιάπη Μελίνα",
+      "description": "Μουρτζιάπη Μελίνα",
+      "mail": "melmourtziapi@eoppep.gr",
+      "telephoneNumber": "9175",
+      "physicalDeliveryOfficeName": "Ι34",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "v.iosifidou",
+      "cn": "Iosifidou Vasia",
+      "displayName": "Ιωσηφίδου Βάσια",
+      "description": "Ιωσηφίδου Βάσια",
+      "mail": "viosifidou@gmail.com",
+      "physicalDeliveryOfficeName": "Ι34",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "v.bartsoka",
+      "cn": "Veatriki Bartsoka",
+      "displayName": "Μπαρτσώκα Βεατρίκη",
+      "description": "Μπαρτσώκα Βεατρίκη",
+      "mail": "bartsoka@eoppep.gr",
+      "userAccountControl": "514",
+      "active": false
+    },
+    {
+      "sAMAccountName": "realgame",
+      "cn": "Real Game",
+      "displayName": "Real Game",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "a.antoniadou",
+      "cn": "Athina Antoniadou",
+      "displayName": "Αντωνιάδου Αθηνά",
+      "description": "Αντωνιάδου Αθηνά",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "dmanoura",
+      "cn": "Dimitra Manoura",
+      "displayName": "Μανούρα Δήμητρα",
+      "description": "Μανούρα Δήμητρα",
+      "mail": "dmanoura@eoppep.gr",
+      "telephoneNumber": "9017",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "d.maragos",
+      "cn": "Dimitris Maragkos",
+      "displayName": "Μαραγκός Δημήτρης",
+      "description": "Μαραγκός Δημήτρης",
+      "physicalDeliveryOfficeName": "B12",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "d.voloudakis",
+      "cn": "Dimitris Voloudakis",
+      "displayName": "Βολουδάκης Δημήτρης",
+      "description": "Βολουδάκης Δημήτρης",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "e.skamaki",
+      "cn": "Eudokia Skamaki",
+      "displayName": "Σκαμάκη Ευδοκία",
+      "description": "Σκαμάκη Ευδοκία",
+      "telephoneNumber": "9084",
+      "physicalDeliveryOfficeName": "Τμ. Λογιστηρίου",
+      "userAccountControl": "514",
+      "active": false
+    },
+    {
+      "sAMAccountName": "politis",
+      "cn": "Haris Politis",
+      "displayName": "Πολίτης Χάρης",
+      "description": "Πολίτης Χάρης",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "fotopoulou",
+      "cn": "Ioanna Fotopoulou",
+      "displayName": "Φωτοπούλου Ιωάννα",
+      "description": "Φωτοπούλου Ιωάννα",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "a.kaliris",
+      "cn": "Kaliris Andronikos",
+      "displayName": "Καλλίρης Ανδρόνικος",
+      "description": "Καλλίρης Ανδρόνικος",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "k.chavarani",
+      "cn": "Kalliopi Chavarani",
+      "displayName": "Χαβαράνη Καλλιόπη",
+      "description": "Χαβαράνη Καλλιόπη",
+      "telephoneNumber": "9073",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "s.karagkounis",
+      "cn": "Karagkounis Stavros",
+      "displayName": "Καραγκούνης Σταύρος",
+      "description": "Καραγκούνης Σταύρος",
+      "mail": "ceo@eoppep.gr",
+      "telephoneNumber": "9032",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "t.kartsiotis",
+      "cn": "Theodoros Kartsiotis",
+      "displayName": "Καρτσιώτης Θεόδωρος",
+      "description": "Καρτσιώτης Θεόδωρος",
+      "mail": "tkartsiotis@gmail.com",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "n.tsakiri",
+      "cn": "Niki Tsakiri",
+      "displayName": "Τσακίρη Νίκη",
+      "description": "Τσακίρη Νίκη",
+      "userAccountControl": "514",
+      "active": false
+    },
+    {
+      "sAMAccountName": "m.theofili",
+      "cn": "Θεοφίλη Μαρία",
+      "displayName": "Θεοφίλη Μαρία",
+      "description": "Θεοφίλη Μαρία",
+      "mail": "mtheofili@eoppep.gr",
+      "telephoneNumber": "9117",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "athanasiou",
+      "cn": "Athanasiou Katerina",
+      "displayName": "Αθανασιου Αικατερίνη",
+      "description": "Αθανασιου Αικατερίνη",
+      "info": "UserID=910",
+      "lastLogon": "132112634811285822",
+      "physicalDeliveryOfficeName": "Β42",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "o.chalkiadaki",
+      "cn": "Chalkiadaki Olimpia",
+      "displayName": "Χαλκιαδάκη Ολυμπία",
+      "description": "Χαλκιαδάκη Ολυμπία",
+      "mail": "olympia@eoppep.gr",
+      "info": "UserID=1354",
+      "physicalDeliveryOfficeName": "Β22",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "priovolos",
+      "cn": "Πριόβολος",
+      "displayName": "Πριόβολος",
+      "info": "UserID=649",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "zafeirop",
+      "cn": "Zafiropoulos Dimitris",
+      "displayName": "Ζαφειρόπουλος Δημήτρης",
+      "info": "UserID=491",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "zompolas",
+      "cn": "Ζόμπολας",
+      "displayName": "Ζόμπολας",
+      "info": "UserID=529",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "papadiam",
+      "cn": "Παπαδιαμάντη",
+      "displayName": "Παπαδιαμάντη",
+      "info": "UserID=129",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "Brousta",
+      "cn": "Μπρούστα",
+      "displayName": "Μπρούστα",
+      "info": "UserID=92",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "diamanti",
+      "cn": "Διαμάντη",
+      "displayName": "Διαμάντη",
+      "info": "UserID=530",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "xaibani",
+      "cn": "Χαιβάνη",
+      "displayName": "Χαιβάνη",
+      "info": "UserID=537",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "c.cristoforou",
+      "cn": "Christoforou Christos",
+      "displayName": "Χριστοφόρου Χρίστος",
+      "description": "Χριστοφόρου Χρίστος",
+      "mail": "christosxx@eoppep.gr",
+      "telephoneNumber": "9156",
+      "info": "UserID=1294",
+      "physicalDeliveryOfficeName": "Β42",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "d.paraschi",
+      "cn": "Paraschi Dionisia",
+      "displayName": "Παράσχη Διονυσία",
+      "description": "Παράσχη Διονυσία",
+      "mail": "deniaparaschi@eoppep.gr",
+      "info": "UserID=1249",
+      "physicalDeliveryOfficeName": "Ι33",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "kaltsask",
+      "cn": "Kaltsas Kostas",
+      "displayName": "Kostas Kaltsas",
+      "info": "UserID=1209",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "pgavalakis",
+      "cn": "Gavalakis Petros",
+      "displayName": "Petros Gavalakis",
+      "info": "UserID=1210",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "agiochalas",
+      "cn": "Giochalas Alexandros",
+      "displayName": "Alexandros Giochalas",
+      "info": "UserID=1211",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "agrogian",
+      "cn": "Αγρογιάννης",
+      "displayName": "Αγρογιάννης Άρης",
+      "info": "UserID=1291",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "i.mparouni",
+      "cn": "Mparouni Ifigenia",
+      "displayName": "Μπαρούνη Ιφιγένεια",
+      "description": "Μπαρούνη Ιφιγένεια",
+      "mail": "ifigeni@eoppep.gr",
+      "info": "UserID=1269",
+      "physicalDeliveryOfficeName": "Β25",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "i.balla",
+      "cn": "Balla Ioanna",
+      "displayName": "Balla Ioanna",
+      "info": "UserID=1301",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "i.kapoutsis",
+      "cn": "Kapoutsis Ioannis",
+      "displayName": "Kapoutsis Ioannis",
+      "info": "UserID=1306",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "v.tsiamanta",
+      "cn": "Tsiamanta Vasiliki",
+      "displayName": "Tsiamanta Vasiliki",
+      "info": "UserID=1309",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "n.asmargianaki",
+      "cn": "Asmargianaki Nektaria",
+      "displayName": "Ασμαργιανάκη Νεκταρία",
+      "description": "Ασμαργιανάκη Νεκταρία",
+      "mail": "n.asmargianaki@eoppep.gr",
+      "telephoneNumber": "9154",
+      "info": "UserID=1314",
+      "physicalDeliveryOfficeName": "Β42",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "d.giamarelou",
+      "cn": "Giamarelou Dimitra",
+      "displayName": "Giamarelou Dimitra",
+      "info": "UserID=1315",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "g.mikros",
+      "cn": "Mikros Georgios",
+      "displayName": "Mikros Georgios",
+      "info": "UserID=1319",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "c.rouggeri",
+      "cn": "Rouggeri Christina",
+      "displayName": "Ρουγγέρη Χριστίνα",
+      "description": "Ρουγγέρη Χριστίνα",
+      "mail": "c.rouggeri@eoppep.gr",
+      "telephoneNumber": "9079",
+      "info": "UserID=1322",
+      "physicalDeliveryOfficeName": "Β65",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "m.dakoronia",
+      "cn": "Dakoronia Margarita",
+      "displayName": "Dakoronia Margarita",
+      "info": "UserID=1326",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "v.karavitis",
+      "cn": "Karavitis Vasilios",
+      "displayName": "Karavitis Vasilios",
+      "info": "UserID=1327",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "g.nikolakopoulos",
+      "cn": "Nikolakopoulos George",
+      "displayName": "Νικολακόπουλος Γεώργιος",
+      "description": "Νικολακόπουλος Γεώργιος",
+      "mail": "gnikolako@eoppep.gr",
+      "telephoneNumber": "9007",
+      "info": "UserID=1333",
+      "physicalDeliveryOfficeName": "Β47",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "d.dedousis",
+      "cn": "Dedousis Dimitrios",
+      "displayName": "Dedousis Dimitrios",
+      "info": "UserID=1335",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "a.giannousa",
+      "cn": "Giannousa Athina",
+      "displayName": "Giannousa Athina",
+      "info": "UserID=1336",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "d.raftopoulos",
+      "cn": "Raftopoulos Dimitris",
+      "displayName": "Raftopoulos Dimitris",
+      "info": "UserID=1337",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "e.apergi",
+      "cn": "Apergi Eleni",
+      "displayName": "Απέργη Ελένη",
+      "description": "Απέργη Ελένη",
+      "info": "UserID=1340",
+      "userAccountControl": "514",
+      "active": false
+    },
+    {
+      "sAMAccountName": "d.papavasilopoulos",
+      "cn": "Papavasilopoulos Dimitrios",
+      "displayName": "Παπαβασιλόπουλος Δημήτριος",
+      "description": "Παπαβασιλόπουλος Δημήτριος",
+      "mail": "d.pap@eoppep.gr",
+      "telephoneNumber": "9145",
+      "info": "UserID=1530",
+      "physicalDeliveryOfficeName": "Ι32",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "a.blana",
+      "cn": "Blana Anna",
+      "displayName": "Μπλάνα Άννα",
+      "description": "Μπλάνα Άννα",
+      "mail": "a.blana@eoppep.gr",
+      "telephoneNumber": "9185",
+      "info": "UserID=1531",
+      "physicalDeliveryOfficeName": "Β42",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "i.kontzinou",
+      "cn": "Kontzinou Ioanna",
+      "displayName": "Kontzinou Ioanna",
+      "info": "UserID=1550",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "e.soultanaki",
+      "cn": "Soultanaki Evagelia",
+      "displayName": "Σουλτανάκη Ευαγγελία",
+      "description": "Σουλτανάκη Ευαγγελία",
+      "mail": "e.soultanaki@eoppep.gr",
+      "info": "UserID=1551",
+      "physicalDeliveryOfficeName": "Β66",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "d.georgopoulos",
+      "cn": "Georgopoulos Dimitrios",
+      "displayName": "Γεωργόπουλος Δημήτριος",
+      "description": "Γεωργόπουλος Δημήτριος",
+      "mail": "d.georgopoulos@eoppep.gr",
+      "telephoneNumber": "9193",
+      "info": "UserID=1552",
+      "physicalDeliveryOfficeName": "Βιβλιοθήκη",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "s.skourteli",
+      "cn": "Skourteli Stamatia",
+      "displayName": "Σκουρτέλη Σταματία",
+      "description": "Σκουρτέλη Σταματία",
+      "mail": "s.skourteli@eoppep.gr",
+      "telephoneNumber": "9021",
+      "info": "UserID=1629",
+      "physicalDeliveryOfficeName": "B50",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "d.litsas",
+      "cn": "Dimitris Litsas",
+      "displayName": "Λίτσας Δημήτρης",
+      "description": "Λίτσας Δημήτρης",
+      "mail": "d.litsas@eoppep.gr",
+      "telephoneNumber": "9129",
+      "info": "UserID=1669",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "n.dimakis",
+      "cn": "Dimakis Nikos",
+      "displayName": "Δημάκης Νίκος",
+      "description": "Δημάκης Νίκος",
+      "mail": "n.dimakis@eoppep.gr",
+      "telephoneNumber": "9125",
+      "info": "UserID=1709",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "e.koutsonika",
+      "cn": "Eleni Koutsonika",
+      "displayName": "Κουτσονίκα Ελένη",
+      "description": "Κουτσονίκα Ελένη",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "appuser",
+      "cn": "appuser",
+      "displayName": "appuser",
+      "description": "Χρησιμοποιείται από τις εφαρμογές (api.lan.eoppep.gr)",
+      "lastLogon": "133233400161070626",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "i.lasica",
+      "cn": "Ilona Lasica",
+      "displayName": "Ilona Lasica",
+      "description": "Ilona Lasica",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "n.panagoulias",
+      "cn": "Nikos Marinos Panagoulias",
+      "displayName": "Παναγούλιας Νίκος Μαρίνος",
+      "description": "Παναγούλιας Νίκος Μαρίνος",
+      "physicalDeliveryOfficeName": "B25",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "praktiki",
+      "cn": "praktiki IEK",
+      "displayName": "praktiki IEK",
+      "description": "Πρακτική ΙΕΚ Πληροφορική",
+      "mail": "praktiki@eoppep.gr",
+      "telephoneNumber": "9026",
+      "lastLogon": "131886449091914260",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "kyriakop",
+      "cn": "Kiriakopoulou Nantina",
+      "displayName": "Κυριακοπούλου Ναντίνα",
+      "description": "Κυριακοπούλου Ναντίνα",
+      "mail": "n.kyriakopoulou@eoppep.gr",
+      "telephoneNumber": "9021",
+      "info": "UserID=7",
+      "lastLogon": "133253274446802049",
+      "physicalDeliveryOfficeName": "Β57",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "d.mioteri",
+      "cn": "Mioteri Despina",
+      "displayName": "Μυωτέρη Δέσποινα",
+      "description": "Μυωτέρη Δέσποινα",
+      "mail": "d.mioteri@eoppep.gr",
+      "telephoneNumber": "9104",
+      "info": "UserID=1690",
+      "lastLogon": "133250808203533510",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "n.georgiadis",
+      "cn": "Nikos Georgiadis",
+      "displayName": "Γεωργιάδης Νίκος",
+      "description": "Γεωργιάδης Νίκος",
+      "mail": "n.georgiadis@eoppep.gr",
+      "telephoneNumber": "9126",
+      "physicalDeliveryOfficeName": "Grafeio Proedrou",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "m.niaka",
+      "cn": "Maria Niaka",
+      "displayName": "Νιάκα Μαρία",
+      "description": "Νιάκα Μαρία",
+      "mail": "m.niaka@eoppep.gr",
+      "physicalDeliveryOfficeName": "Gr. Proedrou",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "r.kokkinakou",
+      "cn": "Kokkinakou Reveka",
+      "displayName": "Κοκκινάκου Ρεβέκκα",
+      "description": "Κοκκινάκου Ρεβέκκα",
+      "mail": "rebeka@eoppep.gr",
+      "telephoneNumber": "9129",
+      "info": "UserID=1236\r\nEvaluatorID=5340",
+      "physicalDeliveryOfficeName": "Β25",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "vathmologiko",
+      "cn": "vathmologiko kentro",
+      "displayName": "Βαθμολογικό Κέντρο",
+      "description": "Βαθμολογικό Κέντρο",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "l.smirlaki",
+      "cn": "Smirlaki Lamprini",
+      "displayName": "Σμυρλάκη Λαμπρινή",
+      "description": "Σμυρλάκη Λαμπρινή",
+      "mail": "lsmirlaki@eoppep.gr",
+      "telephoneNumber": "9164",
+      "info": "UserID=1372\r\nEvaluatorID=5444",
+      "physicalDeliveryOfficeName": "Β60",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "a.papadopoulou",
+      "cn": "Aggeliki Papadopoulou",
+      "displayName": "Παπαδοπούλου Αγγελική",
+      "description": "Παπαδοπούλου Αγγελική",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "a.magkouti",
+      "cn": "Alexandra Magkouti",
+      "displayName": "Μαγκούτη Αλεξάνδρα",
+      "description": "Μαγκούτη Αλεξάνδρα",
+      "mail": "a.magkouti@eoppep.gr",
+      "info": "UserID=1789",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "m.kolokitha",
+      "cn": "Kolokitha Maria",
+      "displayName": "Kolokitha Maria",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "x.leonardou",
+      "cn": "Leonardou Xenia",
+      "displayName": "Λεονάρδου Ξένια",
+      "description": "Λεονάρδου Ξένια",
+      "mail": "xen.leonardou@eoppep.gr",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "n.patsouratis",
+      "cn": "Nasos Patsouratis",
+      "displayName": "Nasos Patsouratis",
+      "description": "Πατσουράτης Νάσος",
+      "mail": "n.patsouratis@eoppep.gr",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "d.skandali",
+      "cn": "Dimitra Skandali",
+      "displayName": "Σκανδάλη Δήμητρα",
+      "description": "Σκανδάλη Δήμητρα",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "m.kytea",
+      "cn": "Kytea Maria Eleni",
+      "displayName": "Κυτέα Μαρία Ελένη",
+      "description": "Κυτέα Μαρία Ελένη",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "mitroo",
+      "cn": "mitroo",
+      "displayName": "mitroo",
+      "description": "Αξιολογητές Εκπαιδευτών",
+      "lastLogon": "133252426467865772",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "m.petropoulou",
+      "cn": "Maria Petropoulou",
+      "displayName": "Πετροπούλου Μαρία",
+      "description": "Πετροπούλου Μαρία",
+      "info": "UserID=1295\r\nEvaluatorID=0",
+      "userAccountControl": "514",
+      "active": false
+    },
+    {
+      "sAMAccountName": "e.gatou",
+      "cn": "Evi Gatou",
+      "displayName": "Γάτου Εύη",
+      "description": "Γάτου Εύη",
+      "info": "UserID=1869",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "praktiki_syep",
+      "cn": "Praktiki SYEP",
+      "displayName": "Praktiki SYEP",
+      "description": "Πρακτική ΣΥΕΠ",
+      "lastLogon": "132938099673717103",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "vlachaki",
+      "cn": "Vlachaki Georgia",
+      "displayName": "Βλαχάκη Γεωργία",
+      "description": "Βλαχάκη Γεωργία",
+      "mail": "gvlachaki@eoppep.gr",
+      "telephoneNumber": "9141",
+      "info": "UserID=911\r\nEvaluatorID=3561",
+      "physicalDeliveryOfficeName": "Β11",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "Michalakakos",
+      "cn": "Michalakakos Giorgos",
+      "displayName": "Μιχαλακάκος Γεώργιος",
+      "description": "Μιχαλακάκος Γεώργιος",
+      "mail": "gmichala@eoppep.gr",
+      "telephoneNumber": "9103",
+      "info": "UserID=609\r\nEvaluatorID=3582",
+      "lastLogon": "133253281073725398",
+      "physicalDeliveryOfficeName": "Β22",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "a.makris",
+      "cn": "Makris Athanasios",
+      "displayName": "Μακρής Αθανάσιος",
+      "description": "Μακρής Αθανάσιος",
+      "mail": "makris@eoppep.gr",
+      "telephoneNumber": "9038",
+      "info": "UserID=1237\r\nEvaluatorID=4481",
+      "lastLogon": "133252324908241744",
+      "physicalDeliveryOfficeName": "I06-I08",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "paraskev",
+      "cn": "Paraskeva Olga",
+      "displayName": "Παρασκευά Όλγα",
+      "description": "Παρασκευά Όλγα",
+      "mail": "olga@eoppep.gr",
+      "info": "UserID=534\r\nEvaluatorID=1018",
+      "physicalDeliveryOfficeName": "Β42",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "c.prapa",
+      "cn": "Prapa Christina",
+      "displayName": "Πράπα Χριστίνα",
+      "description": "Πράπα Χριστίνα",
+      "mail": "c.prapa@eoppep.gr",
+      "info": "UserID=1353",
+      "lastLogon": "0",
+      "physicalDeliveryOfficeName": "Β42",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "k.kiriakidoy",
+      "cn": "Kyriakidoy Korina",
+      "displayName": "Κυριακίδου Κορίνα",
+      "description": "Κυριακίδου Κορίνα",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "n.lykokanellos",
+      "cn": "Nikos Lykokanellos",
+      "displayName": "Λυκοκανέλλος Νίκος",
+      "description": "Λυκοκανέλλος Νίκος",
+      "info": "UserID=1849",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "likoudi",
+      "cn": "Likoudi Rania",
+      "displayName": "Λυκούδη Ράνια",
+      "description": "Λυκούδη Ράνια",
+      "mail": "rlikoudi@eoppep.gr",
+      "info": "UserID=929\r\nEvaluatorID=3583",
+      "physicalDeliveryOfficeName": "Β42",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "a.saliverou",
+      "cn": "Saliverou Anna",
+      "displayName": "Σαλιβέρου Άννα",
+      "description": "Σαλιβέρου Άννα",
+      "info": "UserID=1829",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "sitziouki",
+      "cn": "Maria Συτζιούκη",
+      "displayName": "Συτζιούκη Μαρία",
+      "description": "Συτζιούκη Μαρία",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "d.torosian",
+      "cn": "Diran Torosian",
+      "displayName": "Τοροσιάν Ντιράν",
+      "description": "Τοροσιάν Ντιράν",
+      "mail": "d.torosian@eoppep.gr",
+      "telephoneNumber": "9182",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "a.kiritsi",
+      "cn": "Kiritsi Alexandra",
+      "displayName": "Κυρίτση Αλεξάνδρα",
+      "description": "Κυρίτση Αλεξάνδρα",
+      "physicalDeliveryOfficeName": "Ι34",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "test",
+      "cn": "test",
+      "displayName": "test",
+      "lastLogon": "133108132760019440",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "s.tetradakou",
+      "cn": "Tetradakou Stavroula",
+      "displayName": "Τετραδάκου Σταυρούλα",
+      "description": "Τετραδάκου Σταυρούλα",
+      "mail": "stetradakou@eoppep.gr",
+      "telephoneNumber": "9180",
+      "info": "UserID=1232",
+      "lastLogon": "133253226753040968",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "spapaioa",
+      "cn": "Papaioannou Spiros",
+      "displayName": "Παπαιωάννου Σπύρος",
+      "description": "Παπαιωάννου Σπύρος",
+      "mail": "spyrospap@eoppep.gr",
+      "telephoneNumber": "9109",
+      "info": "UserID=5\r\nEvaluatorID=1009",
+      "lastLogon": "133252528723286690",
+      "physicalDeliveryOfficeName": "Β42",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "rammou",
+      "cn": "Rammou Aggeliki",
+      "displayName": "Ράμμου Αγγελική",
+      "description": "Ράμμου Αγγελική",
+      "mail": "arammou@eoppep.gr",
+      "telephoneNumber": "9194",
+      "info": "UserID=535\r\nEvaluatorID=5347",
+      "physicalDeliveryOfficeName": "Ι06-08",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "anyfanta",
+      "cn": "Anifantaki Aggeliki",
+      "displayName": "Ανυφαντάκη Αγγελική",
+      "description": "Ανυφαντάκη Αγγελική",
+      "mail": "anyfantaki@eoppep.gr",
+      "telephoneNumber": "9091",
+      "info": "UserID=169\r\nEvaluatorID=5441",
+      "lastLogon": "132900978739505665",
+      "physicalDeliveryOfficeName": "Ι06-08",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "l.pavlakis",
+      "cn": "Pavlakis Leonidas",
+      "displayName": "Παυλάκης Λεωνίδας",
+      "description": "Παυλάκης Λεωνίδας",
+      "mail": "l.pavlakis@eoppep.gr",
+      "telephoneNumber": "9176",
+      "info": "UserID=1289",
+      "lastLogon": "133101193220411890",
+      "physicalDeliveryOfficeName": "Vivliothiki",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "simota",
+      "cn": "Simota Adamantia",
+      "displayName": "Σιμωτά Αδαμαντία",
+      "description": "Σιμωτά Αδαμαντία",
+      "mail": "tsimota@eoppep.gr",
+      "telephoneNumber": "9071",
+      "info": "UserID=536\r\nEvaluatorID=1012",
+      "lastLogon": "0",
+      "physicalDeliveryOfficeName": "Β65",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "iek",
+      "cn": "iek",
+      "displayName": "iek",
+      "description": "Ειδικοί Επιστήμονες Εξετάσεων",
+      "lastLogon": "133253411857286968",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "karras",
+      "cn": "Karras Ioannis",
+      "displayName": "Καρράς Ιωάννης",
+      "description": "Καρράς Ιωάννης",
+      "telephoneNumber": "9095",
+      "info": "UserID=1189",
+      "lastLogon": "132641592655084799",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "p.koutsogiannopoulos",
+      "cn": "Koutsogiannopoulos Panagiotis",
+      "displayName": "Κουτσογιαννόπουλος Παναγιώτης",
+      "description": "Κουτσογιαννόπουλος Παναγιώτης",
+      "mail": "pk@eoppep.gr",
+      "telephoneNumber": "9095",
+      "info": "UserID=1323",
+      "lastLogon": "133220610975357351",
+      "physicalDeliveryOfficeName": "I06",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "fkourtis",
+      "cn": "Kourtis Fanis",
+      "displayName": "Κούρτης Θεοφάνης",
+      "description": "Κούρτης Θεοφάνης",
+      "telephoneNumber": "9095",
+      "info": "UserID=493\r\nEvaluatorID=5443",
+      "lastLogon": "133058896009994400",
+      "physicalDeliveryOfficeName": "I06",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "g.papadimitriou",
+      "cn": "Papadimitriou Georgios",
+      "displayName": "Παπαδημητρίου Γεώργιος",
+      "description": "Παπαδημητρίου Γεώργιος",
+      "mail": "g.papadimitriou@eoppep.gr",
+      "telephoneNumber": "9046",
+      "info": "UserID=1271\r\nEvaluatorID=4909",
+      "physicalDeliveryOfficeName": "Β12",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "praktiki_logistirio",
+      "cn": "Praktiki Logistirio",
+      "displayName": "Praktiki Logistirio",
+      "description": "Πρακτική Λογιστήριο",
+      "telephoneNumber": "9084",
+      "lastLogon": "132435868771854709",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "praktiki_promitheion",
+      "cn": "Praktiki Promitheion",
+      "displayName": "Praktiki Promitheion",
+      "description": "Πρακτική Προμηθειών",
+      "telephoneNumber": "9123",
+      "lastLogon": "131840636956003577",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "g.stathopoulou",
+      "cn": "Georgia Stathopoulou",
+      "displayName": "Σταθοπούλου Γεωργία",
+      "description": "Σταθοπούλου Γεωργία",
+      "telephoneNumber": "9088",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "s.brachou",
+      "cn": "Sissy Brachou",
+      "displayName": "Μπράχου Σίσσυ",
+      "description": "Μπράχου Σίσσυ",
+      "lastLogon": "131890971501421558",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "a.antonopoulou",
+      "cn": "Aliki Antonopoulou",
+      "displayName": "Αντωνοπούλου Αλίκη",
+      "description": "Αντωνοπούλου Αλίκη",
+      "telephoneNumber": "9165",
+      "lastLogon": "131909746941449158",
+      "physicalDeliveryOfficeName": "B21",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "isotimies",
+      "cn": "isotimies",
+      "displayName": "isotimies",
+      "lastLogon": "133252538767392607",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "kpapaef",
+      "cn": "Papaefstathiou Konstantinos",
+      "displayName": "Παπαευσταθίου Κωνσταντίνος",
+      "description": "Παπαευσταθίου Κωνσταντίνος",
+      "mail": "kpapaef@eoppep.gr",
+      "telephoneNumber": "9066",
+      "info": "UserID=312\r\nEvaluatorID=1010",
+      "lastLogon": "133253216029441082",
+      "physicalDeliveryOfficeName": "Β42",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "karnemid",
+      "cn": "Karnemidou Anastasia",
+      "displayName": "Καρνεμίδου Αναστασία",
+      "description": "Καρνεμίδου Αναστασία",
+      "mail": "akarnemidou@eoppep.gr",
+      "telephoneNumber": "9100",
+      "info": "UserID=310\r\nEvaluatorID=1000",
+      "lastLogon": "132321845604219383",
+      "physicalDeliveryOfficeName": "Β62",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "kosmetou",
+      "cn": "Kosmetou Maria",
+      "displayName": "Κοσμέτου Μαρία",
+      "description": "Κοσμέτου Μαρία",
+      "mail": "kosmetou@eoppep.gr",
+      "telephoneNumber": "9055",
+      "info": "UserID=111\r\nEvaluatorID=1020",
+      "lastLogon": "133253407740313915",
+      "physicalDeliveryOfficeName": "Β25",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "d.dede",
+      "cn": "Dede Dimitra",
+      "displayName": "Δέδε Δήμητρα",
+      "description": "Δέδε Δήμητρα",
+      "mail": "d.dede@eoppep.gr",
+      "telephoneNumber": "9013",
+      "info": "UserID=1350",
+      "lastLogon": "133253274412253913",
+      "physicalDeliveryOfficeName": "Β42",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "d.gaitanis",
+      "cn": "Gaitanis Dimitris",
+      "displayName": "Γαϊτάνης Δημήτρης",
+      "description": "Γαϊτάνης Δημήτρης",
+      "mail": "dimitrisgaitanis@eoppep.gr",
+      "telephoneNumber": "9174",
+      "info": "UserID=1234",
+      "lastLogon": "133253410212865966",
+      "physicalDeliveryOfficeName": "Ι33",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "e.georgopoulou",
+      "cn": "Georgopoulou Eleni",
+      "displayName": "Γεωργοπούλου Ελένη",
+      "description": "Γεωργοπούλου Ελένη",
+      "mail": "georgop@eoppep.gr",
+      "telephoneNumber": "9039",
+      "info": "UserID=1239\r\nEvaluatorID=4902",
+      "lastLogon": "133252525721440225",
+      "physicalDeliveryOfficeName": "IS-Domes",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "zezas",
+      "cn": "Zezas Dionisis",
+      "displayName": "Ζέζας Διονύσης",
+      "description": "Ζέζας Διονύσης",
+      "mail": "dzezas@eoppep.gr",
+      "telephoneNumber": "9101",
+      "info": "UserID=949\r\nEvaluatorID=3581",
+      "lastLogon": "133252422666366821",
+      "physicalDeliveryOfficeName": "Γρ. Διευθ/ντος",
+      "userAccountControl": "512",
+      "active": true
+    },
+    {
+      "sAMAccountName": "tzanetea",
+      "cn": "Tzanetea Froso",
+      "displayName": "Τζανετέα Φρόσω",
+      "description": "Τζανετέα Φρόσω",
+      "info": "UserID=309\r\nEvaluatorID=1014",
+      "lastLogon": "133222921955333284",
+      "physicalDeliveryOfficeName": "Β42",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "e.mela",
+      "cn": "Mela Eftichia",
+      "displayName": "Μελά Ευτυχία",
+      "description": "Μελά Ευτυχία",
+      "mail": "e.mela@eoppep.gr",
+      "info": "UserID=1370",
+      "lastLogon": "132077282293851849",
+      "physicalDeliveryOfficeName": "Β65",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "mpasdra",
+      "cn": "Mpasdra Vivi",
+      "displayName": "Μπάσδρα Βιβή",
+      "description": "Μπάσδρα Βιβή",
+      "mail": "vbasdra@eoppep.gr",
+      "telephoneNumber": "9008",
+      "info": "UserID=68\r\nEvaluatorID=1005",
+      "lastLogon": "133253404683815632",
+      "physicalDeliveryOfficeName": "Β59",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "karabela",
+      "cn": "Karabela Christina",
+      "displayName": "Καράμπελα Χριστίνα",
+      "description": "Καράμπελα Χριστίνα",
+      "mail": "karabela@eoppep.gr",
+      "info": "UserID=93",
+      "lastLogon": "0",
+      "physicalDeliveryOfficeName": "Β42",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "karkoulia",
+      "cn": "Karkoulia Panagiota",
+      "displayName": "Καρκούλια Γιώτα",
+      "description": "Καρκούλια Γιώτα",
+      "mail": "karkoulia@eoppep.gr",
+      "telephoneNumber": "9092",
+      "info": "UserID=492\r\nEvaluatorID=5346",
+      "lastLogon": "133253167554642770",
+      "physicalDeliveryOfficeName": "B59",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "papaxris",
+      "cn": "Papachristopoulos Panagiotis",
+      "displayName": "Παπαχριστόπουλος Παναγιώτης",
+      "description": "Παπαχριστόπουλος Παναγιώτης",
+      "mail": "ppapachristopoulos@eoppep.gr",
+      "info": "UserID=6\r\nEvaluatorID=1011",
+      "lastLogon": "132721131337005791",
+      "physicalDeliveryOfficeName": "Β22",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "mparmpouta",
+      "cn": "Mparmpouta Marina",
+      "displayName": "Μπαρμπούτα Μαρίνα",
+      "description": "Μπαρμπούτα Μαρίνα",
+      "mail": "mbarbouta@eoppep.gr",
+      "telephoneNumber": "9083",
+      "info": "UserID=533\r\nEvaluatorID=1021",
+      "lastLogon": "133253158688174346",
+      "physicalDeliveryOfficeName": "Β22",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "eisodos",
+      "cn": "eisodos",
+      "displayName": "eisodos",
+      "description": "Eίσοδος - Security",
+      "telephoneNumber": "9132",
+      "lastLogon": "133251672870400152",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "s.doulami",
+      "cn": "Doulami Stavroula",
+      "displayName": "Δουλάμη Σταυρούλα",
+      "description": "Δουλάμη Σταυρούλα",
+      "mail": "sdoulami@eoppep.gr",
+      "telephoneNumber": "9184",
+      "info": "UserID=1214",
+      "lastLogon": "133253349275283387",
+      "physicalDeliveryOfficeName": "Ι33",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "moirali",
+      "cn": "Mirali Eleni",
+      "displayName": "Μοίραλη Ελένη",
+      "description": "Μοίραλη Ελένη",
+      "mail": "elmoirali@eoppep.gr",
+      "telephoneNumber": "9071",
+      "info": "UserID=9\r\nEvaluatorID=1003",
+      "lastLogon": "132386651849279423",
+      "physicalDeliveryOfficeName": "Β11",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "y.pylouris",
+      "cn": "Yiannis Pylouris",
+      "displayName": "Yiannis Pylouris",
+      "telephoneNumber": "9088",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "antoniou",
+      "cn": "Antoniou Antonis",
+      "displayName": "Αντωνίου Αντώνιος",
+      "description": "Αντωνίου Αντώνιος",
+      "mail": "antoniou@eoppep.gr",
+      "telephoneNumber": "9161",
+      "info": "UserID=8\r\nEvaluatorID=994",
+      "lastLogon": "133251432920088014",
+      "physicalDeliveryOfficeName": "Β67",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "louka",
+      "cn": "Louka Elena",
+      "displayName": "Λουκά Έλενα",
+      "description": "Λουκά Έλενα",
+      "mail": "hlouka@eoppep.gr",
+      "telephoneNumber": "9181",
+      "info": "UserID=389\r\nEvaluatorID=1022",
+      "lastLogon": "133253391539826799",
+      "physicalDeliveryOfficeName": "SYEP",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "enlog",
+      "cn": "En Log",
+      "displayName": "En Log",
+      "description": "Εξωτερική υποστήριξη λογιστηρίου",
+      "telephoneNumber": "9084",
+      "lastLogon": "132390766328923739",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "katsimani",
+      "cn": "Katsimani Marina",
+      "displayName": "Κατσιμάνη Μαρίνα",
+      "description": "Κατσιμάνη Μαρίνα",
+      "mail": "markat@eoppep.gr",
+      "telephoneNumber": "9064",
+      "info": "UserID=531\r\nEvaluatorID=1001",
+      "lastLogon": "133253377492748191",
+      "physicalDeliveryOfficeName": "Ι33",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "daskalak",
+      "cn": "Daskalakis Thomas",
+      "displayName": "Δασκαλάκης Θωμάς",
+      "description": "Δασκαλάκης Θωμάς",
+      "mail": "t.daskalakis@eoppep.gr",
+      "telephoneNumber": "9149",
+      "info": "UserID=1029",
+      "lastLogon": "133253182994382696",
+      "physicalDeliveryOfficeName": "Β17",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "k.notara",
+      "cn": "Notara Katerina",
+      "displayName": "Νοταρά Κατερίνα",
+      "description": "Νοταρά Κατερίνα",
+      "telephoneNumber": "9197",
+      "lastLogon": "132119727348554079",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "p.kousoulis",
+      "cn": "Kousoulis Panagiotis",
+      "displayName": "Κουσούλης Παναγιώτης",
+      "description": "Κουσούλης Παναγιώτης",
+      "mail": "pkousoulis@eoppep.gr",
+      "telephoneNumber": "9087",
+      "info": "UserID=1351",
+      "lastLogon": "133253247437943474",
+      "physicalDeliveryOfficeName": "Β12",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "mpoulnti",
+      "cn": "Mpoulnti Viki",
+      "displayName": "Μπουλντή Βίκυ",
+      "description": "Μπουλντή Βίκυ",
+      "mail": "vbouldi@eoppep.gr",
+      "telephoneNumber": "9164",
+      "info": "UserID=509\r\nEvaluatorID=1006",
+      "lastLogon": "133251480406709724",
+      "physicalDeliveryOfficeName": "Β66",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "europass",
+      "cn": "Europass",
+      "displayName": "Europass",
+      "lastLogon": "132201105263142132",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "giannopo",
+      "cn": "Giannopoulou Marina",
+      "displayName": "Γιαννοπούλου Μαρίνα",
+      "description": "Γιαννοπούλου Μαρίνα",
+      "mail": "gianmar@eoppep.gr",
+      "telephoneNumber": "9002",
+      "info": "UserID=249\r\nEvaluatorID=3482",
+      "lastLogon": "133253235467473275",
+      "physicalDeliveryOfficeName": "Domes",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "e.tsigarida",
+      "cn": "Tsigarida Eleutheria",
+      "description": "Τσιγαρίδα Ελευθερία",
+      "lastLogon": "131863091273385669",
+      "userAccountControl": "514",
+      "active": false
+    },
+    {
+      "sAMAccountName": "d.ierapetritaki",
+      "cn": "Despoina Ierapetritaki",
+      "displayName": "Ιεραπετριτάκη Δέσποινα",
+      "description": "Ιεραπετριτάκη Δέσποινα",
+      "telephoneNumber": "9088",
+      "lastLogon": "132440513997756240",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "anaggelia",
+      "cn": "anaggelia",
+      "displayName": "anaggelia",
+      "description": "Έλεγχος Πληρότητας Αναγγελίας Διδασκαλίας",
+      "lastLogon": "132818640444859252",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "dmavri",
+      "cn": "Mavri Despina",
+      "displayName": "Μαυρή Δέσποινα",
+      "description": "Μαυρή Δέσποινα",
+      "mail": "dmavris@eoppep.gr",
+      "info": "UserID=329\r\nEvaluatorID=1501",
+      "lastLogon": "132213227277437217",
+      "physicalDeliveryOfficeName": "Β13",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "vpetritsis",
+      "cn": "Vaggelis Chaikalis Petritsis",
+      "displayName": "Χαϊκάλης Πετρίτσης Βαγγέλης",
+      "description": "Χαϊκάλης Πετρίτσης Βαγγέλης",
+      "lastLogon": "131988375924321488",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "bistas",
+      "cn": "Stefanos Bistas",
+      "displayName": "Μπίστας Στέφανος",
+      "description": "Μπίστας Στέφανος",
+      "mail": "sbistas@eoppep.gr",
+      "telephoneNumber": "9156",
+      "lastLogon": "132090284150402342",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "stavropo",
+      "cn": "Stavropoulou Maria",
+      "displayName": "Σταυροπούλου Μαρία",
+      "description": "Σταυροπούλου Μαρία",
+      "mail": "mstavrop@eoppep.gr",
+      "telephoneNumber": "9017",
+      "info": "UserID=89\r\nEvaluatorID=1013",
+      "lastLogon": "133253206821354980",
+      "physicalDeliveryOfficeName": "Β25",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "e.giannakopoulou",
+      "cn": "Eleni Giannakopoulou",
+      "displayName": "Γιαννακοπούλου Ελένη",
+      "description": "Γιαννακοπούλου Ελένη",
+      "mail": "e.giannakopoulou@eoppep.gr",
+      "telephoneNumber": "9032",
+      "lastLogon": "132118848615181826",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "g.sfakianakis",
+      "cn": "Sfakianakis Georgios",
+      "displayName": "Σφακιανάκης Γεώργιος",
+      "description": "Σφακιανάκης Γεώργιος",
+      "mail": "g.sfakianakis@eoppep.gr",
+      "telephoneNumber": "9121",
+      "info": "UserID=1238",
+      "lastLogon": "133021798206887066",
+      "physicalDeliveryOfficeName": "Β25",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "Bravos",
+      "cn": "Bravos Antonis",
+      "displayName": "Μπράβος Αντώνιος",
+      "description": "Μπράβος Αντώνιος",
+      "mail": "bravos@eoppep.gr",
+      "telephoneNumber": "9056",
+      "info": "UserID=209\r\nEvaluatorID=1004",
+      "lastLogon": "133253207034499098",
+      "physicalDeliveryOfficeName": "B40",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "katsoulou",
+      "cn": "Katsoulou Nana",
+      "displayName": "Κατσούλου Ανδριανή",
+      "description": "Κατσούλου Ανδριανή",
+      "mail": "akatsoulou@eoppep.gr",
+      "telephoneNumber": "9042",
+      "info": "UserID=109\r\nEvaluatorID=1002",
+      "lastLogon": "133239400254578505",
+      "physicalDeliveryOfficeName": "I40",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "barpaki",
+      "cn": "Barpaki Vaso",
+      "displayName": "Μπαρπάκη Βάσω",
+      "description": "Μπαρπάκη Βάσω",
+      "mail": "barpaki@eoppep.gr",
+      "telephoneNumber": "9056",
+      "info": "UserID=409\r\nEvaluatorID=3483",
+      "lastLogon": "132370413155631928",
+      "physicalDeliveryOfficeName": "B11",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "protocol",
+      "cn": "protocol",
+      "displayName": "protocol",
+      "lastLogon": "133253173049474011",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "c.aggeli",
+      "cn": "Aggeli Christiana",
+      "displayName": "Αγγελή Χριστιάνα",
+      "description": "Αγγελή Χριστιάνα",
+      "mail": "c.aggeli@eoppep.gr",
+      "telephoneNumber": "9058",
+      "lastLogon": "132048784072422412",
+      "physicalDeliveryOfficeName": "B11",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "SQLService",
+      "cn": "SQLService",
+      "displayName": "SQLService",
+      "lastLogon": "132280074010705358",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "n.maltezos",
+      "cn": "Maltezos Nikolaos",
+      "displayName": "Μαλτέζος Νικόλαος",
+      "description": "Μαλτέζος Νικόλαος",
+      "mail": "n.maltezos@eoppep.gr",
+      "telephoneNumber": "9177",
+      "info": "UserID=1270",
+      "lastLogon": "132748583226508881",
+      "physicalDeliveryOfficeName": "I18",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "a.nakas",
+      "cn": "Nakas Aristidis",
+      "displayName": "Νάκας Αριστείδης",
+      "description": "Νάκας Αριστείδης",
+      "mail": "a.nakas@eoppep.gr",
+      "telephoneNumber": "9103",
+      "info": "UserID=1331",
+      "lastLogon": "132140400466785949",
+      "physicalDeliveryOfficeName": "Β65",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "alberti",
+      "cn": "Alberti Katerina",
+      "displayName": "Αλμπέρτη Αικατερίνη",
+      "description": "Αλμπέρτη Αικατερίνη",
+      "mail": "kalberti@eoppep.gr",
+      "telephoneNumber": "9051",
+      "info": "UserID=1\r\nEvaluatorID=993",
+      "lastLogon": "133252646142784223",
+      "physicalDeliveryOfficeName": "Β40",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "s.meimetea",
+      "cn": "Meimetea Stavroula",
+      "displayName": "Μεϊμετέα Σταυρούλα",
+      "description": "Μεϊμετέα Σταυρούλα",
+      "telephoneNumber": "9146",
+      "lastLogon": "131866657283390555",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "liligkoufa",
+      "cn": "Lilly Gkoufa",
+      "displayName": "Gkoufa Lili",
+      "description": "Γκούφα Λίλη",
+      "telephoneNumber": "9117",
+      "lastLogon": "132379798828640116",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "lsoundia",
+      "cn": "Lida Soundia",
+      "displayName": "Lida Soundia",
+      "description": "Σούνδια Λήδα",
+      "lastLogon": "132423333777369949",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "g.papaefthymiou",
+      "cn": "Papaefthymiou Georgia",
+      "displayName": "Papaefthymiou Georgia",
+      "description": "Παπαευθυμίου Γεωργία",
+      "mail": "proedros@eoppep.gr",
+      "telephoneNumber": "9030",
+      "lastLogon": "133074574477539723",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "a.tsampra",
+      "cn": "Anastasia Tsampra",
+      "displayName": "Τσάμπρα Αναστασία",
+      "description": "Τσάμπρα Αναστασία",
+      "mail": "a.tsampra@eoppep.gr",
+      "telephoneNumber": "9003",
+      "lastLogon": "132563026686458885",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "i.lytrivi",
+      "cn": "Lytrivi Ioanna",
+      "displayName": "Lytrivi Ioanna",
+      "description": "Λυτρίβη Ιωάννα",
+      "mail": "ceo@eoppep.gr",
+      "telephoneNumber": "9182",
+      "lastLogon": "133252611221375728",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "enet",
+      "cn": "enet enet",
+      "displayName": "enet enet",
+      "description": "pylon",
+      "lastLogon": "132284532829818723",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "modus",
+      "cn": "modus",
+      "displayName": "modus",
+      "lastLogon": "133253360879912333",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "katsaounou",
+      "cn": "Katsaounou Theodora",
+      "displayName": "Κατσαούνου Θεοδώρα",
+      "description": "Κατσαούνου Θεοδώρα",
+      "mail": "eqavet@eoppep.gr",
+      "telephoneNumber": "9067",
+      "lastLogon": "132684883299007419",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "i.papadopoulou",
+      "cn": "Papadopoulou Ioanna",
+      "displayName": "Papadopoulou Ioanna",
+      "description": "Παπαδοπούλου Ιωάννα",
+      "mail": "i.papadopoulou@eoppep.gr",
+      "telephoneNumber": "9032",
+      "lastLogon": "133251621604115866",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "v.raskou",
+      "cn": "Raskou Vasiliki",
+      "displayName": "Ράσκου Βασιλική",
+      "description": "Ράσκου Βασιλική",
+      "mail": "v.raskou@eoppep.gr",
+      "telephoneNumber": "9183",
+      "lastLogon": "132638881105755531",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "c.kravaritis",
+      "cn": "Kravaritis Charalampos",
+      "displayName": "Κραβαρίτης Χαράλαμπος",
+      "description": "Κραβαρίτης Χαράλαμπος",
+      "mail": "c.kravaritis@eoppep.gr",
+      "telephoneNumber": "9044",
+      "info": "EvaluatorID=10000",
+      "lastLogon": "132772820004759288",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "ag.antonopoulou",
+      "cn": "Antonopoulou Aggeliki",
+      "displayName": "Αντωνοπούλου Αγγελική",
+      "description": "Αντωνοπούλου Αγγελική",
+      "mail": "ag.antonopoulou@eoppep.gr",
+      "telephoneNumber": "9092",
+      "lastLogon": "132774656185437787",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "a.theodoritsi",
+      "cn": "Theodoritsi Alexandra",
+      "displayName": "Θεοδωρίτση Αλεξάνδρα",
+      "description": "Θεοδωρίτση Αλεξάνδρα",
+      "mail": "a.theodoritsi@eoppep.gr",
+      "telephoneNumber": "9054",
+      "lastLogon": "132773685923504186",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "a.mousoni",
+      "cn": "Mousoni Anastasia",
+      "displayName": "Μουσώνη Αναστασία",
+      "description": "Μουσώνη Αναστασία",
+      "mail": "a.mousoni@eoppep.gr",
+      "telephoneNumber": "9163",
+      "lastLogon": "132772811018063529",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "p.stamiris",
+      "cn": "Stamiris Panagiotis",
+      "displayName": "Σταμίρης Παναγιώτης",
+      "description": "Σταμίρης Παναγιώτης",
+      "mail": "p.stamiris@eoppep.gr",
+      "telephoneNumber": "9121",
+      "lastLogon": "133253192275770259",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "a.hourmouzi",
+      "cn": "Hourmouzi Afroditi",
+      "displayName": "Χουρμούζη Αφροδίτη",
+      "description": "Χουρμούζη Αφροδίτη",
+      "mail": "a.hourmouzi@eoppep.gr",
+      "telephoneNumber": "9059",
+      "lastLogon": "133253236058913252",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "a.thanou",
+      "cn": "Thanou Aggeliki",
+      "displayName": "Θάνου Αγγελική",
+      "description": "Θάνου Αγγελική",
+      "mail": "a.thanou@eoppep.gr",
+      "telephoneNumber": "9045",
+      "info": "EvaluatorID=10049",
+      "lastLogon": "133253163912151627",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "z.papakonstantinou",
+      "cn": "Papakonstantinou Zoi",
+      "displayName": "Παπακωνσταντίνου Ζωή",
+      "description": "Παπακωνσταντίνου Ζωή",
+      "mail": "z.papakonstantinou@eoppep.gr",
+      "telephoneNumber": "9053",
+      "lastLogon": "133220502581753243",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "m.tsiana",
+      "cn": "Maria Tsiana",
+      "displayName": "Maria Tsiana",
+      "description": "Τσιάνα Μαρία",
+      "telephoneNumber": "9177",
+      "lastLogon": "132616468233741095",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "g.magiras",
+      "cn": "Mageiras Giorgos",
+      "displayName": "Mageiras Giorgos",
+      "description": "Μάγειρας Γιώργος",
+      "info": "EvaluatorID=10000",
+      "lastLogon": "132722866000221382",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "e.theos",
+      "cn": "Theos Evagelos",
+      "displayName": "Theos Evagelos",
+      "description": "Θέος Ευάγγελος",
+      "lastLogon": "133251500928837357",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "c.veletakou",
+      "cn": "Veletakou Chrisoula",
+      "displayName": "Βελετάκου Χρυσούλα",
+      "description": "Βελετάκου Χρυσούλα",
+      "mail": "c.veletakou@eoppep.gr",
+      "telephoneNumber": "9102",
+      "lastLogon": "132747979877608082",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "k.tsapoga",
+      "cn": "Tsapoga Keli",
+      "displayName": "Τσαπόγα Κέλλυ",
+      "description": "Τσαπόγα Κέλλυ",
+      "mail": "k.tsapoga@eoppep.gr",
+      "telephoneNumber": "9093",
+      "lastLogon": "132996811301399079",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "k.nezi",
+      "cn": "Nezi Konstantina",
+      "displayName": "Νέζη Κωνσταντίνα",
+      "description": "Νέζη Κωνσταντίνα",
+      "mail": "k.nezi@eoppep.gr",
+      "telephoneNumber": "9194",
+      "lastLogon": "133238789208562776",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "f.himonakou",
+      "cn": "Himonakou Foteini",
+      "displayName": "Χειμωνάκου Φανή",
+      "description": "Χειμωνάκου Φανή",
+      "mail": "f.himonakou@eoppep.gr",
+      "telephoneNumber": "9015",
+      "lastLogon": "133253334540597115",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "mathiteia",
+      "cn": "mathiteia",
+      "displayName": "mathiteia",
+      "lastLogon": "132815371885550846",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "o.giannopoulou",
+      "cn": "Giannopoulou Olga",
+      "displayName": "Γιαννοπούλου Όλγα",
+      "description": "Γιαννοπούλου Όλγα",
+      "mail": "o.giannopoulou@eoppep.gr",
+      "telephoneNumber": "9172",
+      "lastLogon": "132790958897960759",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "d.karatzogianni",
+      "cn": "Karatzogianni Dimitra",
+      "displayName": "Καρατζογιάννη Δήμητρα",
+      "description": "Καρατζογιάννη Δήμητρα",
+      "mail": "d.karatzogianni@eoppep.gr",
+      "telephoneNumber": "9043",
+      "info": "EvaluatorID=10050",
+      "lastLogon": "133251425238142368",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "ch.savvoulidis",
+      "cn": "Savvoulidis Christos",
+      "displayName": "Σαβουλίδης Χρήστος",
+      "description": "Praktiki IEK",
+      "telephoneNumber": "9026",
+      "lastLogon": "132968885887236349",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "v.spyroglou",
+      "cn": "Spyroglou Euaggelos",
+      "displayName": "Σπυρόγλου Ευάγγελος",
+      "description": "Σπυρόγλου Ευάγγελος",
+      "lastLogon": "132798052827775761",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "s.diakatos",
+      "cn": "Diakatos Stelios",
+      "displayName": "Διακάτος Στέλιος",
+      "description": "Διακάτος Στέλιος",
+      "mail": "s.diakatos@eoppep.gr",
+      "telephoneNumber": "9040",
+      "lastLogon": "133084055971256012",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "f.pasanikolakis",
+      "cn": "Pasanikolakis Fratzeskos",
+      "displayName": "Πασανικολάκης Φραντζέσκος",
+      "description": "Πασανικολάκης Φραντζέσκος",
+      "lastLogon": "133083229026345054",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "n.katopis",
+      "cn": "Katopis Nikos",
+      "displayName": "Κατόπης Νίκος",
+      "description": "Κατόπης Νίκος",
+      "mail": "n.katopis@eoppep.gr",
+      "lastLogon": "133023309031023994",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "m.mathioudaki",
+      "cn": "Maria Mathioudaki",
+      "displayName": "Μαθιουδάκη Μαρία",
+      "description": "Μαθιουδάκη Μαρία",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "i.arniotis",
+      "cn": "Arniotis Ioannis",
+      "displayName": "Αρνιώτης Ιωάννης",
+      "description": "Αρνιώτης Ιωάννης",
+      "mail": "i.arniotis@eoppep.gr",
+      "telephoneNumber": "9172",
+      "lastLogon": "133021655808297823",
+      "physicalDeliveryOfficeName": "B42",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "t.tsipoliti",
+      "cn": "Theodora Tsipoliti",
+      "displayName": "Τσιπολίτη Θεοδώρα",
+      "description": "Τσιπολίτη Θεοδώρα",
+      "mail": "t.tsipoliti@eoppep.gr",
+      "telephoneNumber": "9143",
+      "lastLogon": "133086422557678882",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "a.akalestou",
+      "cn": "Akalestou Aikaterini",
+      "displayName": "Ακαλέστου Αικατερίνη",
+      "description": "Ακαλέστου Αικατερίνη",
+      "telephoneNumber": "9092",
+      "lastLogon": "132979303643209595",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "g.petratou",
+      "cn": "Georgia Petratou",
+      "displayName": "Πετράτου Γεωργία",
+      "description": "Πετράτου Γεωργία",
+      "mail": "g.petratou@eoppep.gr",
+      "telephoneNumber": "9163",
+      "lastLogon": "133069121234521196",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "k.nikolaou",
+      "cn": "Nikolaou Kalitsa",
+      "displayName": "Nikolaou Kalitsa",
+      "description": "Νικολάου Καλίτσα",
+      "lastLogon": "132918916443004210",
+      "userAccountControl": "66050",
+      "active": false
+    },
+    {
+      "sAMAccountName": "n.balagouras",
+      "cn": "Balagouras Nikitas",
+      "displayName": "Balagouras Nikitas",
+      "description": "Μπαλαγούρας Νικίτας",
+      "lastLogon": "133130612322023026",
+      "userAccountControl": "512",
+      "active": true
+    },
+    {
+      "sAMAccountName": "v.tsioumas",
+      "cn": "Evaggelos Tsioumas",
+      "displayName": "Tsioumas Euaggelos",
+      "description": "Τσιούμας Ευάγγελος",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "r.kalodiki",
+      "cn": "Reggina Kalodiki",
+      "displayName": "Reggina Kalodiki",
+      "description": "Καλοδίκη Ρεγγίνα",
+      "lastLogon": "133252425743017629",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "s.plota",
+      "cn": "Plota Sofia",
+      "displayName": "Πλώτα Σοφία",
+      "description": "Πλώτα Σοφία",
+      "mail": "s.plota@eoppep.gr",
+      "telephoneNumber": "9091",
+      "lastLogon": "133245692705191254",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "f.belafemine",
+      "cn": "Belafemine Frantzeska",
+      "displayName": "Μπελαφέμινε Φραντζέσκα",
+      "description": "Μπελαφέμινε Φραντζέσκα",
+      "mail": "f.belafemine@eoppep.gr",
+      "telephoneNumber": "9183",
+      "lastLogon": "133253185344400029",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "a.sagri",
+      "cn": "Sagri Alexandra",
+      "displayName": "Sagri Alexandra",
+      "description": "Σαγρή Αλεξάνδρα",
+      "lastLogon": "133198027823521550",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "a.mantaka",
+      "cn": "Mantaka Anna",
+      "displayName": "Mantaka Anna",
+      "description": "Μάντακα Άννα",
+      "lastLogon": "133178960858562187",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "e.vlachadoni",
+      "cn": "Vlahantoni Errika",
+      "displayName": "Βλαχαντώνη Έρρικα",
+      "description": "Βλαχαντώνη Έρρικα",
+      "mail": "proedros@eoppep.gr",
+      "telephoneNumber": "9030",
+      "lastLogon": "133226653087415312",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "m.pagourtzi",
+      "cn": "Pagourtzi Maria",
+      "displayName": "Παγουρτζή Μαρία",
+      "description": "Παγουρτζή Μαρία",
+      "mail": "m.pagourtzi@eoppep.gr",
+      "telephoneNumber": "9122",
+      "lastLogon": "133251503943783782",
+      "physicalDeliveryOfficeName": "B25",
+      "userAccountControl": "512",
+      "active": true
+    },
+    {
+      "sAMAccountName": "o.kousta",
+      "cn": "Kousta Ourania",
+      "displayName": "Κούστα Ουρανία",
+      "description": "Κούστα Ουρανία",
+      "mail": "o.kousta@eoppep.gr",
+      "telephoneNumber": "9175",
+      "lastLogon": "133252811289758707",
+      "userAccountControl": "512",
+      "active": true
+    },
+    {
+      "sAMAccountName": "p.kouniaki",
+      "cn": "Kouniaki Pandora",
+      "displayName": "Κουνιάκη Πανδώρα",
+      "description": "Κουνιάκη Πανδώρα",
+      "mail": "p.kouniaki@eoppep.gr",
+      "telephoneNumber": "9172",
+      "lastLogon": "133253412741107980",
+      "physicalDeliveryOfficeName": "B42",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "v.plarinou",
+      "cn": "Plarinou Vasiliki",
+      "displayName": "Πλαρινού Βασιλική",
+      "description": "Πλαρινού Βασιλική",
+      "mail": "v.plarinou@eoppep.gr",
+      "telephoneNumber": "9145",
+      "lastLogon": "133250589882584158",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "g.petrou",
+      "cn": "Petrou Giannis",
+      "displayName": "Πέτρου Γιάννης",
+      "description": "Πέτρου Γιάννης",
+      "mail": "g.petrou@eoppep.gr",
+      "telephoneNumber": "9026",
+      "lastLogon": "133253241192245809",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "k.skamagkas",
+      "cn": "Skamagkas Konstantinos",
+      "displayName": "Σκαμάγκας Κωνσταντίνος",
+      "description": "Σκαμάγκας Κωνσταντίνος",
+      "mail": "k.skamagkas@eoppep.gr",
+      "telephoneNumber": "9024",
+      "lastLogon": "133252456154887686",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "e.theodoraki",
+      "cn": "Theodoraki Eudokia",
+      "displayName": "Θεοδωράκη Ευδοκία",
+      "description": "Θεοδωράκη Ευδοκία",
+      "mail": "e.theodoraki@eoppep.gr",
+      "telephoneNumber": "9143",
+      "lastLogon": "133245414896888437",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "ve",
+      "cn": "Voithitiki Epitropi Exetaseon",
+      "displayName": "Voithitiki Epitropi Exetaseon",
+      "description": "Βοηθητική Επιτροπή Εξετάσεων",
+      "lastLogon": "133252309088137293",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "c.kostelidou",
+      "cn": "Kostelidou Charikleia",
+      "displayName": "Κωστελίδου Χαρούλα",
+      "description": "Κωστελίδου Χαρούλα",
+      "mail": "c.kostelidou@eoppep.gr",
+      "telephoneNumber": "9044",
+      "info": "EvaluatorID=10051",
+      "lastLogon": "133246262480720981",
+      "physicalDeliveryOfficeName": "Domes",
+      "userAccountControl": "66048",
+      "active": true
+    },
+    {
+      "sAMAccountName": "a.korakiti",
+      "cn": "Korakiti Anna",
+      "displayName": "Κορακίτη Άννα",
+      "description": "Κορακίτη Άννα",
+      "mail": "a.korakiti@eoppep.gr",
+      "telephoneNumber": "9084",
+      "lastLogon": "133185044398926980",
+      "physicalDeliveryOfficeName": "B22",
+      "userAccountControl": "66050",
+      "active": false
+    }
+  ]
