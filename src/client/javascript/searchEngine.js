@@ -14,6 +14,10 @@ export function initSearchEngine(hostElement){
             host.dispatchEvent(canceledSearch)
         }
     })
+
+    document.addEventListener('user-selection-by-search',()=>{
+        searchBar.value = ''
+    })
 }
 
 

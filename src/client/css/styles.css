@@ -50,8 +50,16 @@ body > * { border:solid 1px #999 ;}
 .office-list  li:hover{background-color: rgb(136, 136, 136,0.3);} 
 .office-list  li:active{background-color: rgba(206, 205, 205, 0.456);} 
 .office-filters > * { border: 1px solid #999; padding: 5px; }
+.office-content{
+  display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto 1fr;
+    justify-items: center;
+    align-items: center;
+    padding: 1rem;
+    gap: 1rem;
+}
 
-.office-content{display: flex; align-items: center; justify-content: center;}
 rect{ fill:rgb(99 99 99); stroke:rgb(0, 0, 0); }
 .rectUser { width:120px; height:60px; cursor: pointer; }
 .rectUserBig { width:170px; height:290px; cursor: pointer;  }
@@ -142,7 +150,7 @@ path { fill: rgba(99, 99, 99, 0.263);stroke: rgba(0, 0, 0, 0.159) }
     text-align: center;  
 }
 .searchbar::placeholder{
-  color: #333;
+  color: #33333386;
 }
 .selected{ background-color: #6c6c6c; }
 .tooltip {

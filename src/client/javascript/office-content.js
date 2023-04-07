@@ -52,7 +52,7 @@ export function initOfficeContent(hostElement){
                 host.dispatchEvent(hoverEvent)
             })
         });
-        document.addEventListener('office-filter-changed',()=>host.innerHTML='')
+        document.addEventListener('office-filter-changed',()=>content.innerHTML='')
         document.addEventListener('user-updated',async e=>{
             await updateRectInfo(e.detail)
             .then(async()=>await fetch(`/getofficeinformation/?office=${selection}`))
