@@ -1,6 +1,6 @@
 export async function downloadCsv(data, filename) {
-    console.log(typeof(data))
-    const blob = await data.blob();
+    const blob = await data.text()
+    .then(async d=> new Blob([`\uFEFF${d}`], { type: 'text/csv; charset=utf-8;' }))
     const url = URL.createObjectURL(blob);
     const link = document.createElement('a');
     link.href = url;

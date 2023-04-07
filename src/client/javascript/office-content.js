@@ -17,7 +17,7 @@ export function initOfficeContent(hostElement){
         host.dispatchEvent(svgLoadedEvent)
         await fetch(`/getofficeinformation/?office=${selection}`)
             .then(async o=> await matchOfficeDataWithSvg(await o.json()))
-            .then(emitSvgContentInfoToList())
+            .then(()=>emitSvgContentInfoToList())
       
         
         
@@ -107,15 +107,18 @@ function emitSvgContentInfoToList(){
             svgContentInfo.push({ 
                     user:user.user,
                     outlet:user.outlet,
+                    position:user.position,
                     cn:user.cn,
-                    displayName:user.displayName
+                    displayName:user.displayname
             })
         else
             svgContentInfo.push({ 
                 user:user.user,
-                outlet:user.outlet
+                outlet:user.outlet,
+                position:user.position
             })
     })
+    // console.log(svgContentInfo)
     const contentReceivedEvent = new CustomEvent('content-received',{
         detail:svgContentInfo,
         bubbles:true

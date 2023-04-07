@@ -1,9 +1,8 @@
 import {Router} from "express";
-import {appendInfoFromIdap} from './idapUsers.js'
+import {appendInfoFromIdap, searchQuery} from './idapUsers.js'
 import fs from 'fs/promises'
 import {_dirname} from './server.js'
 export const r = Router()
-
 
 
 r.post('/updateuserinfo/',async (req,res)=>{
@@ -42,12 +41,14 @@ r.get('/getofficeinformation/', async (req, res) => {
 r.get('/download-selected-office-list/', async (req, res) => {
   const {floor} = req.query
   const offices = await getAllOffices()
-  .then( allOffices => allOffices.filter(of=> floor==='all-offices' || floor.includes(of.floor)))
-  const content = await getUsersByOfficeNames(offices)
+    .then( allOffices => allOffices.filter(of=> floor==='all-offices' || floor.includes(of.floor)))
+  const users =  await getUsersByOfficeNames(offices)
+    .then(async userdata=> await appendInfoFromIdap(userdata))
+    .then(strObj=>JSON.parse(strObj))
   let data = []
-  data.push(['User','Outlet','Office'])
-  content.flat().forEach(user => {
-      data.push([user.user,user.outlet,user.office])
+  data.push(['User','Display Name','Outlet','Office'])
+  users.flat().forEach(user => {
+      data.push([user.user, user.displayName, user.outlet, user.office])
   });
   const csv = data.map(row => row.join(',')).join('\n');
   res.set('Content-Disposition', 'attachment; filename=data.csv');
@@ -58,11 +59,12 @@ r.get('/download-selected-office-list/', async (req, res) => {
 
 r.get('/download-selected-office/', async (req, res) => {
   const {office} = req.query
-  const content = JSON.parse(await readToFile(office))
+  const users = await readToFile(office).then(async userdata=> await appendInfoFromIdap(userdata))
+  .then(strObj=>JSON.parse(strObj))
   let data = []
-  data.push(['User','Outlet'])
-  content.forEach(user => {
-      data.push([user.user,user.outlet])
+  data.push(['User','Display Name','Outlet'])
+  users.forEach(user => {
+      data.push([user.user,user.displayName, user.outlet])
   });
   const csv = data.map(row => row.join(',')).join('\n');
   res.set('Content-Disposition', 'attachment; filename=data.csv');
@@ -136,38 +138,38 @@ async function getUsersByOfficeNames(offices){
 
 
 
-async function searchQuery(str) {
-  let result;
-  const directoryPath = `${_dirname}/../../content/offices/`;
-  const searchPromise = new Promise(async (resolve, reject) => {
-    let filteredArr = [];
-    const files = await fs.readdir(directoryPath);
-    const promises = files.map(async (file) => {
-      const fileContent = JSON.parse(
-        await fs.readFile(`${directoryPath + file}`)
-      );
-      return fileContent;
-    });
-    const arr = await Promise.all(promises);
-    const flattenedArr = [...arr.flat()];
-    filteredArr = flattenedArr.filter(
-      (user) =>
-        user.user.toLowerCase().includes(str.toLowerCase()) ||
-        user.outlet.toLowerCase().includes(str.toLowerCase())
-    );
-    resolve(filteredArr);
-  });
+// async function searchQuery(str) {
+//   let result;
+//   const directoryPath = `${_dirname}/../../content/offices/`;
+//   const searchPromise = new Promise(async (resolve, reject) => {
+//     let filteredArr = [];
+//     const files = await fs.readdir(directoryPath);
+//     const promises = files.map(async (file) => {
+//       const fileContent = JSON.parse(
+//         await fs.readFile(`${directoryPath + file}`)
+//       );
+//       return fileContent;
+//     });
+//     const arr = await Promise.all(promises);
+//     const flattenedArr = [...arr.flat()];
+//     filteredArr = flattenedArr.filter(
+//       (user) =>
+//         user.user.toLowerCase().includes(str.toLowerCase()) ||
+//         user.outlet.toLowerCase().includes(str.toLowerCase())
+//     );
+//     resolve(filteredArr);
+//   });
 
-  result = searchPromise.then(
-    (arr) => {
-      return arr;
-    },
-    (error) => {
-      return error;
-    }
-  );
-  return result;
-}
+//   result = searchPromise.then(
+//     (arr) => {
+//       return arr;
+//     },
+//     (error) => {
+//       return error;
+//     }
+//   );
+//   return result;
+// }
 
 
 

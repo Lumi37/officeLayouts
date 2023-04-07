@@ -43,6 +43,8 @@ export async function initOfficeList(hostElement) {
     officeListDownloadButton.addEventListener('click',async e=>{
         
             const data = await fetch(`/download-selected-office-list/?floor=${filter}`)
+            const data2 = await fetch(`/download-selected-office-list/?floor=${filter}`).then(async d=> await d.text())
+            console.log(data2)
             downloadCsv(data,'offices')
         
     })
