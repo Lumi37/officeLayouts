@@ -68,20 +68,28 @@ path { fill: rgba(99, 99, 99, 0.263);stroke: rgba(0, 0, 0, 0.159) }
 .office-view > * { border: solid 1px #999; }
 .office-user-details{
     display:flex;
-    gap: 1rem;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 1.5rem;
 }
-.office-user-details > input[type="text"]{
+
+.office-user{
+  display:flex;
+  visibility: hidden;
+  gap: 1rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;  
+}
+.office-user > input[type="text"]{
         padding: 0.3rem;
         background-color: #3a4341;
         outline-width: 0;
         color: white;
         text-align: center;
 }
-#office { font-size: 2rem; padding: 1rem; }
+#office { font-size: 2rem; }
 #downloadCsv {
   border: 1px solid #6b6b6b;
   padding: 10px;

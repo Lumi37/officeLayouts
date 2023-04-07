@@ -8,11 +8,11 @@ let selected
 
 export function initOfficeContent(hostElement){
     host = hostElement
-
+    const content =  host.querySelector('#content')
     document.addEventListener('office-selection', async e=>{
         const selection = e.detail
         const svg = await fetch(`/getsvgelement/?requestedSvg=${selection}`).then(s=>s.text())
-        host.innerHTML = svg
+        content.innerHTML = svg
         const svgLoadedEvent = new CustomEvent('svg-loaded',{bubbles:true})
         host.dispatchEvent(svgLoadedEvent)
         await fetch(`/getofficeinformation/?office=${selection}`)
