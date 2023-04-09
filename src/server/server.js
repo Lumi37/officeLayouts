@@ -15,7 +15,7 @@ console.log('1')
 initIdapUsers(await allStoredUsers())
 server.listen(3000, console.log("listens to 3000"));
 
-async function allStoredUsers(){
+export async function allStoredUsers(){
         console.log('2')
         const offices = await Promise.all(
             (await fs.readdir(`${_dirname}/../../content/offices/`))
