@@ -118,7 +118,6 @@ function emitSvgContentInfoToList(){
                 position:user.position
             })
     })
-    // console.log(svgContentInfo)
     const contentReceivedEvent = new CustomEvent('content-received',{
         detail:svgContentInfo,
         bubbles:true

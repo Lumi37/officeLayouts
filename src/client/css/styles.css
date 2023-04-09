@@ -130,7 +130,6 @@ path { fill: rgba(99, 99, 99, 0.263);stroke: rgba(0, 0, 0, 0.159) }
 }
 #officeListButton:active { background-color: #828181; }
 #submit:active { background-color: #828181; }
-.office-user-list{ display: flex; flex-direction: column;overflow-y: auto; }
 .office-user-list li:active { background-color: #333; }
 .office-user-list li:hover { background-color: rgb(255, 255, 255, 0.2); }
 .office-user-list li {
@@ -141,6 +140,9 @@ path { fill: rgba(99, 99, 99, 0.263);stroke: rgba(0, 0, 0, 0.159) }
   user-select: none;
   padding: 0.5rem;
   border: solid 0.5px rgb(255, 255, 255, 0.2);
+}
+.user-list{
+  display: flex; flex-direction: column;overflow-y: auto; 
 }
 .searchbar{
     padding: 0.3rem;

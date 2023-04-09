@@ -9,7 +9,7 @@ export async function downloadCsv(data, filename) {
     link.click();
     document.body.removeChild(link);
 }
-//must already exist on document
+
 export async function downloadSvg(office) {
     const svgElement = document.querySelector('svg');
     const svgString = new XMLSerializer().serializeToString(svgElement);

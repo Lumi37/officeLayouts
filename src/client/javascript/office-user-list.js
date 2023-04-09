@@ -5,7 +5,6 @@ export function initUserList(hostElement){
     host = hostElement
     document.addEventListener('content-received',async e=>{
         const officeData = e.detail
-        // console.log(e.detail)
         constructList(officeData)
     
         host.querySelectorAll('li').forEach(li=>{

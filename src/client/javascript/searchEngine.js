@@ -5,7 +5,7 @@ export function initSearchEngine(hostElement){
     host = hostElement
     const searchBar = host.querySelector('#searchbar')
     searchBar.addEventListener('keyup', e=>{
-        if(searchBar.value.length > 2){
+        if(searchBar.value.length > 2 ){
             queryRequest(searchBar)
             const initiatedSearch = new CustomEvent('initiated-search',{bubbles:true})
             host.dispatchEvent(initiatedSearch)
