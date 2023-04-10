@@ -18,7 +18,16 @@ export function initOfficeContent(hostElement){
         await fetch(`/getofficeinformation/?office=${selection}`)
             .then(async o=> await matchOfficeDataWithSvg(await o.json()))
             .then(()=>emitSvgContentInfoToList())
-      
+        const svg1 = host.querySelector('svg')
+        content.addEventListener("mousemove", function(e) {
+            let x = e.clientX - content.offsetLeft;
+            let y = e.clientY - content.offsetTop;
+            svg1.setAttribute("viewBox", (x - 50) + " " + (y - 50) + " " + "500" + " " + "500");
+        });
+
+        content.addEventListener("mouseleave", function(e) {
+            svg1.setAttribute("viewBox", "-0.5 -0.5 1202 802");
+        });
         
         
             
@@ -124,3 +133,5 @@ function emitSvgContentInfoToList(){
     })
     host.dispatchEvent(contentReceivedEvent)
 }
+
+
