@@ -1,5 +1,4 @@
 import { _dirname } from "./server.js";
-import fs from 'fs/promises'
 let storedUsers;
 
 export async function initIdapUsers(users) {
