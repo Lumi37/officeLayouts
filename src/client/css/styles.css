@@ -97,6 +97,16 @@ path { fill: rgba(99, 99, 99, 0.263);stroke: rgba(0, 0, 0, 0.159) }
         color: white;
         text-align: center;
 }
+.office-details-buttons{
+  display:flex;
+  visibility: hidden;
+  gap: 0.5rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding:0.5rem; 
+}
+
 #office { font-size: 2rem; }
 #downloadCsv {
   border: 1px solid #6b6b6b;

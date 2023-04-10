@@ -66,7 +66,7 @@ r.get('/download-selected-office/', async (req, res) => {
   users.forEach(user => {
       data.push([user.user,user.displayName, user.outlet])
   });
-  const csv = data.map(row => row.join(',')).join('\n');
+  const csv = data.map(row => row.join(';')).join('\n');
   res.set('Content-Disposition', 'attachment; filename=data.csv');
   res.set('Content-Type', 'text/csv');
   res.send(csv);

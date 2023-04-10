@@ -6,6 +6,7 @@ let host
 export function initOfficeUserDetails(hostElement){
     host = hostElement
     const user = host.querySelector('.office-user')
+    const downloadButtons = host.querySelector('.office-details-buttons')
     const submitButton = host.querySelector('#submit')
     const userField = host.querySelector('#user')
     const outletField = host.querySelector('#dataOutlet')
@@ -20,6 +21,7 @@ export function initOfficeUserDetails(hostElement){
         outletField.value = ''
         outletField.dataset.position=''
         user.style.visibility = 'hidden'
+        downloadButtons.style.visibility = 'visible'
     })
     document.addEventListener('office-filter-changed',()=>{
         office.innerHTML = ''
@@ -27,6 +29,7 @@ export function initOfficeUserDetails(hostElement){
         outletField.value = ''
         outletField.dataset.position=''
         user.style.visibility = 'hidden'
+        downloadButtons.style.visibility = 'hidden'
 
     })
     document.addEventListener('user-selection', e=>{
