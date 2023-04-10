@@ -17,7 +17,10 @@ export function utilities(){
     })
   document.addEventListener('hovered-item',e=> tooltip(e.detail) )
   document.addEventListener('unhovered-item',()=>document.querySelector('.tooltip').remove())
-  document.addEventListener('svg-loaded',()=>resizeSvg())
+  document.addEventListener('svg-loaded',()=>{
+    resizeSvg()
+    // enableMagnifyTool()
+  })
  
 }
 
@@ -47,4 +50,17 @@ function tooltip(position){
   }
 
 
+}
+function enableMagnifyTool(){
+  const content = document.querySelector('#content')
+  const svg = document.querySelector('svg')
+  content.addEventListener("keypress", function(e) {
+      let x = e.clientX - content.offsetLeft;
+      let y = e.clientY - content.offsetTop;
+      svg.setAttribute("viewBox", (x - 50) + " " + (y - 50) + " " + "500" + " " + "500");
+  });
+
+  content.addEventListener("mouseleave", function(e) {
+    svg.setAttribute("viewBox", "-0.5 -0.5 1202 802");
+  });
 }
