@@ -19,7 +19,7 @@ export function utilities(){
   document.addEventListener('unhovered-item',()=>document.querySelector('.tooltip').remove())
   document.addEventListener('svg-loaded',()=>{
     resizeSvg()
-    // enableMagnifyTool()
+    enableMagnifyTool()
   })
  
 }
@@ -54,13 +54,42 @@ function tooltip(position){
 function enableMagnifyTool(){
   const content = document.querySelector('#content')
   const svg = document.querySelector('svg')
-  content.addEventListener("keypress", function(e) {
+  let spaceKeyPressed = false
+  let leftClickPressed = false 
+  document.addEventListener("keydown",e => {
+    console.log('spaceKeyPressed',spaceKeyPressed)
+    if(e.code === 'Space')
+      spaceKeyPressed = true
+  });
+  
+  
+  content.addEventListener('mousedown',e=>{
+    console.log('leftClickPressed',leftClickPressed)
+    if(e.button === 0)
+      leftClickPressed = true
+     
+    if(spaceKeyPressed === true && leftClickPressed === true){
       let x = e.clientX - content.offsetLeft;
       let y = e.clientY - content.offsetTop;
       svg.setAttribute("viewBox", (x - 50) + " " + (y - 50) + " " + "500" + " " + "500");
-  });
+    }
+  })
 
-  content.addEventListener("mouseleave", function(e) {
+  content.addEventListener('mouseup',e=>{
+    console.log('spaceKeyPressed',spaceKeyPressed)
+    if(e.button === 0)
+      leftClickPressed = false 
+  })
+
+  document.addEventListener('keyup',e=>{
+    console.log('leftClickPressed',leftClickPressed)
+
+    if(e.code === 'Space')
+      spaceKeyPressed = false 
+  })
+
+
+  content.addEventListener("mouseleave",e => {
     svg.setAttribute("viewBox", "-0.5 -0.5 1202 802");
   });
 }
