@@ -1,0 +1,38 @@
+[
+  {
+    "user": "unused",
+    "outlet": "D18",
+    "office": "B22",
+    "position": "1"
+  },
+  {
+    "user": "p.kousoulis",
+    "outlet": "D20",
+    "office": "B22",
+    "position": "2"
+  },
+  {
+    "user": "p.kousoulis",
+    "outlet": "D196",
+    "office": "B22",
+    "position": "3"
+  },
+  {
+    "user": "unused",
+    "outlet": "",
+    "office": "B22",
+    "position": "4"
+  },
+  {
+    "user": "unused",
+    "outlet": "V119",
+    "office": "B22",
+    "position": "5"
+  },
+  {
+    "user": "mparmpouta",
+    "outlet": "D193",
+    "office": "B22",
+    "position": "6"
+  }
+]
