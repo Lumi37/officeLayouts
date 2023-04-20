@@ -11,6 +11,7 @@ export async function initOfficeList(hostElement) {
     const officeListDownloadButton = host.querySelector('#officeListButton')
     const officeFiltersCheckboxes = host.querySelectorAll('input[type="checkbox"]')
     const officeListArr = await fetch(`/offices/?floor=all-offices`).then(res => res.json())
+    host.dispatchEvent(new CustomEvent( 'floor-selection', { detail:'all-offices',bubbles:true }))
     constructOfficeList(officeListArr)
 
     officeFiltersCheckboxes.forEach(checkbox=>{
@@ -37,6 +38,7 @@ export async function initOfficeList(hostElement) {
             }else
                 host.querySelector('.office-list').innerHTML=''
             const officeFilterChangedEvent = new CustomEvent('office-filter-changed',{bubbles:true})
+            const selectedFloorsEvent = new CustomEvent('floor-selection',{details:filter, bubbles:true})
             host.dispatchEvent(officeFilterChangedEvent)
         })
     })

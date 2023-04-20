@@ -9,6 +9,10 @@ let selected
 export function initOfficeContent(hostElement){
     host = hostElement
     const content =  host.querySelector('#content')
+    document.addEventListener('floor-selection',async e=>{
+        const selection = e.detail
+        console.log(selection)
+    })
     document.addEventListener('office-selection', async e=>{
         const selection = e.detail
         const svg = await fetch(`/getsvgelement/?requestedSvg=${selection}`).then(s=>s.text())
