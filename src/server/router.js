@@ -18,6 +18,7 @@ r.get('/search/',async (req,res)=>{
 })
 
 
+
 r.get('/offices',async (req,res)=>{
   const {floor} = req.query
   const offices = await getAllOffices()
@@ -25,10 +26,15 @@ r.get('/offices',async (req,res)=>{
   res.send(offices)
 })
 
-r.get('/getsvgelement/',async (req,res)=>{
+r.get('/getsvgofficeelement/',async (req,res)=>{
   const {requestedSvg} = req.query
-  const svg = await getSvgElement(requestedSvg)
+  const svg = await getSvgOfficeElement(requestedSvg)
   res.send(svg)
+})
+r.get('/getsvgfloorelement/',async (req,res)=>{
+  const {floor} = req.query
+  const floors = await getSvgFloorElement(floor)
+  res.send(floors)
 })
 
 r.get('/getofficeinformation/', async (req, res) => {
@@ -96,6 +102,7 @@ async function  getAllOffices(){
 
 
 
+
 async function writeToFile(body) {
   let requestedFile = `${_dirname}../../content/offices/${body.office}.json`;
   let requestedFileContent;
@@ -119,10 +126,30 @@ async function writeToFile(body) {
 
 
 
-async function getSvgElement(svg){
-    let  requestedFile = `${_dirname}/../../content/svgs/${svg}.svg`    
+async function getSvgOfficeElement(svg){
+    let  requestedFile = `${_dirname}/../../content/svgs/svg-offices/${svg}.svg`    
     const content = await fs.readFile(requestedFile,{encoding: 'utf-8'})
     return content
+}
+async function getSvgFloorElement(floors){
+  const directoryPath = `${_dirname}/../../content/svgs/svg-floors/`
+  const files = await fs.readdir(directoryPath)
+  if(floors === 'all-offices'){
+    return await Promise.all(
+      files.map(async file =>{
+        return await fs.readFile(directoryPath+file,"utf-8")
+      })
+    )
+  }else{
+    return await Promise.all(
+        files.map(async file =>{
+          file = file.replace('.svg','')
+          if(floors.includes(file))
+            return await fs.readFile(directoryPath+file+'.svg',"utf-8")
+        })
+    )
+  }
+  
 
 }
 

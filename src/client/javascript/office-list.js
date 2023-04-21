@@ -38,8 +38,10 @@ export async function initOfficeList(hostElement) {
             }else
                 host.querySelector('.office-list').innerHTML=''
             const officeFilterChangedEvent = new CustomEvent('office-filter-changed',{bubbles:true})
-            const selectedFloorsEvent = new CustomEvent('floor-selection',{details:filter, bubbles:true})
+            const selectedFloorsEvent = new CustomEvent('floor-selection',{detail:filter, bubbles:true})
             host.dispatchEvent(officeFilterChangedEvent)
+            host.dispatchEvent(selectedFloorsEvent)
+
         })
     })
     officeListDownloadButton.addEventListener('click',async e=>{

@@ -30,12 +30,12 @@ div::-webkit-scrollbar {
 }
 
 div::-webkit-scrollbar-track {
-  background-color: rgb(255, 255, 255, 0.7);
+  background-color: rgb(0, 0, 0);
   border-radius: 5px;
 }
 
 div::-webkit-scrollbar-thumb {
-  background-color: #888;
+  background-color: #ffffff;
   border-radius: 5px;
 }
 div::-webkit-scrollbar-thumb:hover {
@@ -57,18 +57,14 @@ body > * { border:solid 1px #999 ;}
     justify-items: center;
     align-items: center;
     padding: 1rem;
+    overflow-y: auto;
     gap: 1rem;
 }
-#content{overflow-y:scroll ;height: calc(100% -20rem);}
+#content{overflow-y:auto ;height: 100%; display: grid; grid-template-rows: auto auto auto; padding:1rem;gap: 1rem;}
 rect{ fill:rgb(99 99 99); stroke:rgb(0, 0, 0); }
 .rectUser { width:120px; height:60px; cursor: pointer; }
 .rectUserBig { width:170px; height:290px; cursor: pointer;  }
-.rectContainer {
-  width: 1200px;
-  height: 800px;
-  fill: #434343;
-  stroke: white;
-}
+.rectContainer { width: 1200px; height: 800px; fill:#434343; stroke:white;}
 path { fill: rgba(99, 99, 99, 0.263);stroke: rgba(0, 0, 0, 0.159) }
 .selectedRect{fill: white;}
 

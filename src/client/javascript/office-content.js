@@ -10,13 +10,14 @@ export function initOfficeContent(hostElement){
     host = hostElement
     const content =  host.querySelector('#content')
     document.addEventListener('floor-selection',async e=>{
+        content.innerHTML = ''
         const selection = e.detail
-        console.log(selection)
+        await fetch(`/getsvgfloorelement/?floor=${selection}`).then(async response=> await response.json()).then(async svg=> svg.forEach(s=>content.innerHTML+=(s) ? s : '') )
+
     })
     document.addEventListener('office-selection', async e=>{
         const selection = e.detail
-        const svg = await fetch(`/getsvgelement/?requestedSvg=${selection}`).then(s=>s.text())
-        content.innerHTML = svg
+        await fetch(`/getsvgofficeelement/?requestedSvg=${selection}`).then(s=>s.text()).then(svg=> content.innerHTML = svg)
         const svgLoadedEvent = new CustomEvent('svg-loaded',{bubbles:true})
         host.dispatchEvent(svgLoadedEvent)
         await fetch(`/getofficeinformation/?office=${selection}`)
@@ -38,7 +39,8 @@ export function initOfficeContent(hostElement){
                         outlet:userData.outlet,
                         position:userData.position
                     }, 
-                    bubbles: true })
+                    bubbles: true 
+                })
                 host.dispatchEvent(userSelectionEvent)
                 const userSelectionByRectEvent = new CustomEvent('user-selection-by-rect',{ detail:userData.position, bubbles:true})
                 host.dispatchEvent(userSelectionByRectEvent)
