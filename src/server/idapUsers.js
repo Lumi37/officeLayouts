@@ -1,9 +1,10 @@
 import { _dirname } from "./server.js";
+import fs from 'fs/promises'
 let storedUsers;
 
 export async function initIdapUsers(users) {
-    const allUsers = await fetch("http://api.lan.eoppep.gr/ldap/users").then(async (r) => await r.json());
-    //const allUsers = await fs.readFile(`${_dirname}/../../content/notes/info.json`).then((r) => r.toString('utf-8')).then((r) => JSON.parse(r));
+    // const allUsers = await fetch("http://api.lan.eoppep.gr/ldap/users").then(async (r) => await r.json());
+    const allUsers = await fs.readFile(`${_dirname}/../../content/notes/info.json`).then((r) => r.toString('utf-8')).then((r) => JSON.parse(r));
     storedUsers =[
         ...allUsers
             .map((user) => {

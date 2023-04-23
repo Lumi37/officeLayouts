@@ -17,7 +17,8 @@ export function utilities(){
     })
   document.addEventListener('hovered-item',e=> tooltip(e.detail) )
   document.addEventListener('unhovered-item',()=>document.querySelector('.tooltip').remove())
-  document.addEventListener('svg-loaded',()=>resizeSvg())
+  document.addEventListener('svg-office-loaded',()=>resizeSvg())
+  document.addEventListener('svg-floor-loaded',(e)=>displayOfficeNames(e.detail))
  
 }
 
@@ -45,6 +46,29 @@ function tooltip(position){
     tooltip.style.top = rectBounds.top - 45 + 'px'
     tooltip.style.left = rectBounds.right -125 + 'px'
   }
+}
 
-
+function displayOfficeNames(allOffices){
+  let occupiedOffices = []
+  const allOfficesRects = document.querySelectorAll('rect[data-office]')
+  const content = document.querySelector('#content')
+  document.querySelectorAll('li[data-office]').forEach(li=>{
+    occupiedOffices.push(li.dataset.office)
+  })
+  const unoccupiedOffices = allOffices.filter(office=>!(occupiedOffices.includes(office)))
+  allOfficesRects.forEach(rect=>{
+    const rectOffice = rect.dataset.office
+    for(let i = 0; i < unoccupiedOffices.length; i++){
+      if(rectOffice === unoccupiedOffices[i]){
+        rect.classList.add('unoccupied-office')
+      }
+    const officeNameBox = document.createElement('div')
+    officeNameBox.classList.add('officeNameBox')
+    content.appendChild(officeNameBox)
+    const rectBounds = rect.getBoundingClientRect()
+    officeNameBox.style.top = rectBounds.top+'px'
+    officeNameBox.style.left = rectBounds.right  +'px'
+    
+    }
+  })
 }

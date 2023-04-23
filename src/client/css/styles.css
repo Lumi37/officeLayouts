@@ -62,6 +62,7 @@ body > * { border:solid 1px #999 ;}
 }
 #content{overflow-y:auto ;height: 100%; display: grid; grid-template-rows: auto auto auto; padding:1rem;gap: 1rem;}
 rect{ fill:rgb(99 99 99); stroke:rgb(0, 0, 0); }
+.unoccupied-office{ fill: rgb(0 0 0 / 0%); stroke: rgb(0 0 0 / 34%); cursor: not-allowed; }
 .rectUser { width:120px; height:60px; cursor: pointer; }
 .rectUserBig { width:170px; height:290px; cursor: pointer;  }
 .rectContainer { width: 1200px; height: 800px; fill:#434343; stroke:white;}
@@ -164,6 +165,13 @@ path { fill: rgba(99, 99, 99, 0.263);stroke: rgba(0, 0, 0, 0.159) }
 .tooltip {
   position: absolute;
   background-color: rgb(110, 109, 109);
+  border: 1px solid black;
+  padding: 0.625rem;
+  font-size: 1rem;
+}
+.officeNameBox{
+  position: sticky;
+  background-color: rgb(255, 0, 0);
   border: 1px solid black;
   padding: 0.625rem;
   font-size: 1rem;

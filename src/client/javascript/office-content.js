@@ -12,17 +12,20 @@ export function initOfficeContent(hostElement){
     document.addEventListener('floor-selection',async e=>{
         content.innerHTML = ''
         const selection = e.detail
-        await fetch(`/getsvgfloorelement/?floor=${selection}`).then(async response=> await response.json()).then(async svg=> svg.forEach(s=>content.innerHTML+=(s) ? s : '') )
+        await fetch(`/getsvgfloorelement/?floor=${selection}`)
+            .then(async response=> await response.json())
+            .then(async svg=> svg.forEach(s=>content.innerHTML+=(s) ? s : ''))
+            .then(()=>emitSvgFloorContentInfoToList())
 
     })
     document.addEventListener('office-selection', async e=>{
         const selection = e.detail
         await fetch(`/getsvgofficeelement/?requestedSvg=${selection}`).then(s=>s.text()).then(svg=> content.innerHTML = svg)
-        const svgLoadedEvent = new CustomEvent('svg-loaded',{bubbles:true})
+        const svgLoadedEvent = new CustomEvent('svg-office-loaded',{bubbles:true})
         host.dispatchEvent(svgLoadedEvent)
         await fetch(`/getofficeinformation/?office=${selection}`)
             .then(async o=> await matchOfficeDataWithSvg(await o.json()))
-            .then(()=>emitSvgContentInfoToList())
+            .then(()=>emitSvgOfficeContentInfoToList())
       
         
         
@@ -63,7 +66,7 @@ export function initOfficeContent(hostElement){
             await updateRectInfo(e.detail)
             .then(async()=>await fetch(`/getofficeinformation/?office=${selection}`))
             .then(async o=> await matchOfficeDataWithSvg(await o.json()))
-            .then(emitSvgContentInfoToList())
+            .then(emitSvgOfficeContentInfoToList())
        
         })
         document.addEventListener('user-selection-by-list',e=>{
@@ -105,7 +108,7 @@ async function updateRectInfo(updatedData){
     })
 }
 
-function emitSvgContentInfoToList(){
+function emitSvgOfficeContentInfoToList(){
     let svgContentInfo = []
     host.querySelectorAll('rect[data-position]').forEach(rect=>{
         let user = rect.dataset
@@ -129,4 +132,13 @@ function emitSvgContentInfoToList(){
         bubbles:true
     })
     host.dispatchEvent(contentReceivedEvent)
+}
+
+function emitSvgFloorContentInfoToList(){
+    let svgOfficeInfo = []
+    host.querySelectorAll('rect[data-office]').forEach(rect=>{
+        svgOfficeInfo.push(rect.dataset.office)
+    })
+    const officeNamesEvent = new CustomEvent('svg-floor-loaded',{ detail:svgOfficeInfo, bubbles:true})
+    host.dispatchEvent(officeNamesEvent)
 }
