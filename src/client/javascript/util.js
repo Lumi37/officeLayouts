@@ -51,7 +51,7 @@ function tooltip(position){
 function displayOfficeNames(allOffices){
   let occupiedOffices = []
   const allOfficesRects = document.querySelectorAll('rect[data-office]')
-  const content = document.querySelector('#content')
+  const content = document.querySelector('.office-content')
   document.querySelectorAll('li[data-office]').forEach(li=>{
     occupiedOffices.push(li.dataset.office)
   })
