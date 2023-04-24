@@ -60,7 +60,16 @@ body > * { border:solid 1px #999 ;}
     overflow-y: auto;
     gap: 1rem;
 }
-#content{overflow-y:auto ;height: 100%; display: grid; grid-template-rows: auto auto auto; padding:1rem;gap: 1rem;}
+/* #content{overflow-y:auto ;height: 100%; display: grid; grid-template-rows: auto auto auto; padding:1rem;gap: 1rem;} */
+#content {
+  grid-template-columns: auto auto;
+  overflow-y: auto;
+  height: 100%;
+  display: grid;
+  grid-template-rows: auto auto;
+  padding: 1rem;
+  gap: 1rem;
+}
 rect{ fill:rgb(99 99 99); stroke:rgb(0, 0, 0); }
 .unoccupied-office{ fill: rgb(0 0 0 / 0%); stroke: rgb(0 0 0 / 34%); cursor: not-allowed; }
 .rectUser { width:120px; height:60px; cursor: pointer; }
@@ -175,4 +184,8 @@ path { fill: rgba(99, 99, 99, 0.263);stroke: rgba(0, 0, 0, 0.159) }
   border: 1px solid black;
   padding: 0.625rem;
   font-size: 1rem;
+}
+.officeName{
+  font-size: 1.5rem;
+  
 }
