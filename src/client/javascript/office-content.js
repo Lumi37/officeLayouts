@@ -9,15 +9,20 @@ let selected
 export function initOfficeContent(hostElement){
     host = hostElement
     const content =  host.querySelector('#content')
+    const button = host.querySelector('.go-back-button')
     document.addEventListener('floor-selection',async e=>{
-        content.innerHTML = ''
         const selection = e.detail
         await fetch(`/getsvgfloorelement/?floor=${selection}`)
             .then(async response=> await response.json())
-            .then(async svg=> svg.forEach(s=>content.innerHTML+=(s) ? s : ''))
+            .then(async svg=>{ 
+                content.innerHTML = ''        
+                svg.forEach(s=>content.innerHTML+=(s) ? s : '')
+            })
             .then(()=>emitSvgFloorContentInfoToList())
-
+            .then(()=>addEventListenersToOffices())
+        hideBackToOverviewButton()
     })
+    
     document.addEventListener('office-selection', async e=>{
         const selection = e.detail
         await fetch(`/getsvgofficeelement/?requestedSvg=${selection}`).then(s=>s.text()).then(svg=> content.innerHTML = svg)
@@ -26,8 +31,11 @@ export function initOfficeContent(hostElement){
         await fetch(`/getofficeinformation/?office=${selection}`)
             .then(async o=> await matchOfficeDataWithSvg(await o.json()))
             .then(()=>emitSvgOfficeContentInfoToList())
-      
-        
+        displayBackToOverviewButton()
+        button.addEventListener('click',()=>{
+            const backToOverviewEvent = new CustomEvent('back-to-overview',{bubbles:true})
+            host.dispatchEvent(backToOverviewEvent)
+        })
         
             
         host.querySelectorAll('rect[data-position]').forEach(rect => {
@@ -141,4 +149,23 @@ function emitSvgFloorContentInfoToList(){
     })
     const officeNamesEvent = new CustomEvent('svg-floor-loaded',{ detail:svgOfficeInfo, bubbles:true})
     host.dispatchEvent(officeNamesEvent)
+}
+
+function addEventListenersToOffices(){
+    const offices = document.querySelectorAll('rect[data-office]')
+    offices.forEach(office=>{
+        office.addEventListener('click',e=>{
+            const selectionByOverviewEvent = new CustomEvent('office-selection-by-overview',{detail:office.dataset.office, bubbles:true})
+            host.dispatchEvent(selectionByOverviewEvent)
+        })
+    })
+}
+
+function displayBackToOverviewButton(){
+    const btn = host.querySelector('.go-back-button')
+    btn.style.visibility = 'visible'
+}
+function hideBackToOverviewButton(){
+    const btn = host.querySelector('.go-back-button')
+    btn.style.visibility = 'hidden'
 }

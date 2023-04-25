@@ -1,10 +1,45 @@
 
 export function utilities(){
     window.addEventListener('resize',()=>{
-        if(document.querySelector('svg')){
+      const windowWidth = window.innerWidth
+      const windowHeight = window.innerHeight
+      if(document.querySelectorAll('svg').length>1){
+        const svgs = document.querySelectorAll('svg')
+        const content = document.querySelector('#content')
+        if(windowWidth<1700){
+          content.classList.remove('grid-content')
+          content.classList.add('flex-content')
+         }else{
+          content.classList.remove('flex-content')
+          content.classList.add('grid-content')
+         }
+        if(windowHeight<870){
+          svgs.forEach(svg=>{
+            svg.style.height = windowHeight/3 +'px'
+          })
+        }else{
+          svgs.forEach(svg=>{
+            svg.style.height = String(450)+'px'
+          })
+        }
+        if(windowWidth<1040){
+          svgs.forEach(svg=>{
+            svg.style.width = windowWidth -400+'px'
+            svg.style.height = svg.style.height - 50 + 'px'
+          })
+        }else{
+          svgs.forEach(svg=>{
+            svg.style.width = String(650)+'px'
+          })
+        }
+       
+      //   svgs.forEach(svg=>{
+      //     svg.style.height = String(windowHeight - 167)+'px'
+      //     svg.style.width = String(windowWidth - 450 )+'px'
+      // })
+      } 
+      else if(document.querySelector('svg')){
           const svg = document.querySelector('svg')
-          const windowWidth = window.innerWidth
-          const windowHeight = window.innerHeight
           if(windowHeight>801)
             svg.style.height = '800px'
           else
@@ -19,13 +54,13 @@ export function utilities(){
   document.addEventListener('unhovered-item',()=>document.querySelector('.tooltip').remove())
   document.addEventListener('svg-office-loaded',()=>resizeSvg())
   document.addEventListener('svg-floor-loaded',(e)=>{
-    resizeOverviewSvg()
-    displayOfficeNames(e.detail)
+     resizeOverviewSvg()
+    //  displayOfficeNames(e.detail)
   })
  
 }
   
-  function resizeOverviewSvg(){
+   function resizeOverviewSvg(){
     if(document.querySelector('svg')){
       const svgs = document.querySelectorAll('svg')
       svgs.forEach(svg=>{
@@ -64,9 +99,13 @@ function displayOfficeNames(allOffices){
   
   let occupiedOffices = []
   const allOfficesRects = document.querySelectorAll('rect[data-office]')
-  const svg1 = document.querySelector('svg[data-floor="a-floor"]')
-  const svg2 = document.querySelector('svg[data-floor="b-floor"]')
-  const svg3 = document.querySelector('svg[data-floor="ground-floor"]')
+  const svg1 = document.querySelector('div[data-floor="a-floor"]')
+  const svg2 = document.querySelector('div[data-floor="b-floor"]')
+  const svg3 = document.querySelector('div[data-floor="ground-floor"]')
+  
+  // const svg1 = document.querySelector('svg[data-floor="a-floor"]')
+  // const svg2 = document.querySelector('svg[data-floor="b-floor"]')
+  // const svg3 = document.querySelector('svg[data-floor="ground-floor"]')
   
   document.querySelectorAll('li[data-office]').forEach(li=>{
     occupiedOffices.push(li.dataset.office)
@@ -80,37 +119,96 @@ function displayOfficeNames(allOffices){
       }
     }
     if((rect.dataset.office).startsWith('A')){
-      const officeName = document.createElementNS("http://www.w3.org/2000/svg", "text");
+      const officeName = document.createElement('div')
       const rectBounds = rect.getBoundingClientRect()
-      officeName.setAttribute("x", rect.getAttribute("x"));
-      officeName.setAttribute("y", rect.getAttribute("y"));
-      officeName.setAttribute("text-anchor", "middle");
-      officeName.setAttribute("dominant-baseline", "central");
-      officeName.classList.add('officeName')
-      officeName.textContent = rect.getAttribute("data-office");
+      // officeName.setAttribute("x", rect.getAttribute("x"));
+      // officeName.setAttribute("y", rect.getAttribute("y"));
+      if(rect.getAttribute('transform')){
+        officeName.classList.add('officeName')
+        officeName.textContent = rect.getAttribute("data-office");
+        officeName.style.top = rectBounds.top  + (rect.getAttribute('width')/4) + 'px'
+        officeName.style.left = rectBounds.right - (rect.getAttribute('height')/4) + 'px'
+      }else{
+        officeName.classList.add('officeName')
+        officeName.textContent = rect.getAttribute("data-office");
+        officeName.style.top = rectBounds.top  + 'px'
+        officeName.style.left = rectBounds.right  + 'px'
+      }
+      
       svg1.appendChild(officeName);
     }
     if((rect.dataset.office).startsWith('B')){
-      const officeName = document.createElementNS("http://www.w3.org/2000/svg", "text");
-      officeName.setAttribute("x", rect.getAttribute("x"));
-      officeName.setAttribute("y", rect.getAttribute("y"));
-      officeName.setAttribute("text-anchor", "middle");
-      officeName.setAttribute("dominant-baseline", "central");
-      officeName.classList.add('officeName')
-      officeName.textContent = rect.getAttribute("data-office");
+      const officeName = document.createElement('div')
+      const rectBounds = rect.getBoundingClientRect()
+      if(rect.getAttribute('transform')){
+        officeName.classList.add('officeName')
+        officeName.textContent = rect.getAttribute("data-office");
+        officeName.style.top = rectBounds.top  + (rect.getAttribute('width')/4) + 'px'
+        officeName.style.left = rectBounds.right - (rect.getAttribute('height')/4) + 'px'
+      }else{
+        officeName.classList.add('officeName')
+        officeName.textContent = rect.getAttribute("data-office");
+        officeName.style.top = rectBounds.top  + (rect.getAttribute('height')/4) + 'px'
+        officeName.style.left = rectBounds.right - (rect.getAttribute('width')/4) + 'px'
+      }
+      // officeName.setAttribute("x", rect.getAttribute("x"));
+      // officeName.setAttribute("y", rect.getAttribute("y"));
+      
       svg2.appendChild(officeName);
     }
 
     if((rect.dataset.office).startsWith('I') || (rect.dataset.office).startsWith('m') || (rect.dataset.office).startsWith('d')){
-      const officeName = document.createElementNS("http://www.w3.org/2000/svg", "text");
-      officeName.setAttribute("x", rect.getAttribute("x"));
-      officeName.setAttribute("y", rect.getAttribute("y"));
-      // officeName.setAttribute("text-anchor", "middle");
-      officeName.setAttribute("dominant-baseline", "central");
-      officeName.classList.add('officeName')
-      officeName.textContent = rect.getAttribute("data-office");
+      const officeName = document.createElement('div')
+      const rectBounds = rect.getBoundingClientRect()
+      // officeName.setAttribute("x", rect.getAttribute("x"));
+      // officeName.setAttribute("y", rect.getAttribute("y"));
+      if(rect.getAttribute('transform')){
+        officeName.classList.add('officeName')
+        officeName.textContent = rect.getAttribute("data-office");
+        officeName.style.top = rectBounds.top  + (rect.getAttribute('width')/4) + 'px'
+        officeName.style.left = rectBounds.right - (rect.getAttribute('height')/4) + 'px'
+      }else{
+        officeName.classList.add('officeName')
+        officeName.textContent = rect.getAttribute("data-office");
+        officeName.style.top = rectBounds.top  + 'px'
+        officeName.style.left = rectBounds.right  + 'px'
+      }
       svg3.appendChild(officeName);
     }
+    // if((rect.dataset.office).startsWith('A')){
+    //   const officeName = document.createElementNS("http://www.w3.org/2000/svg", "text");
+    //   const rectBounds = rect.getBoundingClientRect()
+    //   officeName.setAttribute("x", rect.getAttribute("x"));
+    //   officeName.setAttribute("y", rect.getAttribute("y"));
+    //   officeName.setAttribute('fill','white')
+    //   officeName.setAttribute('transform',"rotate(90,185,590)") //transform="rotate(0,185,590)"
+    //   officeName.setAttribute("text-anchor", "middle");
+    //   officeName.setAttribute("dominant-baseline", "central");
+    //   officeName.classList.add('officeName')
+    //   officeName.textContent = rect.getAttribute("data-office");
+    //   svg1.appendChild(officeName);
+    // }
+    // if((rect.dataset.office).startsWith('B')){
+    //   const officeName = document.createElementNS("http://www.w3.org/2000/svg", "text");
+    //   officeName.setAttribute("x", rect.getAttribute("x"));
+    //   officeName.setAttribute("y", rect.getAttribute("y"));
+    //   officeName.setAttribute("text-anchor", "middle");
+    //   officeName.setAttribute("dominant-baseline", "central");
+    //   officeName.classList.add('officeName')
+    //   officeName.textContent = rect.getAttribute("data-office");
+    //   svg2.appendChild(officeName);
+    // }
+
+    // if((rect.dataset.office).startsWith('I') || (rect.dataset.office).startsWith('m') || (rect.dataset.office).startsWith('d')){
+    //   const officeName = document.createElementNS("http://www.w3.org/2000/svg", "text");
+    //   officeName.setAttribute("x", rect.getAttribute("x"));
+    //   officeName.setAttribute("y", rect.getAttribute("y"));
+    //   officeName.setAttribute("text-anchor", "middle");
+    //   officeName.setAttribute("dominant-baseline", "central");
+    //   officeName.classList.add('officeName')
+    //   officeName.textContent = rect.getAttribute("data-office");
+    //   svg3.appendChild(officeName);
+    // }
 
 
 

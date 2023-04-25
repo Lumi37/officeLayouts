@@ -30,7 +30,14 @@ export function initOfficeUserDetails(hostElement){
         outletField.dataset.position=''
         user.style.visibility = 'hidden'
         downloadButtons.style.visibility = 'hidden'
-
+    })
+    document.addEventListener('back-to-overview',()=>{
+        office.innerHTML = ''
+        userField.value  = ''
+        outletField.value = ''
+        outletField.dataset.position=''
+        user.style.visibility = 'hidden'
+        downloadButtons.style.visibility = 'hidden'
     })
     document.addEventListener('user-selection', e=>{
         userField.value = e.detail.user

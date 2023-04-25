@@ -35,7 +35,7 @@
             <button class="go-back-button">← Back To Overview</button>
             <input type='text' class='searchbar' id="searchbar" placeholder="search"></input>
         </div>
-        <div id="content" class="grid-content">
+        <div id="content">
             <svg data-floor="b-floor" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1"
             width="1202px" height="801px" viewBox="-0.5 -0.5 1202 801">
             <g>

@@ -1,10 +1,10 @@
+
 import { downloadCsv } from "./lib.js"
 /**@type {HTMLELEMENT} */
 let host
 
 /** @type {HTMLLIElement} */
 let selected
-
 export async function initOfficeList(hostElement) {
     let filter = 'all-offices'
     host = hostElement
@@ -41,8 +41,12 @@ export async function initOfficeList(hostElement) {
             const selectedFloorsEvent = new CustomEvent('floor-selection',{detail:filter, bubbles:true})
             host.dispatchEvent(officeFilterChangedEvent)
             host.dispatchEvent(selectedFloorsEvent)
-
+            console.log('triggered')
         })
+    })
+    document.addEventListener('back-to-overview',()=>{
+        const selectedFloorsEvent = new CustomEvent('floor-selection',{detail:filter, bubbles:true})
+        host.dispatchEvent(selectedFloorsEvent)
     })
     officeListDownloadButton.addEventListener('click',async e=>{
         
@@ -60,6 +64,14 @@ export async function initOfficeList(hostElement) {
             selected = e.target
             const officeSelectionEvent = new CustomEvent('office-selection', { detail: li.textContent, bubbles: true })
             host.dispatchEvent(officeSelectionEvent)
+        })
+        document.addEventListener('office-selection-by-overview',e=>{
+            if(e.detail === li.dataset.office){
+                if(selected)selected.classList.remove('selected')
+                li.classList.add('selected')
+                selected = li
+                li.click()
+            }
         })
     })
 
