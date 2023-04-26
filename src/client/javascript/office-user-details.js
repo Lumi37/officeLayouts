@@ -46,7 +46,12 @@ export function initOfficeUserDetails(hostElement){
         user.style.visibility = 'visible'
         userField.select()
     })
-
+    document.addEventListener('hovered-overview-item',e=>{
+        office.innerHTML = e.detail
+    })
+    document.addEventListener('unhovered-overview-item',()=>{
+        office.innerHTML = ''
+    })
     submitButton.addEventListener('click', async e=>{
         if(outletField.dataset.position){
             const userInfo = {

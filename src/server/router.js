@@ -138,7 +138,7 @@ async function getSvgFloorElement(floors){
     return await Promise.all(
       files.map(async file =>{
         file = file.replace('.svg','')
-        return  `  <div data-floor=${file}> ${await fs.readFile(directoryPath+file+'.svg',"utf-8")} </div> `
+        return  `  <div data-floor=${file}><div>${file}<div> ${await fs.readFile(directoryPath+file+'.svg',"utf-8")} </div> `
       })
     )
   }else{
@@ -146,7 +146,7 @@ async function getSvgFloorElement(floors){
         files.map(async file =>{
           file = file.replace('.svg','')
           if(floors.includes(file))
-            return `  <div data-floor=${file}> ${await fs.readFile(directoryPath+file+'.svg',"utf-8")} </div> `
+            return `  <div data-floor=${file}><div>${file}<div> ${await fs.readFile(directoryPath+file+'.svg',"utf-8")} </div> `
         })
     )
   }

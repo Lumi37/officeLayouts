@@ -1,5 +1,6 @@
 * { box-sizing: border-box; }
 
+
 html {
     font-size: 16px;
     font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
@@ -60,8 +61,7 @@ body > * { border:solid 1px #999 ;}
     overflow-y: auto;
     gap: 1rem;
 }
-#content>div{width: min-content;height:min-content}
-/* #content{overflow-y:auto ;height: 100%; display: grid; grid-template-rows: auto auto auto; padding:1rem;gap: 1rem;} */
+#content>div>div{font-size: 2rem;text-align: center;}
 .grid-content {
   grid-template-columns: auto auto;
   overflow-y: auto;
@@ -79,7 +79,8 @@ body > * { border:solid 1px #999 ;}
   gap: 1rem;
 }
 rect{ fill:rgb(99 99 99); stroke:rgb(0, 0, 0); }
-.unoccupied-office{ fill: rgb(0 0 0 / 0%); stroke: rgb(0 0 0 / 34%); cursor: not-allowed; }
+.unoccupied-office{ fill: rgb(0 0 0 / 0%); stroke: rgb(0 0 0 / 34%); cursor: not-allowed!important; }
+.unoccupied-office-text{ fill: rgba(255, 255, 255, 0.476);cursor: not-allowed;}
 .rectUser { width:120px; height:60px; cursor: pointer; }
 .rectUserBig { width:170px; height:290px; cursor: pointer;  }
 .rectContainer { width: 1200px; height: 800px; fill:#434343; stroke:white;}
@@ -194,19 +195,6 @@ path { fill: rgba(99, 99, 99, 0.263);stroke: rgba(0, 0, 0, 0.159) }
   padding: 0.625rem;
   font-size: 1rem;
 }
-.officeName{
-  font-size: 1rem;
-  width: max-content;
-  position:absolute;
-  color: #333;
-  /* fill: white; */
-  background-color: white;
-  
-}
-/* .officeName{
-  font-size: 1.5rem;
-  fill: white;
-} */
 .upper-office-content-container{
   display: flex;
   width: 100%;
@@ -223,5 +211,6 @@ path { fill: rgba(99, 99, 99, 0.263);stroke: rgba(0, 0, 0, 0.159) }
 }
 .go-back-button:active{
   background-color: #a1a1a1;
-
 }
+text{fill: white;cursor: pointer;}
+rect[data-office]{cursor: pointer; }

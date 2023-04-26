@@ -18,9 +18,27 @@ export function initOfficeContent(hostElement){
                 content.innerHTML = ''        
                 svg.forEach(s=>content.innerHTML+=(s) ? s : '')
             })
-            .then(()=>emitSvgFloorContentInfoToList())
+            .then(()=>emitSvgFloorLoadedEvent())
             .then(()=>addEventListenersToOffices())
         hideBackToOverviewButton()
+
+        host.querySelectorAll('rect[data-office]').forEach(office=>{
+            office.addEventListener('mouseover',e=>{
+                const hoverEvent = new CustomEvent('hovered-overview-item',{detail:office.dataset.office,bubbles:true})
+                host.dispatchEvent(hoverEvent)
+            })
+            office.addEventListener('mouseout',()=>{
+                const hoverEvent = new CustomEvent('unhovered-overview-item',{bubbles:true})
+                host.dispatchEvent(hoverEvent)
+            })
+        })
+        host.querySelectorAll('text[data-office]').forEach(text=>{
+            text.addEventListener('mouseover',e=>{
+                const hoverEvent = new CustomEvent('hovered-overview-item',{detail:text.dataset.office,bubbles:true})
+                host.dispatchEvent(hoverEvent)
+            })
+        })
+
     })
     
     document.addEventListener('office-selection', async e=>{
@@ -142,21 +160,28 @@ function emitSvgOfficeContentInfoToList(){
     host.dispatchEvent(contentReceivedEvent)
 }
 
-function emitSvgFloorContentInfoToList(){
-    let svgOfficeInfo = []
-    host.querySelectorAll('rect[data-office]').forEach(rect=>{
-        svgOfficeInfo.push(rect.dataset.office)
-    })
-    const officeNamesEvent = new CustomEvent('svg-floor-loaded',{ detail:svgOfficeInfo, bubbles:true})
+function emitSvgFloorLoadedEvent(){
+    const officeNamesEvent = new CustomEvent('svg-floor-loaded',{ bubbles:true})
     host.dispatchEvent(officeNamesEvent)
 }
 
 function addEventListenersToOffices(){
     const offices = document.querySelectorAll('rect[data-office]')
+    const officesTextContent = document.querySelectorAll('text[data-office]')
     offices.forEach(office=>{
         office.addEventListener('click',e=>{
             const selectionByOverviewEvent = new CustomEvent('office-selection-by-overview',{detail:office.dataset.office, bubbles:true})
             host.dispatchEvent(selectionByOverviewEvent)
+        })
+    })
+    officesTextContent.forEach(text=>{
+        text.addEventListener('click',e=>{
+            offices.forEach(office=>{
+                if(office.dataset.office === e.target.dataset.office){
+                    const selectionByOverviewEvent = new CustomEvent('office-selection-by-overview',{detail:office.dataset.office, bubbles:true})
+                    host.dispatchEvent(selectionByOverviewEvent)
+                }
+            })
         })
     })
 }
