@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <svg viewBox="-0.5 -0.5 1202 801" xmlns="http://www.w3.org/2000/svg">
-  <rect width="1200" height="800" class="rectContainer" fill="rgb(99 99 99)" stroke="rgb(0, 0, 0)" y="-9.664" x="12.885"/>
+  <rect width="1200" height="800" class="rectContainer" fill="rgb(99 99 99)" stroke="rgb(0, 0, 0)" y="0" x="0"/>
   <rect data-office="B09" fill="rgb(99 99 99)" stroke="rgb(0, 0, 0)" x="58.516" y="133.4" width="40" height="80"/>
   <rect data-office="B10" fill="rgb(99 99 99)" stroke="rgb(0, 0, 0)" x="130.7" y="133.427" width="44.879" height="40"/>
   <rect data-office="B11" fill="rgb(99 99 99)" stroke="rgb(0, 0, 0)" x="198.5" y="133.4" width="80" height="40"/>

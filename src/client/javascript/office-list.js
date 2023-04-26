@@ -41,7 +41,6 @@ export async function initOfficeList(hostElement) {
             const selectedFloorsEvent = new CustomEvent('floor-selection',{detail:filter, bubbles:true})
             host.dispatchEvent(officeFilterChangedEvent)
             host.dispatchEvent(selectedFloorsEvent)
-            console.log('triggered')
         })
     })
     document.addEventListener('back-to-overview',()=>{

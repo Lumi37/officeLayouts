@@ -1,59 +1,10 @@
 
 export function utilities(){
-    window.addEventListener('resize',()=>{
-      const windowWidth = window.innerWidth
-      const windowHeight = window.innerHeight
-      if(document.querySelectorAll('svg').length>1){
-        const svgs = document.querySelectorAll('svg')
-        const content = document.querySelector('#content')
-        if(windowWidth<1700){
-          content.classList.remove('grid-content')
-          content.classList.add('flex-content')
-         }else{
-          content.classList.remove('flex-content')
-          content.classList.add('grid-content')
-         }
-        if(windowHeight<870){
-          svgs.forEach(svg=>{
-            svg.style.height = windowHeight/3 +'px'
-          })
-        }else{
-          svgs.forEach(svg=>{
-            svg.style.height = String(450)+'px'
-          })
-        }
-        if(windowWidth<1040){
-          svgs.forEach(svg=>{
-            svg.style.width = windowWidth -400+'px'
-            svg.style.height = svg.style.height - 50 + 'px'
-          })
-        }else{
-          svgs.forEach(svg=>{
-            svg.style.width = String(650)+'px'
-          })
-        }
-       
-      //   svgs.forEach(svg=>{
-      //     svg.style.height = String(windowHeight - 167)+'px'
-      //     svg.style.width = String(windowWidth - 450 )+'px'
-      // })
-      } 
-      else if(document.querySelector('svg')){
-          const svg = document.querySelector('svg')
-          if(windowHeight>801)
-            svg.style.height = '800px'
-          else
-            svg.style.height = String(windowHeight - 167)+'px'
-          if(windowWidth>1600)
-            svg.style.width = '1200px'
-          else
-            svg.style.width = String(windowWidth - 450)+'px'
-        }
-    })
+  windowEventSvgResizing()
   document.addEventListener('hovered-item',e=> tooltip(e.detail) )
   document.addEventListener('unhovered-item',()=>document.querySelector('.tooltip').remove())
   document.addEventListener('svg-office-loaded',()=>resizeSvg())
-  document.addEventListener('svg-floor-loaded',(e)=>{
+  document.addEventListener('svg-floor-loaded',()=>{
      resizeOverviewSvg()
      displayAvailableOffices()
   })
@@ -63,11 +14,44 @@ export function utilities(){
    function resizeOverviewSvg(){
     if(document.querySelector('svg')){
       const svgs = document.querySelectorAll('svg')
-      svgs.forEach(svg=>{
-        svg.style.height = String(450)+'px'
-        svg.style.width = String(650)+'px'
-      })
+      if(svgs.length === 1){
+        svgs.forEach(svg=>{
+          content.classList.remove('grid-content')
+          content.classList.add('flex-content')
+          svg.style.height = String(799)+'px'
+          svg.style.width = String(1199)+'px'
+        })
+      }
+      if(svgs.length === 2){
+          svgs.forEach(svg=>{
+            content.classList.remove('grid-content')
+            content.classList.add('flex-content')
+            svg.style.height = String(600)+'px'
+            svg.style.width = String(800)+'px'
+          })
+      }
+      if(svgs.length === 3){
+        if(svgs.length === 3){
+          if(window.innerWidth>1600){
+            svgs.forEach(svg=>{
+              content.classList.remove('flex-content')
+              content.classList.add('grid-content')
+              svg.style.height = String(450)+'px'
+              svg.style.width = String(650)+'px'
+            })
+          }else{
+            svgs.forEach(svg=>{
+              content.classList.remove('grid-content')
+              content.classList.add('flex-content')
+              svg.style.height = String(450)+'px'
+              svg.style.width = String(650)+'px'
+            })
+          }
+  
+        }
+      }
     }
+      
   }
   function resizeSvg(){
   if(document.querySelector('svg')){
@@ -123,5 +107,54 @@ function displayAvailableOffices(){
         text.classList.add('unoccupied-office-text')
       }
     }
+  })
+}
+function windowEventSvgResizing(){
+  window.addEventListener('resize',()=>{
+    const windowWidth = window.innerWidth
+    const windowHeight = window.innerHeight
+    if(document.querySelectorAll('svg').length>1){
+      const svgs = document.querySelectorAll('svg')
+      const content = document.querySelector('#content')
+      if(windowWidth<1700){
+        content.classList.remove('grid-content')
+        content.classList.add('flex-content')
+       }else{
+        content.classList.remove('flex-content')
+        content.classList.add('grid-content')
+       }
+      if(windowHeight<870){
+        svgs.forEach(svg=>{
+          svg.style.height = windowHeight/3 +'px'
+        })
+      }else{
+        svgs.forEach(svg=>{
+          svg.style.height = String(450)+'px'
+        })
+      }
+      if(windowWidth<1040){
+        svgs.forEach(svg=>{
+          svg.style.width = windowWidth -400+'px'
+          svg.style.height = svg.style.height - 50 + 'px'
+        })
+      }else{
+        svgs.forEach(svg=>{
+          svg.style.width = String(650)+'px'
+        })
+      }
+     
+
+    } 
+    else if(document.querySelector('svg')){
+        const svg = document.querySelector('svg')
+        if(windowHeight>801)
+          svg.style.height = '800px'
+        else
+          svg.style.height = String(windowHeight - 167)+'px'
+        if(windowWidth>1600)
+          svg.style.width = '1200px'
+        else
+          svg.style.width = String(windowWidth - 450)+'px'
+      }
   })
 }
