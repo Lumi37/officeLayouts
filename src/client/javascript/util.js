@@ -123,7 +123,7 @@ function windowEventSvgResizing(){
         content.classList.remove('flex-content')
         content.classList.add('grid-content')
        }
-      if(windowHeight<870){
+      if(windowHeight<650){
         svgs.forEach(svg=>{
           svg.style.height = windowHeight/3 +'px'
         })
@@ -142,8 +142,6 @@ function windowEventSvgResizing(){
           svg.style.width = String(650)+'px'
         })
       }
-     
-
     } 
     else if(document.querySelector('svg')){
         const svg = document.querySelector('svg')

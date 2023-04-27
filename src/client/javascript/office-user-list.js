@@ -53,7 +53,6 @@ export function initUserList(hostElement){
 
 
     document.addEventListener('resolved-search',e=>{
-        console.log(e.detail)
         constructList(e.detail)
         document.querySelectorAll('li').forEach(li=>{
             li.addEventListener('click',e=>{
