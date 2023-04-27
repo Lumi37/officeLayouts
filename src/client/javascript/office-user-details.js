@@ -23,6 +23,7 @@ export function initOfficeUserDetails(hostElement){
         user.style.visibility = 'hidden'
         downloadButtons.style.visibility = 'visible'
     })
+
     document.addEventListener('office-filter-changed',()=>{
         office.innerHTML = ''
         userField.value  = ''
@@ -40,11 +41,13 @@ export function initOfficeUserDetails(hostElement){
         downloadButtons.style.visibility = 'hidden'
     })
     document.addEventListener('user-selection', e=>{
-        userField.value = e.detail.user
-        outletField.value = e.detail.outlet 
-        outletField.dataset.position = e.detail.position
-        user.style.visibility = 'visible'
-        userField.select()
+        if(e.detail.user || e.detail.outlet){
+            userField.value = e.detail.user
+            outletField.value = e.detail.outlet 
+            outletField.dataset.position = e.detail.position
+            user.style.visibility = 'visible'
+            userField.select()
+        }
     })
     document.addEventListener('hovered-overview-item',e=>{
         office.innerHTML = e.detail
